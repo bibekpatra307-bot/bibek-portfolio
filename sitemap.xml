@@ -7,15 +7,38 @@
   <url><loc>https://bibekpatra.site/projects/gengram</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://bibekpatra.site/projects/vivika-ai</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://bibekpatra.site/projects/krayvo</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://bibekpatra.site/services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bibekpatra.site/services</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://bibekpatra.site/services/web-development</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bibekpatra.site/services/seo</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bibekpatra.site/services/ai-development</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bibekpatra.site/services/branding</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://bibekpatra.site/books</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://bibekpatra.site/books/chitt-vijay</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://bibekpatra.site/blog</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://bibekpatra.site/blog/post1</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://bibekpatra.site/portfolio</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bibekpatra.site/portfolio/case-study</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://bibekpatra.site/reviews</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bibekpatra.site/testimonials</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bibekpatra.site/media</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://bibekpatra.site/interviews</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://bibekpatra.site/resources</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://bibekpatra.site/gallery</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://bibekpatra.site/events</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://bibekpatra.site/contact</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bibekpatra.site/book-call</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bibekpatra.site/faq</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bibekpatra.site/careers</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://bibekpatra.site/community</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://bibekpatra.site/newsletter</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://bibekpatra.site/partners</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://bibekpatra.site/author</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bibekpatra.site/search</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://bibekpatra.site/account</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://bibekpatra.site/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://bibekpatra.site/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://bibekpatra.site/cookies</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://bibekpatra.site/disclaimer</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://bibekpatra.site/copyright</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://bibekpatra.site/404</loc><changefreq>yearly</changefreq><priority>0.1</priority></url>
 </urlset>
