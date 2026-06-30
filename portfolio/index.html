@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio - Bibek Patra</title>
-  <meta name="description" content="Showcase of premium projects and designs by Bibek Patra." />
+  <meta name="description" content="Showcase of projects by Bibek Patra: Krayvo, Gengram, Vivika AI, BibekBook." />
   <link rel="canonical" href="https://bibekpatra.site/portfolio" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = { darkMode:'class', theme: { extend: { colors: { primary:'#6C3BFF', secondary:'#111827', accent:'#F59E0B' } } } }</script>
@@ -12,78 +12,166 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/global.css" />
   <style>
-    .portfolio-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(108,59,255,0.15); }
-    .dark .portfolio-card:hover { box-shadow: 0 20px 40px rgba(108,59,255,0.3); }
+    /* ---- Auto-scroll container ---- */
+    .scroll-container {
+      overflow: hidden;
+      width: 100%;
+      padding: 2rem 0;
+    }
+    .scroll-track {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      animation: scroll-left 30s linear infinite;
+    }
+    .scroll-track:hover {
+      animation-play-state: paused;
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ---- Card style (same as original but enhanced) ---- */
+    .port-card {
+      width: 280px;
+      min-width: 280px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.25);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.2);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .dark .port-card {
+      background: rgba(0,0,0,0.5);
+      border-color: rgba(255,255,255,0.1);
+    }
+    .port-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(108,59,255,0.25);
+    }
+    .port-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-body {
+      padding: 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111827;
+      margin: 0;
+    }
+    .dark .card-title { color: #f3f4f6; }
+    .card-desc {
+      font-size: 13px;
+      color: #6b7280;
+      margin: 0;
+      line-height: 1.5;
+      flex: 1;
+    }
+    .card-btn {
+      display: block;
+      text-align: center;
+      background: #6C3BFF;
+      color: #fff;
+      font-size: 13px;
+      padding: 8px 0;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .card-btn:hover { background: #5530cc; }
+
+    /* Responsive: stack on small screens */
+    @media (max-width: 768px) {
+      .scroll-track {
+        animation: none;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .scroll-container { overflow: visible; }
+    }
   </style>
 </head>
 <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors">
   <div id="navbar-placeholder"></div>
 
   <main class="pt-24 pb-20 max-w-7xl mx-auto px-4">
-    <h1 class="text-4xl md:text-5xl font-bold text-center mb-10">My Portfolio</h1>
-    <p class="text-center text-lg text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">A curated selection of projects where design meets technology.</p>
+    <h1 class="text-4xl md:text-5xl font-bold text-center mb-4">Portfolio</h1>
+    <p class="text-center text-lg text-gray-600 dark:text-gray-400 mb-12">Explore my latest projects — each crafted with precision and passion.</p>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="portfolio-card glass rounded-2xl overflow-hidden transition-all duration-300" data-aos="fade-up">
-        <div class="relative overflow-hidden h-56">
-          <img src="/images/krayvo.jpg" alt="Krayvo" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
-          <span class="absolute top-3 left-3 bg-primary text-white text-xs px-3 py-1 rounded-full">E‑Commerce</span>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold">Krayvo</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Smart multi‑vendor marketplace.</p>
-          <a href="/portfolio/case-study" class="inline-flex items-center mt-4 text-primary font-medium text-sm hover:underline">
-            View Case Study <i class="fas fa-arrow-right ml-2"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="portfolio-card glass rounded-2xl overflow-hidden transition-all duration-300" data-aos="fade-up">
-        <div class="relative overflow-hidden h-56">
-          <img src="/images/gengram.jpg" alt="Gengram" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
-          <span class="absolute top-3 left-3 bg-primary text-white text-xs px-3 py-1 rounded-full">Social Media</span>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold">Gengram</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Next‑gen community platform.</p>
-          <a href="/portfolio/case-study" class="inline-flex items-center mt-4 text-primary font-medium text-sm hover:underline">
-            View Case Study <i class="fas fa-arrow-right ml-2"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="portfolio-card glass rounded-2xl overflow-hidden transition-all duration-300" data-aos="fade-up">
-        <div class="relative overflow-hidden h-56">
-          <img src="/images/vivika-ai.jpg" alt="Vivika AI" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
-          <span class="absolute top-3 left-3 bg-primary text-white text-xs px-3 py-1 rounded-full">AI</span>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold">Vivika AI</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Advanced conversational AI.</p>
-          <a href="/portfolio/case-study" class="inline-flex items-center mt-4 text-primary font-medium text-sm hover:underline">
-            View Case Study <i class="fas fa-arrow-right ml-2"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="portfolio-card glass rounded-2xl overflow-hidden transition-all duration-300" data-aos="fade-up">
-        <div class="relative overflow-hidden h-56">
-          <img src="/images/bibekbook.jpg" alt="BibekBook" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
-          <span class="absolute top-3 left-3 bg-primary text-white text-xs px-3 py-1 rounded-full">Publishing</span>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold">BibekBook</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Digital publishing platform.</p>
-          <a href="/portfolio/case-study" class="inline-flex items-center mt-4 text-primary font-medium text-sm hover:underline">
-            View Case Study <i class="fas fa-arrow-right ml-2"></i>
-          </a>
-        </div>
+    <!-- Auto-scrolling Cards -->
+    <div class="scroll-container">
+      <div class="scroll-track" id="scrollTrack">
+        <!-- cards will be generated by JS to avoid duplication -->
       </div>
     </div>
   </main>
 
   <div id="footer-placeholder"></div>
   <a href="https://wa.me/918280482686" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+
+  <script>
+    (function() {
+      const projects = [
+        {
+          img: "/images/krayvo.jpg",
+          title: "Krayvo",
+          desc: "Smart e‑commerce platform accessing multiple marketplaces.",
+          link: "/projects/krayvo"
+        },
+        {
+          img: "/images/gengram.jpg",
+          title: "Gengram",
+          desc: "Next-gen social networking and community platform.",
+          link: "/projects/gengram"
+        },
+        {
+          img: "/images/vivika-ai.jpg",
+          title: "Vivika AI",
+          desc: "Advanced conversational AI for human-like interaction.",
+          link: "/projects/vivika-ai"
+        },
+        {
+          img: "/images/bibekbook.jpg",
+          title: "BibekBook",
+          desc: "A platform for authors to publish and manage books digitally.",
+          link: "/projects/bibekbook"
+        },
+        // Add more if needed
+      ];
+
+      // Double the array for infinite scroll effect
+      const doubled = [...projects, ...projects, ...projects, ...projects];
+
+      const track = document.getElementById('scrollTrack');
+      track.innerHTML = doubled.map(p => `
+        <div class="port-card">
+          <img src="${p.img}" alt="${p.title}" loading="lazy" />
+          <div class="card-body">
+            <p class="card-title">${p.title}</p>
+            <p class="card-desc">${p.desc}</p>
+            <a class="card-btn" href="${p.link}">View Details</a>
+          </div>
+        </div>
+      `).join('');
+    })();
+  </script>
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init({ duration: 800, once: true });</script>
   <script src="/js/script.js"></script>
