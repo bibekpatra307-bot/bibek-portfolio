@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Bibek Patra</title>
+  <meta name="description" content="Your personal dashboard." />
+  <link rel="canonical" href="https://bibekpatra.site/dashboard" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode:'class', theme: { extend: { colors: { primary:'#6C3BFF', secondary:'#111827', accent:'#F59E0B' } } } }</script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="/css/global.css" />
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+  <div class="min-h-screen flex">
+    <!-- Sidebar -->
+    <aside class="hidden md:flex flex-col w-64 glass p-6 space-y-4">
+      <h2 class="text-2xl font-bold text-primary">Dashboard</h2>
+      <nav class="space-y-2">
+        <a href="#" class="block px-3 py-2 rounded-lg hover:bg-primary/10">Overview</a>
+        <a href="#" class="block px-3 py-2 rounded-lg hover:bg-primary/10">My Books</a>
+        <a href="#" class="block px-3 py-2 rounded-lg hover:bg-primary/10">Settings</a>
+        <a href="#" class="block px-3 py-2 rounded-lg hover:bg-primary/10">Logout</a>
+      </nav>
+    </aside>
+    <main class="flex-1 p-6 pt-20 md:pt-6">
+      <h1 class="text-3xl font-bold">Welcome, Bibek!</h1>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+        <div class="glass p-4 rounded-2xl"><h3 class="font-semibold">Projects</h3><p class="text-3xl font-bold">4</p></div>
+        <div class="glass p-4 rounded-2xl"><h3 class="font-semibold">Books Sold</h3><p class="text-3xl font-bold">120</p></div>
+        <div class="glass p-4 rounded-2xl"><h3 class="font-semibold">Messages</h3><p class="text-3xl font-bold">15</p></div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
