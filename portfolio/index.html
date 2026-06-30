@@ -1,27 +1,115 @@
 <!DOCTYPE html>
 <html lang="en" class="">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio - Bibek Patra</title>
-  <meta name="description" content="Showcase of projects and designs by Bibek Patra.">
-  <link rel="canonical" href="https://bibekpatra.site/portfolio">
+  <meta name="description" content="Showcase of premium projects and designs by Bibek Patra." />
+  <link rel="canonical" href="https://bibekpatra.site/portfolio" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = { darkMode:'class', theme: { extend: { colors: { primary:'#6C3BFF', secondary:'#111827', accent:'#F59E0B' } } } }</script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <style>
+    .portfolio-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(108,59,255,0.15); }
+    .dark .portfolio-card:hover { box-shadow: 0 20px 40px rgba(108,59,255,0.3); }
+  </style>
 </head>
-<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors">
   <div id="navbar-placeholder"></div>
+
   <main class="pt-24 pb-20 max-w-7xl mx-auto px-4">
-    <h1 class="text-4xl font-bold text-center mb-10">Portfolio</h1>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="glass rounded-2xl overflow-hidden shadow-lg"><img src="/image/krayvo.jpg" class="w-full h-48 object-cover"><div class="p-6"><h3 class="font-bold text-lg">Krayvo</h3><p class="text-sm">E‑commerce platform</p><a href="/portfolio/case-study" class="text-primary text-sm mt-2 inline-block">View Case Study →</a></div></div>
-      <div class="glass rounded-2xl overflow-hidden shadow-lg"><img src="/image/gengram.jpg" class="w-full h-48 object-cover"><div class="p-6"><h3 class="font-bold text-lg">Gengram</h3><p class="text-sm">Social networking app</p><a href="/portfolio/case-study" class="text-primary text-sm mt-2 inline-block">View Case Study →</a></div></div>
-      <div class="glass rounded-2xl overflow-hidden shadow-lg"><img src="/image/vivika-ai.jpg" class="w-full h-48 object-cover"><div class="p-6"><h3 class="font-bold text-lg">Vivika AI</h3><p class="text-sm">Conversational AI</p><a href="/portfolio/case-study" class="text-primary text-sm mt-2 inline-block">View Case Study →</a></div></div>
+    <h1 class="text-4xl md:text-5xl font-bold text-center mb-10">My Portfolio</h1>
+    <p class="text-center text-lg text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">A curated selection of projects where design meets technology. Each case study reflects a problem, process, and result.</p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Project 1: Krayvo -->
+      <div class="portfolio-card glass rounded-2xl overflow-hidden transition-all duration-300" data-aos="fade-up">
+        <div class="relative overflow-hidden h-56">
+          <img src="/images/krayvo.jpg" alt="Krayvo" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          <span class="absolute top-3 left-3 bg-primary text-white text-xs px-3 py-1 rounded-full">E‑Commerce</span>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold">Krayvo</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Smart multi‑vendor marketplace with unified inventory.</p>
+          <div class="flex gap-2 mt-3 text-xs text-primary">
+            <span>UI/UX</span>
+            <span>•</span>
+            <span>Development</span>
+          </div>
+          <a href="/portfolio/case-study?project=krayvo" class="inline-flex items-center mt-4 text-primary font-medium text-sm hover:underline">
+            View Case Study <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 2: Gengram -->
+      <div class="portfolio-card glass rounded-2xl overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+        <div class="relative overflow-hidden h-56">
+          <img src="/images/gengram.jpg" alt="Gengram" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          <span class="absolute top-3 left-3 bg-primary text-white text-xs px-3 py-1 rounded-full">Social Media</span>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold">Gengram</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Next‑gen community platform with real‑time engagement.</p>
+          <div class="flex gap-2 mt-3 text-xs text-primary">
+            <span>Branding</span>
+            <span>•</span>
+            <span>Development</span>
+          </div>
+          <a href="/portfolio/case-study?project=gengram" class="inline-flex items-center mt-4 text-primary font-medium text-sm hover:underline">
+            View Case Study <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 3: Vivika AI -->
+      <div class="portfolio-card glass rounded-2xl overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+        <div class="relative overflow-hidden h-56">
+          <img src="/images/vivika-ai.jpg" alt="Vivika AI" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          <span class="absolute top-3 left-3 bg-primary text-white text-xs px-3 py-1 rounded-full">AI / ML</span>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold">Vivika AI</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Advanced conversational AI assistant with human‑like responses.</p>
+          <div class="flex gap-2 mt-3 text-xs text-primary">
+            <span>NLP</span>
+            <span>•</span>
+            <span>API Integration</span>
+          </div>
+          <a href="/portfolio/case-study?project=vivika" class="inline-flex items-center mt-4 text-primary font-medium text-sm hover:underline">
+            View Case Study <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 4: BibekBook -->
+      <div class="portfolio-card glass rounded-2xl overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+        <div class="relative overflow-hidden h-56">
+          <img src="/images/bibekbook.jpg" alt="BibekBook" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          <span class="absolute top-3 left-3 bg-primary text-white text-xs px-3 py-1 rounded-full">Publishing</span>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold">BibekBook</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Complete digital publishing platform for authors worldwide.</p>
+          <div class="flex gap-2 mt-3 text-xs text-primary">
+            <span>Full‑Stack</span>
+            <span>•</span>
+            <span>Dashboard</span>
+          </div>
+          <a href="/portfolio/case-study?project=bibekbook" class="inline-flex items-center mt-4 text-primary font-medium text-sm hover:underline">
+            View Case Study <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
     </div>
   </main>
+
   <div id="footer-placeholder"></div>
+  <a href="https://wa.me/918280482686" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 800, once: true });</script>
   <script src="/js/script.js"></script>
 </body>
 </html>
