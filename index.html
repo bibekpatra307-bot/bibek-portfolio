@@ -1,1 +1,505 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bibek Patra – Founder, Developer & Author</title>
+  <meta name="description" content="Official website of Bibek Patra, entrepreneur, full‑stack developer, author, and founder of BibekBook, Gengram, Vivika AI, and Krayvo." />
+  <link rel="canonical" href="https://bibekpatra.site/" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bibekpatra.site/" />
+  <meta property="og:title" content="Bibek Patra – Founder, Developer & Author" />
+  <meta property="og:description" content="Official website of Bibek Patra." />
+  <meta property="og:image" content="https://bibekpatra.site/images/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- Font Awesome (only CDN used) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Custom inline styles (no external CSS files) -->
+  <style>
+    :root {
+      --primary: #6C3BFF;
+      --accent: #F59E0B;
+      --bg: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --glass-bg: rgba(255,255,255,0.25);
+      --glass-border: rgba(255,255,255,0.2);
+      --shadow: 0 4px 20px rgba(0,0,0,0.06);
+      --radius: 1.5rem;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .dark {
+      --bg: #0f172a;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --glass-bg: rgba(0,0,0,0.5);
+      --glass-border: rgba(255,255,255,0.1);
+      --shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; font-size:16px; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background var(--transition), color var(--transition);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    .container { max-width:1200px; margin:0 auto; padding:0 2rem; }
+    h1,h2,h3 { line-height:1.2; letter-spacing:-0.02em; }
+    a { color:inherit; text-decoration:none; }
+    button { cursor:pointer; }
 
+    /* Glass card */
+    .glass {
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed; top:0; left:0; right:0; z-index:100;
+      padding:1rem 2rem; display:flex; justify-content: space-between; align-items: center;
+      background: var(--glass-bg); backdrop-filter: blur(12px); border-bottom:1px solid var(--glass-border);
+    }
+    .logo {
+      font-size:1.5rem; font-weight:700;
+      background:linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    }
+    .nav-links { display:flex; gap:1.5rem; align-items:center; }
+    .nav-links a { font-weight:500; transition:color 0.2s; }
+    .nav-links a:hover { color:var(--primary); }
+    .theme-toggle {
+      background:none; border:none; font-size:1.2rem; color:var(--text); margin-left:1rem;
+    }
+    .mobile-menu-btn { display:none; background:none; border:none; font-size:1.5rem; color:var(--text); }
+    .mobile-menu { display:none; flex-direction:column; gap:0.5rem; position:absolute; top:100%; left:0; right:0; background:var(--glass-bg); backdrop-filter:blur(12px); padding:1rem 2rem; border-bottom:1px solid var(--glass-border); }
+
+    /* Sections */
+    section { padding:5rem 0; }
+    .section-title { font-size:2.5rem; font-weight:700; margin-bottom:1rem; }
+    .section-subtitle { font-size:1.1rem; color:var(--muted); margin-bottom:3rem; }
+
+    /* Hero */
+    .hero { min-height:100vh; display:flex; align-items:center; text-align:center; }
+    .hero-content { max-width:800px; margin:0 auto; }
+    .hero-img { width:140px; height:140px; border-radius:50%; object-fit:cover; border:3px solid var(--primary); box-shadow:0 0 30px rgba(108,59,255,0.4); margin-bottom:2rem; }
+    .hero h1 { font-size:3.5rem; font-weight:800; }
+    .hero h1 span { background:linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    .hero p { font-size:1.2rem; color:var(--muted); margin:1.5rem 0; }
+    .hero-btns { display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:2rem; }
+    .btn { padding:0.75rem 2rem; border-radius:100px; font-weight:600; transition:all var(--transition); }
+    .btn-primary { background:var(--primary); color:white; border:2px solid var(--primary); }
+    .btn-primary:hover { background:transparent; color:var(--primary); }
+    .btn-outline { border:2px solid var(--text); color:var(--text); background:transparent; }
+    .btn-outline:hover { background:var(--text); color:var(--bg); }
+    .btn-accent { background:var(--accent); color:black; border:none; }
+    .btn-accent:hover { filter:brightness(0.9); }
+
+    /* Trust bar */
+    .trust-bar { display:flex; flex-wrap:wrap; justify-content:center; gap:2rem; text-align:center; }
+    .trust-item { flex:1 1 150px; max-width:200px; }
+    .trust-item .number { font-size:2.5rem; font-weight:800; color:var(--primary); }
+
+    /* Cards grid */
+    .grid-2 { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:2rem; }
+    .grid-3 { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:2rem; }
+    .grid-4 { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:2rem; }
+
+    .project-card, .book-card, .article-card {
+      background: var(--glass-bg); backdrop-filter:blur(12px); border:1px solid var(--glass-border);
+      border-radius: var(--radius); overflow:hidden; box-shadow:var(--shadow); transition:transform var(--transition), box-shadow var(--transition);
+    }
+    .project-card:hover, .book-card:hover, .article-card:hover { transform:translateY(-5px); box-shadow:0 15px 30px rgba(108,59,255,0.2); }
+    .card-img { width:100%; height:200px; object-fit:cover; }
+    .card-body { padding:1.5rem; }
+    .tag { display:inline-block; padding:0.2rem 0.8rem; border-radius:100px; font-size:0.7rem; font-weight:600; background:var(--primary); color:white; margin-right:0.5rem; margin-bottom:0.5rem; }
+
+    /* Testimonials */
+    .testimonial-card { background:var(--glass-bg); backdrop-filter:blur(12px); border:1px solid var(--glass-border); border-radius:var(--radius); padding:2rem; text-align:center; }
+    .stars { color:#f59e0b; font-size:1.2rem; margin-bottom:0.5rem; }
+
+    /* Footer */
+    footer { padding:3rem 2rem; border-top:1px solid var(--glass-border); display:flex; flex-wrap:wrap; justify-content:space-between; gap:2rem; }
+    .footer-col { flex:1; min-width:150px; }
+    .footer-col h4 { margin-bottom:1rem; }
+
+    /* Custom cursor (desktop only) */
+    .custom-cursor { position:fixed; width:10px; height:10px; border-radius:50%; background:var(--primary); pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:width 0.2s, height 0.2s; }
+    .custom-cursor.hover { width:20px; height:20px; opacity:0.5; }
+
+    /* Reveal animations */
+    .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.active { opacity:1; transform:translateY(0); }
+
+    @media (max-width:768px) {
+      .nav-links { display:none; }
+      .mobile-menu-btn { display:block; }
+      .hero h1 { font-size:2.5rem; }
+      .hero-img { width:100px; height:100px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Custom cursor (desktop) -->
+  <div class="custom-cursor" id="cursor"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#" class="logo">Bibek Patra</a>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#books">Books</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+    <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#books">Books</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content reveal">
+      <img src="/images/hero-circle.jpg" alt="Bibek Patra" class="hero-img" />
+      <h1>Hi, I'm <span>Bibek Patra</span></h1>
+      <p>Entrepreneur · Full‑stack Developer · Author · Technology Innovator<br/>Founder of BibekBook, Gengram, Vivika AI & Krayvo</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> Explore Projects</a>
+        <a href="#books" class="btn btn-outline"><i class="fas fa-book-open"></i> Read My Work</a>
+        <a href="#contact" class="btn btn-accent"><i class="fas fa-envelope"></i> Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust bar -->
+  <section class="container reveal">
+    <div class="trust-bar">
+      <div class="trust-item"><div class="number">5+</div><p>Years Experience</p></div>
+      <div class="trust-item"><div class="number">20+</div><p>Projects Delivered</p></div>
+      <div class="trust-item"><div class="number">500+</div><p>Happy Clients</p></div>
+      <div class="trust-item"><div class="number">4</div><p>Products Launched</p></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="container" id="about">
+    <h2 class="section-title reveal">About Me</h2>
+    <div class="grid-2 reveal" style="align-items:center;">
+      <img src="/images/about.jpg" alt="Bibek" style="width:100%; border-radius:var(--radius); box-shadow:var(--shadow);" />
+      <div>
+        <p style="font-size:1.1rem; margin-bottom:1.5rem;">I am Bibek Patra, an entrepreneur, full‑stack developer, author, and technology innovator based in Mayurbhanj, Odisha. As the founder of BibekBook, Gengram, Vivika AI, and Krayvo, I create digital solutions that bridge creativity and cutting‑edge technology.</p>
+        <p style="color:var(--muted);">My work spans publishing, artificial intelligence, social networking, e‑commerce, web development, and 3D design. I’m dedicated to building products that empower people and businesses globally.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="container" id="projects">
+    <h2 class="section-title reveal">Featured Projects</h2>
+    <div class="grid-4 reveal">
+      <!-- BibekBook -->
+      <div class="project-card">
+        <img src="/images/bibekbook.jpg" class="card-img" alt="BibekBook" />
+        <div class="card-body">
+          <h3>BibekBook</h3>
+          <p style="color:var(--muted); font-size:0.9rem;">Publishing platform for authors.</p>
+          <div style="margin-top:0.5rem;"><span class="tag">Publishing</span></div>
+          <a href="/projects/bibekbook" class="btn btn-primary" style="display:block; margin-top:1rem; text-align:center;">View Details</a>
+        </div>
+      </div>
+      <!-- Gengram -->
+      <div class="project-card">
+        <img src="/images/gengram.jpg" class="card-img" alt="Gengram" />
+        <div class="card-body">
+          <h3>Gengram</h3>
+          <p style="color:var(--muted); font-size:0.9rem;">Next‑gen social networking.</p>
+          <div style="margin-top:0.5rem;"><span class="tag">Social</span></div>
+          <a href="/projects/gengram" class="btn btn-primary" style="display:block; margin-top:1rem; text-align:center;">View Details</a>
+        </div>
+      </div>
+      <!-- Vivika AI -->
+      <div class="project-card">
+        <img src="/images/vivika-ai.jpg" class="card-img" alt="Vivika AI" />
+        <div class="card-body">
+          <h3>Vivika AI</h3>
+          <p style="color:var(--muted); font-size:0.9rem;">Advanced conversational AI.</p>
+          <div style="margin-top:0.5rem;"><span class="tag">AI</span></div>
+          <a href="/projects/vivika-ai" class="btn btn-primary" style="display:block; margin-top:1rem; text-align:center;">View Details</a>
+        </div>
+      </div>
+      <!-- Krayvo -->
+      <div class="project-card">
+        <img src="/images/krayvo.jpg" class="card-img" alt="Krayvo" />
+        <div class="card-body">
+          <h3>Krayvo</h3>
+          <p style="color:var(--muted); font-size:0.9rem;">Smart e‑commerce platform.</p>
+          <div style="margin-top:0.5rem;"><span class="tag">E‑Commerce</span></div>
+          <a href="/projects/krayvo" class="btn btn-primary" style="display:block; margin-top:1rem; text-align:center;">View Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Books / Publications -->
+  <section class="container" id="books">
+    <h2 class="section-title reveal">Books & Publications</h2>
+    <div class="grid-2 reveal" style="max-width:500px; margin:0 auto;">
+      <div class="book-card">
+        <img src="/images/chitt-vijay.jpg" class="card-img" alt="Chitt Vijay" />
+        <div class="card-body" style="text-align:center;">
+          <h3>Chitt Vijay</h3>
+          <p style="color:var(--muted);">मन पर विजय की संवाद यात्रा</p>
+          <a href="/books/chitt-vijay" class="btn btn-primary" style="margin-top:1rem;">Explore Book</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience / Journey -->
+  <section class="container">
+    <h2 class="section-title reveal">My Journey</h2>
+    <div class="reveal" style="position:relative; padding-left:2rem; border-left:2px solid var(--primary);">
+      <div style="margin-bottom:2rem;"><strong>2021</strong> – Started freelancing as a web developer.</div>
+      <div style="margin-bottom:2rem;"><strong>2022</strong> – Launched BibekBook, a digital publishing platform.</div>
+      <div style="margin-bottom:2rem;"><strong>2023</strong> – Founded Gengram and Vivika AI, expanding into social media and artificial intelligence.</div>
+      <div style="margin-bottom:2rem;"><strong>2024</strong> – Released Krayvo, a smart e‑commerce solution, and authored "Chitt Vijay".</div>
+      <div><strong>2025–Present</strong> – Scaling products globally, building a personal brand, and sharing knowledge through blogs and videos.</div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="container">
+    <h2 class="section-title reveal">Skills & Expertise</h2>
+    <div class="grid-3 reveal" style="text-align:center;">
+      <div class="glass" style="padding:2rem;">
+        <i class="fas fa-code" style="font-size:2rem; color:var(--primary); margin-bottom:0.5rem;"></i>
+        <h3>Web Development</h3>
+        <p style="color:var(--muted); font-size:0.9rem;">Modern responsive websites, full‑stack solutions.</p>
+      </div>
+      <div class="glass" style="padding:2rem;">
+        <i class="fas fa-brain" style="font-size:2rem; color:var(--primary); margin-bottom:0.5rem;"></i>
+        <h3>AI & Automation</h3>
+        <p style="color:var(--muted); font-size:0.9rem;">Chatbots, NLP, and intelligent automation.</p>
+      </div>
+      <div class="glass" style="padding:2rem;">
+        <i class="fas fa-pencil-alt" style="font-size:2rem; color:var(--primary); margin-bottom:0.5rem;"></i>
+        <h3>Writing & Publishing</h3>
+        <p style="color:var(--muted); font-size:0.9rem;">Books, articles, and technical content.</p>
+      </div>
+      <div class="glass" style="padding:2rem;">
+        <i class="fas fa-rocket" style="font-size:2rem; color:var(--primary); margin-bottom:0.5rem;"></i>
+        <h3>Product Building</h3>
+        <p style="color:var(--muted); font-size:0.9rem;">From idea to launch, building impactful products.</p>
+      </div>
+      <div class="glass" style="padding:2rem;">
+        <i class="fas fa-search" style="font-size:2rem; color:var(--primary); margin-bottom:0.5rem;"></i>
+        <h3>SEO & Marketing</h3>
+        <p style="color:var(--muted); font-size:0.9rem;">Ranking strategies and digital growth.</p>
+      </div>
+      <div class="glass" style="padding:2rem;">
+        <i class="fas fa-cube" style="font-size:2rem; color:var(--primary); margin-bottom:0.5rem;"></i>
+        <h3>3D & Graphic Design</h3>
+        <p style="color:var(--muted); font-size:0.9rem;">Product mockups, branding, and visuals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="container" id="testimonials">
+    <h2 class="section-title reveal">What People Say</h2>
+    <div class="grid-3 reveal">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"Bibek delivered a stunning website and increased our online sales by 200%."</p>
+        <p style="margin-top:1rem; font-weight:600;">— Rajesh Kumar</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"His AI chatbot saved our support team hours every day."</p>
+        <p style="margin-top:1rem; font-weight:600;">— Priya Sharma</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"Professional, fast, and highly skilled. Highly recommended."</p>
+        <p style="margin-top:1rem; font-weight:600;">— Amit Patel</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content / Insights -->
+  <section class="container" id="blog">
+    <h2 class="section-title reveal">Latest Insights</h2>
+    <div class="grid-3 reveal">
+      <div class="article-card">
+        <img src="/images/krayvo.jpg" class="card-img" alt="Krayvo Blog" />
+        <div class="card-body">
+          <h3>How We Built Krayvo</h3>
+          <p style="color:var(--muted); font-size:0.9rem;">Behind the scenes of our smart e‑commerce platform.</p>
+          <a href="/blog/post1" class="btn btn-primary" style="display:inline-block; margin-top:1rem;">Read More →</a>
+        </div>
+      </div>
+      <div class="article-card">
+        <img src="/images/chitt-vijay.jpg" class="card-img" alt="Chitt Vijay Journey" />
+        <div class="card-body">
+          <h3>The Journey of Chitt Vijay</h3>
+          <p style="color:var(--muted); font-size:0.9rem;">Writing a book that changes lives.</p>
+          <a href="/blog/chitt-vijay-journey" class="btn btn-primary" style="display:inline-block; margin-top:1rem;">Read More →</a>
+        </div>
+      </div>
+      <div class="article-card">
+        <img src="/images/sbinumberchange.jpg" class="card-img" alt="SBI Mobile Number Change" />
+        <div class="card-body">
+          <h3>SBI Mobile Number Change</h3>
+          <p style="color:var(--muted); font-size:0.9rem;">Step‑by‑step guide from home.</p>
+          <a href="https://youtu.be/etlv68d8RyI" target="_blank" class="btn btn-primary" style="display:inline-block; margin-top:1rem;">Watch Video →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="container" id="contact">
+    <h2 class="section-title reveal">Get In Touch</h2>
+    <div class="grid-2 reveal" style="align-items:center;">
+      <div>
+        <p style="font-size:1.1rem;">Let's create something impactful together.</p>
+        <ul style="list-style:none; margin:1.5rem 0;">
+          <li style="margin-bottom:0.8rem;"><i class="fas fa-envelope" style="color:var(--primary); width:1.5rem;"></i> inboxtobibek@gmail.com</li>
+          <li style="margin-bottom:0.8rem;"><i class="fas fa-phone" style="color:var(--primary); width:1.5rem;"></i> +91 8280482686</li>
+        </ul>
+        <div style="display:flex; gap:1rem; font-size:1.5rem;">
+          <a href="https://wa.me/918280482686" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://instagram.com/itsbibekpatra" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://youtube.com/@gtbcreates" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://linkedin.com/in/bibek-patra-932213293" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://facebook.com/thesideincomeguru" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+      <form class="glass" style="padding:2rem; display:flex; flex-direction:column; gap:1rem;" action="https://formspree.io/f/mzdqlpjl" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required style="padding:0.8rem; border-radius:0.5rem; border:1px solid var(--glass-border); background:transparent; color:var(--text);" />
+        <input type="email" name="_replyto" placeholder="Email" required style="padding:0.8rem; border-radius:0.5rem; border:1px solid var(--glass-border); background:transparent; color:var(--text);" />
+        <textarea name="message" placeholder="Message" rows="4" required style="padding:0.8rem; border-radius:0.5rem; border:1px solid var(--glass-border); background:transparent; color:var(--text);"></textarea>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-col"><h4>Bibek Patra</h4><p>Founder of BibekBook, Gengram, Vivika AI & Krayvo</p></div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#home">Home</a><br/>
+      <a href="#about">About</a><br/>
+      <a href="#projects">Projects</a><br/>
+      <a href="#books">Books</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="/privacy">Privacy</a><br/>
+      <a href="/terms">Terms</a><br/>
+      <a href="/cookies">Cookies</a>
+    </div>
+  </footer>
+
+  <!-- WhatsApp floating (optional, we can keep it) -->
+  <a href="https://wa.me/918280482686" target="_blank" style="position:fixed; bottom:20px; right:20px; background:#25D366; color:white; border-radius:50%; width:55px; height:55px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; box-shadow:0 4px 15px rgba(0,0,0,0.2); z-index:100; text-decoration:none;"><i class="fab fa-whatsapp"></i></a>
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Bibek Patra",
+      "url": "https://bibekpatra.site",
+      "image": "https://bibekpatra.site/images/hero-circle.jpg",
+      "jobTitle": "Founder, Developer, Entrepreneur, Author",
+      "sameAs": [
+        "https://www.instagram.com/itsbibekpatra",
+        "https://youtube.com/@gtbcreates",
+        "https://www.linkedin.com/in/bibek-patra-932213293",
+        "https://www.facebook.com/thesideincomeguru"
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://bibekpatra.site",
+      "name": "Bibek Patra Official",
+      "description": "Official website of Bibek Patra, entrepreneur, developer, author.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://bibekpatra.site/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+
+  <!-- Custom JS -->
+  <script>
+    // Theme toggle
+    const html = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const icon = themeToggle.querySelector('i');
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') { html.classList.add('dark'); icon.classList.replace('fa-moon', 'fa-sun'); }
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      if (html.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+        icon.classList.replace('fa-moon', 'fa-sun');
+      } else {
+        localStorage.setItem('theme', 'light');
+        icon.classList.replace('fa-sun', 'fa-moon');
+      }
+    });
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    // Smooth reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Custom cursor (desktop)
+    if (window.matchMedia('(pointer:fine)').matches) {
+      const cursor = document.getElementById('cursor');
+      document.addEventListener('mousemove', e => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+      });
+      document.querySelectorAll('a, button, .btn, .project-card, .book-card').forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+      });
+    }
+  </script>
+</body>
+</html>
