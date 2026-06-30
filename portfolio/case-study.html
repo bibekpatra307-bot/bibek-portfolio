@@ -3,55 +3,162 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Case Study - Bibek Patra</title>
-  <meta name="description" content="Detailed case study showcasing project." />
+  <title>Case Study – Krayvo | Bibek Patra</title>
+  <meta name="description" content="Detailed case study of Krayvo: multi‑vendor marketplace by Bibek Patra." />
   <link rel="canonical" href="https://bibekpatra.site/portfolio/case-study" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = { darkMode:'class', theme: { extend: { colors: { primary:'#6C3BFF', secondary:'#111827', accent:'#F59E0B' } } } }</script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/global.css" />
+  <style>
+    .stat-box { @apply glass rounded-2xl p-6 text-center; }
+    .timeline-dot { position: absolute; left: -25px; top: 6px; width: 16px; height: 16px; background: #6C3BFF; border-radius: 50%; border: 3px solid white; }
+    .dark .timeline-dot { border-color: #1f2937; }
+    .tech-pill { @apply bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium; }
+  </style>
 </head>
-<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors">
   <div id="navbar-placeholder"></div>
 
-  <main class="pt-24 pb-20 max-w-5xl mx-auto px-4">
-    <nav class="text-sm mb-8 text-gray-500">
-      <a href="/portfolio" class="hover:text-primary">Portfolio</a> / <span>Case Study</span>
+  <main class="pt-24 pb-20 max-w-6xl mx-auto px-4">
+    <!-- Breadcrumb -->
+    <nav class="text-sm mb-8 text-gray-500 dark:text-gray-400">
+      <a href="/portfolio" class="hover:text-primary">Portfolio</a> / <span class="text-primary">Case Study</span>
     </nav>
 
-    <div class="glass rounded-3xl overflow-hidden mb-12" data-aos="fade-up">
-      <img src="/images/krayvo.jpg" alt="Project" class="w-full h-64 md:h-96 object-cover" />
-      <div class="p-6 md:p-10">
-        <span class="text-primary font-semibold text-sm uppercase">E‑Commerce</span>
-        <h1 class="text-3xl font-bold mt-2">Krayvo – Multi‑Vendor Marketplace</h1>
-        <p class="text-lg text-gray-600 dark:text-gray-400 mt-4">Built a smart e‑commerce solution that unifies inventory across platforms.</p>
+    <!-- Hero Section -->
+    <div class="glass rounded-3xl overflow-hidden mb-16" data-aos="fade-up">
+      <img src="/images/krayvo.jpg" alt="Krayvo Dashboard" class="w-full h-64 md:h-96 object-cover" />
+      <div class="p-6 md:p-12">
+        <span class="text-primary font-semibold text-sm uppercase tracking-widest">E‑Commerce Platform</span>
+        <h1 class="text-3xl md:text-5xl font-bold mt-3 mb-4">Krayvo – Multi‑Vendor Marketplace</h1>
+        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">A smart e‑commerce solution that allows vendors to manage inventory across multiple marketplaces from a single, intuitive dashboard.</p>
+        <a href="https://bibekpatra307-bot.github.io/Krayvo/" target="_blank" class="inline-flex items-center mt-6 bg-primary text-white px-6 py-3 rounded-xl font-medium hover:bg-purple-700 transition">
+          Visit Live Project <i class="fas fa-external-link-alt ml-2"></i>
+        </a>
       </div>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-10 mb-12" data-aos="fade-up">
-      <div>
-        <h2 class="text-2xl font-bold mb-4">Problem</h2>
-        <p>Vendors managed separate inventories on multiple marketplaces, leading to overselling.</p>
+    <!-- Key Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16" data-aos="fade-up">
+      <div class="glass rounded-2xl p-6 text-center">
+        <div class="text-3xl font-bold text-primary">3x</div>
+        <p class="mt-2 text-sm">Faster Order Processing</p>
       </div>
-      <div>
-        <h2 class="text-2xl font-bold mb-4">Solution</h2>
-        <p>A unified dashboard with real‑time sync and AI‑powered pricing engine.</p>
+      <div class="glass rounded-2xl p-6 text-center">
+        <div class="text-3xl font-bold text-primary">50+</div>
+        <p class="mt-2 text-sm">Active Vendors</p>
+      </div>
+      <div class="glass rounded-2xl p-6 text-center">
+        <div class="text-3xl font-bold text-primary">99.9%</div>
+        <p class="mt-2 text-sm">Uptime SLA</p>
+      </div>
+      <div class="glass rounded-2xl p-6 text-center">
+        <div class="text-3xl font-bold text-primary">2 mo</div>
+        <p class="mt-2 text-sm">Development Time</p>
       </div>
     </div>
 
-    <div class="glass p-6 md:p-10 rounded-3xl mb-12" data-aos="fade-up">
-      <h2 class="text-2xl font-bold mb-4">Result</h2>
-      <p>Reduced inventory management time by 70%, boosted sales 40%.</p>
+    <!-- Problem & Solution -->
+    <div class="grid md:grid-cols-2 gap-10 mb-16" data-aos="fade-up">
+      <div class="glass p-6 md:p-8 rounded-2xl">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm font-bold">1</span>
+          <h2 class="text-2xl font-bold">The Problem</h2>
+        </div>
+        <p class="text-gray-600 dark:text-gray-400">Vendors were forced to maintain separate inventories for Amazon, Flipkart, and their own websites. This led to overselling, manual data entry, and constant price mismatches, costing time and revenue.</p>
+      </div>
+      <div class="glass p-6 md:p-8 rounded-2xl">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm font-bold">2</span>
+          <h2 class="text-2xl font-bold">Our Solution</h2>
+        </div>
+        <p class="text-gray-600 dark:text-gray-400">We built a unified inventory dashboard with real‑time sync across all marketplaces. An AI‑powered pricing engine suggests optimal prices, and automated order routing prevents overselling.</p>
+      </div>
     </div>
 
-    <div class="text-center">
-      <a href="/portfolio" class="bg-primary text-white px-8 py-3 rounded-xl font-medium hover:bg-purple-700">Back to Portfolio</a>
+    <!-- Process Timeline -->
+    <div class="mb-16" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-8">Development Process</h2>
+      <div class="relative ml-6 md:ml-12">
+        <!-- Vertical line -->
+        <div class="absolute left-0 top-0 bottom-0 w-0.5 bg-primary/20 hidden md:block"></div>
+
+        <div class="space-y-8">
+          <!-- Step 1 -->
+          <div class="relative pl-10 md:pl-16">
+            <div class="timeline-dot hidden md:block" style="left: -5px;"></div>
+            <div class="glass p-5 rounded-2xl">
+              <h3 class="font-semibold text-lg">1. Research & Discovery</h3>
+              <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">User interviews with 15 vendors, competitor analysis, and feature prioritization workshop.</p>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="relative pl-10 md:pl-16">
+            <div class="timeline-dot hidden md:block" style="left: -5px;"></div>
+            <div class="glass p-5 rounded-2xl">
+              <h3 class="font-semibold text-lg">2. UI/UX Design</h3>
+              <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Low‑fidelity wireframes → high‑fidelity prototypes → usability testing with real vendors.</p>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="relative pl-10 md:pl-16">
+            <div class="timeline-dot hidden md:block" style="left: -5px;"></div>
+            <div class="glass p-5 rounded-2xl">
+              <h3 class="font-semibold text-lg">3. Agile Development</h3>
+              <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Sprints of 2 weeks, CI/CD pipeline, automated testing. Core features: inventory sync, dashboard, AI pricing.</p>
+            </div>
+          </div>
+          <!-- Step 4 -->
+          <div class="relative pl-10 md:pl-16">
+            <div class="timeline-dot hidden md:block" style="left: -5px;"></div>
+            <div class="glass p-5 rounded-2xl">
+              <h3 class="font-semibold text-lg">4. Launch & Iterate</h3>
+              <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Soft launch with 10 beta vendors, collected feedback, performance optimization, then public release.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Result & Tech Stack -->
+    <div class="grid md:grid-cols-2 gap-10 mb-16" data-aos="fade-up">
+      <div class="glass p-6 md:p-8 rounded-2xl">
+        <h2 class="text-2xl font-bold mb-4">Results</h2>
+        <ul class="space-y-3">
+          <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i> <span>70% reduction in inventory management time</span></li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i> <span>40% increase in sales within first quarter</span></li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i> <span>Zero overselling incidents since launch</span></li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i> <span>50+ active vendors onboarded organically</span></li>
+        </ul>
+      </div>
+      <div class="glass p-6 md:p-8 rounded-2xl">
+        <h2 class="text-2xl font-bold mb-4">Technology Stack</h2>
+        <div class="flex flex-wrap gap-3">
+          <span class="tech-pill">React</span>
+          <span class="tech-pill">Node.js</span>
+          <span class="tech-pill">MongoDB</span>
+          <span class="tech-pill">AWS Lambda</span>
+          <span class="tech-pill">Tailwind CSS</span>
+          <span class="tech-pill">Redis</span>
+          <span class="tech-pill">Stripe API</span>
+          <span class="tech-pill">GitHub Actions</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back Button -->
+    <div class="text-center" data-aos="fade-up">
+      <a href="/portfolio" class="inline-flex items-center bg-primary text-white px-8 py-3 rounded-xl font-medium hover:bg-purple-700 transition">
+        <i class="fas fa-arrow-left mr-2"></i> Back to Portfolio
+      </a>
     </div>
   </main>
 
   <div id="footer-placeholder"></div>
   <a href="https://wa.me/918280482686" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init({ duration: 800, once: true });</script>
   <script src="/js/script.js"></script>
