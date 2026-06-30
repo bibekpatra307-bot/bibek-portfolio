@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard - Bibek Patra</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/global.css" />
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+  <div class="flex min-h-screen">
+    <aside class="w-64 glass p-6 space-y-4 hidden md:block">
+      <h2 class="text-xl font-bold text-primary">Admin</h2>
+      <nav class="space-y-2">
+        <a href="/admin/dashboard" class="block px-3 py-2 rounded-lg bg-primary/10">Dashboard</a>
+        <a href="/admin/books" class="block px-3 py-2 rounded-lg">Books</a>
+        <a href="/admin/blog" class="block px-3 py-2 rounded-lg">Blog</a>
+        <a href="/admin/users" class="block px-3 py-2 rounded-lg">Users</a>
+        <a href="/admin/reviews" class="block px-3 py-2 rounded-lg">Reviews</a>
+        <a href="/admin/settings" class="block px-3 py-2 rounded-lg">Settings</a>
+      </nav>
+    </aside>
+    <main class="flex-1 p-6 pt-20 md:pt-6">
+      <h1 class="text-2xl font-bold mb-6">Dashboard</h1>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="glass p-4 rounded-2xl"><h3 class="font-semibold">Total Books</h3><p class="text-2xl font-bold">5</p></div>
+        <div class="glass p-4 rounded-2xl"><h3 class="font-semibold">Blog Posts</h3><p class="text-2xl font-bold">12</p></div>
+        <div class="glass p-4 rounded-2xl"><h3 class="font-semibold">Users</h3><p class="text-2xl font-bold">89</p></div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
