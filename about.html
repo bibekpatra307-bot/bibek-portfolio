@@ -83,29 +83,15 @@
         #mobile-menu:not(.hidden) {
             display: block;
         }
+
         .hero-rectangle {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16/9;  /* या अपनी फोटो के अनुपात में */
-    object-fit: cover;
-    object-position: center;
-}
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            object-position: center;
         }
-        @media (min-width: 640px) {
-            .hero-rectangle {
-                height: 280px;
-            }
-        }
-        @media (min-width: 768px) {
-            .hero-rectangle {
-                height: 320px;
-            }
-        }
-        @media (min-width: 1024px) {
-            .hero-rectangle {
-                height: 360px;
-            }
-        }
+
         .circle-glow {
             border: 4px solid #6C3BFF;
             box-shadow: 0 0 40px rgba(108, 59, 255, 0.45), 0 0 80px rgba(108, 59, 255, 0.15);
@@ -120,6 +106,60 @@
         }
         .dark .circle-glow:hover {
             box-shadow: 0 0 60px rgba(108, 59, 255, 0.8), 0 0 100px rgba(108, 59, 255, 0.35);
+        }
+
+        /* ── Premium card hover ── */
+        .premium-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .premium-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(108, 59, 255, 0.15);
+        }
+        .dark .premium-card:hover {
+            box-shadow: 0 20px 40px rgba(108, 59, 255, 0.25);
+        }
+
+        .skill-tag {
+            transition: all 0.2s ease;
+        }
+        .skill-tag:hover {
+            transform: scale(1.05);
+            background: #6C3BFF;
+            color: #fff;
+        }
+        .dark .skill-tag:hover {
+            background: #8B6CFF;
+            color: #fff;
+        }
+
+        .project-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            font-size: 24px;
+            background: rgba(108, 59, 255, 0.1);
+            color: #6C3BFF;
+            transition: all 0.3s ease;
+        }
+        .dark .project-icon {
+            background: rgba(108, 59, 255, 0.2);
+        }
+        .premium-card:hover .project-icon {
+            background: #6C3BFF;
+            color: #fff;
+            transform: scale(1.1) rotate(-4deg);
+        }
+
+        .divider-gradient {
+            height: 3px;
+            width: 60px;
+            background: linear-gradient(90deg, #6C3BFF, #F59E0B);
+            border-radius: 4px;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -165,245 +205,166 @@
     </div>
 </nav>
 
-    <!-- ===== HERO SECTION (with rectangle & circle) ===== -->
-<section class="min-h-[60vh] flex items-center justify-center pt-24 pb-10 bg-gradient-to-br from-primary/10 to-accent/10">
-    <div class="w-full max-w-6xl mx-auto px-4 text-center" data-aos="fade-up">  <!-- 🔥 max-w-4xl से बदलकर max-w-6xl किया -->
-        <!-- Rectangle Images -->
-        <div class="w-full max-w-full mx-auto rounded-[24px] md:rounded-[30px] overflow-hidden shadow-2xl shadow-primary/20 dark:shadow-primary/30">  <!-- 🔥 max-w-3xl को हटाकर max-w-full किया -->
-            <img src="images/about-rectangle.jpg" alt="Bibek Patra" class="hero-rectangle" loading="eager" />
-        </div>
-        <!-- Circle Images -->
-        <div class="relative z-10 -mt-10 sm:-mt-12 md:-mt-16 lg:-mt-20 text-center">
-            <img src="images/about-round.jpg" alt="Bibek Patra"
-            class="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full mx-auto circle-glow bg-white dark:bg-gray-900"
-            loading="eager" />
-        </div>
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mt-4">
-            About Me
-        </h1>
-        <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-2">
-            Founder · Developer · 3D Designer · Entrepreneur
-        </p>
-    </div>
-</section>
-
-    <!-- ===== MAIN ABOUT CONTENT ===== -->
-    <main class="py-10 pb-20 max-w-7xl mx-auto px-4">
-
-        <!-- Professional Summary -->
-        <div class="grid md:grid-cols-2 gap-10 items-start mb-16" data-aos="fade-up">
-            <div>
-                <h2 class="text-3xl font-bold mb-4">Who I Am</h2>
-                <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                    I am <strong>Bibek Patra</strong>, an entrepreneur, full-stack developer, author, and technology innovator based in Mayurbhanj, Odisha, India. I am the founder of <strong>BibekBook</strong>, <strong>Gengram</strong>, <strong>Vivika AI</strong>, and <strong>Krayvo</strong> — building digital solutions that bridge creativity with cutting-edge technology.
-                </p>
-                <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mt-3">
-                    With over 4 years of diverse experience across financial services, marketing, education, and 3D design, I blend technical precision with strategic vision to deliver meaningful outcomes in every venture I undertake.
-                </p>
-                <div class="mt-6 flex flex-wrap gap-3">
-                    <span class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Web Development</span>
-                    <span class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium">AI Development</span>
-                    <span class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium">3D Design</span>
-                    <span class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Digital Marketing</span>
-                    <span class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Entrepreneurship</span>
-                </div>
+    <!-- ===== HERO SECTION ===== -->
+    <section class="min-h-[55vh] flex items-center justify-center pt-24 pb-10 bg-gradient-to-br from-primary/10 to-accent/10">
+        <div class="w-full max-w-6xl mx-auto px-4 text-center" data-aos="fade-up">
+            <!-- Rectangle Banner -->
+            <div class="w-full max-w-full mx-auto rounded-[24px] md:rounded-[30px] overflow-hidden shadow-2xl shadow-primary/20 dark:shadow-primary/30">
+                <img src="images/about-rectangle.jpg" alt="Bibek Patra" class="hero-rectangle" loading="eager" />
             </div>
-            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 glass">
-                <h3 class="text-xl font-bold mb-3 flex items-center gap-2">
-                    <i class="fas fa-id-card text-primary"></i> Quick Info
-                </h3>
-                <ul class="space-y-2 text-sm">
-                    <li><span class="font-semibold">📍 Location:</span> Mayurbhanj, Odisha, India</li>
-                    <li><span class="font-semibold">📞 Phone:</span> <a href="tel:+918280482686" class="text-primary hover:underline">+91 8280482686</a></li>
-                    <li><span class="font-semibold">✉️ Email:</span> <a href="mailto:patrabibek802@gmail.com" class="text-primary hover:underline">patrabibek802@gmail.com</a></li>
-                    <li><span class="font-semibold">🩸 Blood Group:</span> B Positive</li>
-                    <li><span class="font-semibold">🏢 Current:</span> 3D Designer at InteriorsWala (Jamshedpur)</li>
-                </ul>
-                <div class="mt-4 flex gap-4 justify-start">
-                    <a href="https://wa.me/918280482686" target="_blank" class="text-2xl text-green-500 hover:scale-110 transition"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://www.linkedin.com/in/bibek-patra-932213293" target="_blank" class="text-2xl text-blue-600 hover:scale-110 transition"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/itsbibekpatra" target="_blank" class="text-2xl text-pink-600 hover:scale-110 transition"><i class="fab fa-instagram"></i></a>
-                    <a href="https://youtube.com/@gtbcreates" target="_blank" class="text-2xl text-red-600 hover:scale-110 transition"><i class="fab fa-youtube"></i></a>
-                </div>
+            <!-- Circle Photo -->
+            <div class="relative z-10 -mt-10 sm:-mt-12 md:-mt-16 lg:-mt-20 text-center">
+                <img src="images/about-round.jpg" alt="Bibek Patra"
+                class="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full mx-auto circle-glow bg-white dark:bg-gray-900 object-cover"
+                loading="eager" />
             </div>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mt-4">
+                About Me
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-2">
+                Founder · Developer · 3D Designer · Entrepreneur
+            </p>
         </div>
+    </section>
 
-        <!-- Career Objective -->
-        <div class="mb-16" data-aos="fade-up">
-            <h2 class="text-2xl font-bold mb-3 flex items-center gap-2">
-                <i class="fas fa-bullseye text-primary"></i> Career Objective
-            </h2>
-            <p class="text-lg text-gray-700 dark:text-gray-300 bg-primary/5 dark:bg-primary/10 p-5 rounded-xl border-l-4 border-primary">
-                Dedicated to applying my abilities effectively to support organizational goals, while learning new skills and striving for continuous improvement.
+    <!-- ===== MAIN ABOUT CONTENT (Premium, Authority-Focused) ===== -->
+    <main class="py-12 pb-20 max-w-7xl mx-auto px-4">
+
+        <!-- ── 1. ABOUT ME ── -->
+        <div class="text-center max-w-4xl mx-auto mb-20" data-aos="fade-up">
+            <div class="divider-gradient mx-auto mb-4"></div>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Building the Future, One Innovation at a Time</h2>
+            <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                I'm <strong class="text-primary">Bibek Patra</strong> — a <strong>founder, developer, and creative technologist</strong> from Mayurbhanj, Odisha. I build digital products that merge <strong>design, intelligence, and purpose</strong>. From AI assistants to social platforms, publishing tools to 3D visualization — my work is driven by a simple belief: <strong class="text-primary">technology should empower people</strong>.
+            </p>
+            <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mt-4">
+                I don't just write code. I build <strong>ecosystems</strong>. I architect <strong>experiences</strong>. And I'm constantly pushing the boundaries of what's possible — blending <strong>art, engineering, and entrepreneurship</strong> into everything I create.
             </p>
         </div>
 
-        <!-- Work Experience -->
+        <!-- ── 2. MY VENTURES / INNOVATIONS ── -->
+        <div class="mb-20" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <div class="divider-gradient mx-auto mb-4"></div>
+                <h2 class="text-3xl md:text-4xl font-bold">My Ventures &amp; Innovations</h2>
+                <p class="text-gray-600 dark:text-gray-400 mt-2">Products I've built from the ground up</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- BibekBook -->
+                <div class="premium-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700 text-center">
+                    <div class="project-icon mx-auto mb-4">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">BibekBook</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Publishing platform for authors to publish and manage books digitally.</p>
+                    <a href="https://bibekbook.store" target="_blank" class="inline-block mt-4 text-primary font-semibold hover:underline text-sm">
+                        Explore →</a>
+                </div>
+
+                <!-- Gengram -->
+                <div class="premium-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700 text-center">
+                    <div class="project-icon mx-auto mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Gengram</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Next‑gen social networking platform built for engagement and community.</p>
+                    <a href="https://gengram.online" target="_blank" class="inline-block mt-4 text-primary font-semibold hover:underline text-sm">
+                        Explore →</a>
+                </div>
+
+                <!-- Vivika AI -->
+                <div class="premium-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700 text-center">
+                    <div class="project-icon mx-auto mb-4">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Vivika AI</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Advanced conversational AI assistant for natural, human-like interactions.</p>
+                    <a href="https://bibekpatra307-bot.github.io/Vivika/" target="_blank" class="inline-block mt-4 text-primary font-semibold hover:underline text-sm">
+                        Explore →</a>
+                </div>
+
+                <!-- Krayvo -->
+                <div class="premium-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700 text-center">
+                    <div class="project-icon mx-auto mb-4">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Krayvo</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Smart e‑commerce platform connecting multiple marketplaces seamlessly.</p>
+                    <a href="https://bibekpatra307-bot.github.io/Krayvo/" target="_blank" class="inline-block mt-4 text-primary font-semibold hover:underline text-sm">
+                        Explore →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── 3. SKILLS ── -->
+        <div class="mb-20" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <div class="divider-gradient mx-auto mb-4"></div>
+                <h2 class="text-3xl md:text-4xl font-bold">Skills &amp; Expertise</h2>
+                <p class="text-gray-600 dark:text-gray-400 mt-2">What I bring to the table</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">Web Development</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">AI Development</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">3D Design (Blender)</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">Graphic Design</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">Video Editing (DaVinci Resolve)</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">Digital Marketing</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">SEO</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">Book Publishing</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">Financial &amp; Marketing Management</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">Teaching &amp; Team Management</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">Microsoft Office Suite</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">Adobe Photoshop</span>
+            </div>
+        </div>
+
+        <!-- ── 4. LANGUAGES ── -->
         <div class="mb-16" data-aos="fade-up">
-            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
-                <i class="fas fa-briefcase text-primary"></i> Work Experience
-            </h2>
-
-            <!-- 3D Designer - InteriorsWala -->
-            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 mb-5 border-l-4 border-primary">
-                <div class="flex flex-wrap justify-between items-start">
-                    <div>
-                        <h3 class="text-xl font-bold">3D Designer</h3>
-                        <p class="text-primary font-semibold">InteriorsWala (A Unit of Interior Solutions Pvt Ltd)</p>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">Jamshedpur, Jharkhand | Nov 2025 – Present</p>
-                    </div>
-                    <span class="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full">Current</span>
-                </div>
-                <ul class="list-disc list-inside mt-3 space-y-1 text-gray-700 dark:text-gray-300">
-                    <li>Member of the T. Government Interiors Designing Team.</li>
-                    <li>Creating 3D visualizations and design mockups for residential and commercial projects.</li>
-                    <li>Collaborating with architects and designers to deliver high-quality interior solutions.</li>
-                </ul>
+            <div class="text-center mb-10">
+                <div class="divider-gradient mx-auto mb-4"></div>
+                <h2 class="text-3xl md:text-4xl font-bold">Languages</h2>
+                <p class="text-gray-600 dark:text-gray-400 mt-2">Connecting with people across cultures</p>
             </div>
 
-            <!-- Financial Service Provider -->
-            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 mb-5 border-l-4 border-gray-300 dark:border-gray-600">
-                <div class="flex flex-wrap justify-between items-start">
-                    <div>
-                        <h3 class="text-xl font-bold">Financial Service Provider</h3>
-                        <p class="text-primary font-semibold">GroMo (Vitrak Fintech Private Limited)</p>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">2022 – 2025</p>
-                    </div>
+            <div class="flex flex-wrap justify-center gap-8 max-w-3xl mx-auto">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl px-8 py-5 shadow-md border border-gray-100 dark:border-gray-700 text-center min-w-[120px] premium-card">
+                    <span class="text-3xl block mb-1">🇮🇳</span>
+                    <span class="font-bold text-lg">Odia</span>
+                    <p class="text-sm text-primary font-medium">Fluent</p>
                 </div>
-                <ul class="list-disc list-inside mt-3 space-y-1 text-gray-700 dark:text-gray-300">
-                    <li>Assisted 150+ clients with demat accounts, bank openings, credit/debit cards, and loan approvals.</li>
-                    <li>Increased customer product adoption by 25% through personalized financial consultations.</li>
-                    <li>Trained new agents on product knowledge and compliance requirements.</li>
-                </ul>
-            </div>
-
-            <!-- Affiliate Marketer -->
-            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 mb-5 border-l-4 border-gray-300 dark:border-gray-600">
-                <div class="flex flex-wrap justify-between items-start">
-                    <div>
-                        <h3 class="text-xl font-bold">Affiliate Marketer</h3>
-                        <p class="text-primary font-semibold">SkillsBazzar</p>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">2022 – 2025</p>
-                    </div>
+                <div class="bg-white dark:bg-gray-800 rounded-2xl px-8 py-5 shadow-md border border-gray-100 dark:border-gray-700 text-center min-w-[120px] premium-card">
+                    <span class="text-3xl block mb-1">🇮🇳</span>
+                    <span class="font-bold text-lg">Hindi</span>
+                    <p class="text-sm text-primary font-medium">Fluent</p>
                 </div>
-                <ul class="list-disc list-inside mt-3 space-y-1 text-gray-700 dark:text-gray-300">
-                    <li>Promoted digital skill courses, generating 20% growth in sales within 1 year.</li>
-                    <li>Built a network of 300+ learners and affiliates, leading to consistent monthly commissions.</li>
-                    <li>Designed marketing campaigns that boosted online course enrollments by 40%.</li>
-                </ul>
-            </div>
-
-            <!-- Marketing Manager -->
-            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 mb-5 border-l-4 border-gray-300 dark:border-gray-600">
-                <div class="flex flex-wrap justify-between items-start">
-                    <div>
-                        <h3 class="text-xl font-bold">Marketing Manager</h3>
-                        <p class="text-primary font-semibold">Rising Sky Academy Private Limited</p>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">Mayurbhanj & Keonjhar, Odisha | 5 months (2024)</p>
-                    </div>
-                </div>
-                <ul class="list-disc list-inside mt-3 space-y-1 text-gray-700 dark:text-gray-300">
-                    <li>Developed and executed local marketing strategies, improving student admissions by 35%.</li>
-                    <li>Built partnerships with schools and coaching centers to expand reach.</li>
-                </ul>
-            </div>
-
-            <!-- Supervisor -->
-            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 mb-5 border-l-4 border-gray-300 dark:border-gray-600">
-                <div class="flex flex-wrap justify-between items-start">
-                    <div>
-                        <h3 class="text-xl font-bold">Supervisor (Mechanical Department)</h3>
-                        <p class="text-primary font-semibold">Sree Metaliks Ltd.</p>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">Barbil | 3 months (2024)</p>
-                    </div>
-                </div>
-                <ul class="list-disc list-inside mt-3 space-y-1 text-gray-700 dark:text-gray-300">
-                    <li>Supervised a team of 50+ contract workers, ensuring tasks were completed safely and on time.</li>
-                    <li>Coordinated with engineers to improve workflow efficiency by 15%.</li>
-                </ul>
-            </div>
-
-            <!-- Teacher -->
-            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 border-l-4 border-gray-300 dark:border-gray-600">
-                <div class="flex flex-wrap justify-between items-start">
-                    <div>
-                        <h3 class="text-xl font-bold">Teacher</h3>
-                        <p class="text-primary font-semibold">Sri Aurobindo Integral Education Centre & Shree Ganesh Sikhya Kendra</p>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">Nuadihi</p>
-                    </div>
-                </div>
-                <ul class="list-disc list-inside mt-3 space-y-1 text-gray-700 dark:text-gray-300">
-                    <li>Taught 120+ students across Mathematics, Science, English, History, and General Knowledge.</li>
-                    <li>Guided 70% of students to gain admission into reputed government schools.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Education & Qualifications -->
-        <div class="grid md:grid-cols-2 gap-8 mb-16" data-aos="fade-up">
-            <div>
-                <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-                    <i class="fas fa-graduation-cap text-primary"></i> Education
-                </h2>
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-5 space-y-3">
-                    <div>
-                        <p class="font-bold">10th (BSE Odisha)</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-400">Jadunath Pur Simanta High School | 2021 | 60%</p>
-                    </div>
-                    <div>
-                        <p class="font-bold">12th (Science) – CHSE Odisha</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-400">Biswa Bharati +2 Science Residential College | 2023 | 69%</p>
-                    </div>
-                    <div>
-                        <p class="font-bold">PGDCA</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-400">Post Graduate Diploma in Computer Applications</p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-                    <i class="fas fa-language text-primary"></i> Languages
-                </h2>
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-5 space-y-2">
-                    <div class="flex justify-between border-b dark:border-gray-700 pb-2">
-                        <span>Odia</span> <span class="text-primary font-medium">Fluent</span>
-                    </div>
-                    <div class="flex justify-between border-b dark:border-gray-700 pb-2">
-                        <span>Hindi</span> <span class="text-primary font-medium">Fluent</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span>English</span> <span class="text-primary font-medium">Fluent</span>
-                    </div>
+                <div class="bg-white dark:bg-gray-800 rounded-2xl px-8 py-5 shadow-md border border-gray-100 dark:border-gray-700 text-center min-w-[120px] premium-card">
+                    <span class="text-3xl block mb-1">🇬🇧</span>
+                    <span class="font-bold text-lg">English</span>
+                    <p class="text-sm text-primary font-medium">Fluent</p>
                 </div>
             </div>
         </div>
 
-        <!-- Skills (Expanded) -->
-        <div data-aos="fade-up">
-            <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-                <i class="fas fa-cogs text-primary"></i> Skills & Expertise
-            </h2>
-            <div class="flex flex-wrap gap-2 bg-white dark:bg-gray-800 rounded-xl shadow-md p-5">
-                <span class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Web Development</span>
-                <span class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium">AI Development</span>
-                <span class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium">3D Design (Blender)</span>
-                <span class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Graphic Design</span>
-                <span class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Video Editing (DaVinci Resolve)</span>
-                <span class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Digital Marketing</span>
-                <span class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium">SEO</span>
-                <span class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Book Publishing</span>
-                <span class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Financial & Marketing Management</span>
-                <span class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Teaching & Team Management</span>
-                <span class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Microsoft Excel, Word, PowerPoint</span>
-                <span class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Adobe Photoshop</span>
+        <!-- ── 5. PHILOSOPHY / MISSION ── -->
+        <div class="mt-8 p-8 md:p-12 rounded-3xl bg-gradient-to-br from-primary/5 to-accent/5 dark:from-primary/10 dark:to-accent/10 border border-primary/10 dark:border-primary/20" data-aos="fade-up">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="text-4xl mb-4">🚀</div>
+                <h3 class="text-2xl md:text-3xl font-bold mb-3">My Mission</h3>
+                <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                    To build <strong class="text-primary">technology that matters</strong> — tools that empower creators, connect communities, and push the boundaries of what's possible. I believe in <strong class="text-primary">innovation with purpose</strong>, design with soul, and code that changes lives.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 mt-6">
+                    <a href="/#projects" class="bg-primary text-white px-6 py-3 rounded-xl font-medium hover:bg-purple-700 transition shadow-lg shadow-primary/25 hover:shadow-primary/40">
+                        View My Work
+                    </a>
+                    <a href="/#contact" class="border-2 border-primary text-primary px-6 py-3 rounded-xl font-medium hover:bg-primary hover:text-white transition">
+                        Let's Connect
+                    </a>
+                </div>
             </div>
-        </div>
-
-        <!-- Declaration -->
-        <div class="mt-16 p-6 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/20" data-aos="fade-up">
-            <p class="text-sm text-gray-600 dark:text-gray-400">
-                <span class="font-semibold">Declaration:</span> I hereby declare that the above information given by me is true to the best of my knowledge.
-            </p>
         </div>
 
     </main>
@@ -413,35 +374,39 @@
         <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-6 text-center md:text-left">
             <div>
                 <h4 class="font-bold text-lg mb-2">Bibek Patra</h4>
-                <p class="text-sm">Founder of BibekBook, Gengram, Vivika AI & Krayvo</p>
+                <p class="text-sm">Founder of BibekBook, Gengram, Vivika AI &amp; Krayvo</p>
                 <div class="flex justify-center md:justify-start gap-4 mt-3">
-                    <a href="https://www.instagram.com/itsbibekpatra" target="_blank"><i class="fab fa-instagram text-xl hover:text-primary"></i></a>
-                    <a href="https://youtube.com/@gtbcreates" target="_blank"><i class="fab fa-youtube text-xl hover:text-primary"></i></a>
-                    <a href="https://www.linkedin.com/in/bibek-patra-932213293" target="_blank"><i class="fab fa-linkedin text-xl hover:text-primary"></i></a>
-                    <a href="https://www.facebook.com/thesideincomeguru" target="_blank"><i class="fab fa-facebook text-xl hover:text-primary"></i></a>
+                    <a href="https://www.instagram.com/itsbibekpatra" target="_blank"><i class="fab fa-instagram text-xl hover:text-primary transition"></i></a>
+                    <a href="https://youtube.com/@gtbcreates" target="_blank"><i class="fab fa-youtube text-xl hover:text-primary transition"></i></a>
+                    <a href="https://www.linkedin.com/in/bibek-patra-932213293" target="_blank"><i class="fab fa-linkedin text-xl hover:text-primary transition"></i></a>
+                    <a href="https://www.facebook.com/thesideincomeguru" target="_blank"><i class="fab fa-facebook text-xl hover:text-primary transition"></i></a>
                 </div>
             </div>
             <div>
                 <h4 class="font-semibold mb-2">Quick Links</h4>
                 <ul class="space-y-1 text-sm">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/#portfolio">Portfolio</a></li>
-                    <li><a href="/#projects">Projects</a></li>
-                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/" class="hover:text-primary transition">Home</a></li>
+                    <li><a href="/about" class="hover:text-primary transition">About</a></li>
+                    <li><a href="/#portfolio" class="hover:text-primary transition">Portfolio</a></li>
+                    <li><a href="/#projects" class="hover:text-primary transition">Projects</a></li>
+                    <li><a href="/#services" class="hover:text-primary transition">Services</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-semibold mb-2">Contact</h4>
-                <p class="text-sm">inboxtobibek@gmail.com</p>
-                <p class="text-sm">+91 8280482686</p>
+                <h4 class="font-semibold mb-2">Connect</h4>
+                <ul class="space-y-1 text-sm">
+                    <li><a href="https://wa.me/918280482686" target="_blank" class="hover:text-primary transition">WhatsApp</a></li>
+                    <li><a href="https://www.instagram.com/itsbibekpatra" target="_blank" class="hover:text-primary transition">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/in/bibek-patra-932213293" target="_blank" class="hover:text-primary transition">LinkedIn</a></li>
+                    <li><a href="https://youtube.com/@gtbcreates" target="_blank" class="hover:text-primary transition">YouTube</a></li>
+                </ul>
             </div>
             <div>
                 <h4 class="font-semibold mb-2">Legal</h4>
                 <ul class="space-y-1 text-sm">
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms</a></li>
-                    <li><a href="copyright.html">Copyright</a></li>
+                    <li><a href="privacy.html" class="hover:text-primary transition">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="hover:text-primary transition">Terms</a></li>
+                    <li><a href="copyright.html" class="hover:text-primary transition">Copyright</a></li>
                 </ul>
             </div>
         </div>
