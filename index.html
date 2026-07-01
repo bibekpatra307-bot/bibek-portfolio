@@ -1,488 +1,231 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bibek Patra | Founder, Developer &amp; Entrepreneur</title>
-  <meta name="description" content="Official website of Bibek Patra, founder of BibekBook, Gengram, Vivika AI, and Krayvo. Building innovative digital products." />
-  <link rel="canonical" href="https://bibekpatra.site/" />
-  <link rel="icon" type="image/png" href="/images/favicon.png" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://bibekpatra.site/" />
-  <meta property="og:title" content="Bibek Patra | Founder, Developer &amp; Entrepreneur" />
-  <meta property="og:description" content="Official website of Bibek Patra." />
-  <meta property="og:image" content="https://bibekpatra.site/images/og-image.jpg" />
-  <meta property="twitter:card" content="summary_large_image" />
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            primary: '#6C3BFF',
-            secondary: '#111827',
-            accent: '#F59E0B',
-          }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bibek Patra | Founder, Developer & Entrepreneur</title>
+    <meta name="description" content="Official website of Bibek Patra, founder of BibekBook, Gengram, Vivika AI, and Krayvo. Building innovative digital products." />
+    <link rel="canonical" href="https://bibekpatra.site/" />
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bibekpatra.site/" />
+    <meta property="og:title" content="Bibek Patra | Founder, Developer & Entrepreneur" />
+    <meta property="og:description" content="Official website of Bibek Patra." />
+    <meta property="og:image" content="https://bibekpatra.site/images/og-image.jpg" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6C3BFF',
+                        secondary: '#111827',
+                        accent: '#F59E0B',
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/global.css" />
-
-  <style>
-    .glass {
-      background: rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    .dark .glass {
-      background: rgba(0, 0, 0, 0.5);
-      border-color: rgba(255, 255, 255, 0.1);
-    }
-
-    .hero-rectangle {
-      width: 100%;
-      height: auto;
-      max-height: 420px;
-      object-fit: cover;
-      border-radius: 32px;
-    }
-
-    .circle-glow {
-      border: 4px solid #6C3BFF;
-      box-shadow: 0 0 40px rgba(108, 59, 255, 0.45), 0 0 80px rgba(108, 59, 255, 0.15);
-      transition: box-shadow 0.3s ease;
-    }
-    .circle-glow:hover {
-      box-shadow: 0 0 60px rgba(108, 59, 255, 0.6), 0 0 100px rgba(108, 59, 255, 0.25);
-    }
-    .dark .circle-glow {
-      border-color: #8B6CFF;
-      box-shadow: 0 0 40px rgba(108, 59, 255, 0.6), 0 0 80px rgba(108, 59, 255, 0.25);
-    }
-    .dark .circle-glow:hover {
-      box-shadow: 0 0 60px rgba(108, 59, 255, 0.8), 0 0 100px rgba(108, 59, 255, 0.35);
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-      animation: bounce 2s infinite;
-    }
-    @keyframes bounce {
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-
-    .stat-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .stat-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(108, 59, 255, 0.12);
-    }
-    .dark .stat-card:hover {
-      box-shadow: 0 12px 30px rgba(108, 59, 255, 0.25);
-    }
-
-    .product-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(108, 59, 255, 0.13);
-    }
-    .dark .product-card:hover {
-      box-shadow: 0 20px 40px rgba(108, 59, 255, 0.22);
-    }
-
-    .testimonial-card {
-      transition: transform 0.3s ease;
-    }
-    .testimonial-card:hover {
-      transform: scale(1.01);
-    }
-
-    .btn-primary {
-      background: #6C3BFF;
-      color: #fff;
-      padding: 0.75rem 2rem;
-      border-radius: 0.75rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 20px rgba(108, 59, 255, 0.3);
-    }
-    .btn-primary:hover {
-      background: #5530cc;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(108, 59, 255, 0.4);
-    }
-
-    .btn-outline {
-      border: 2px solid #6C3BFF;
-      color: #6C3BFF;
-      padding: 0.75rem 2rem;
-      border-radius: 0.75rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-    .btn-outline:hover {
-      background: #6C3BFF;
-      color: #fff;
-      transform: translateY(-2px);
-    }
-    .dark .btn-outline {
-      border-color: #8B6CFF;
-      color: #8B6CFF;
-    }
-    .dark .btn-outline:hover {
-      background: #8B6CFF;
-      color: #fff;
-    }
-
-    /* navbar overrides for this page */
-    .nav-link {
-      position: relative;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: #6C3BFF;
-      transition: width 0.3s ease;
-    }
-    .nav-link:hover::after,
-    .nav-link.active::after {
-      width: 100%;
-    }
-    .nav-link:hover {
-      color: #6C3BFF;
-    }
-    .dark .nav-link:hover {
-      color: #8B6CFF;
-    }
-  </style>
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <style>
+        .hero-rectangle {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 32px;
+        }
+        .circle-glow {
+            border: 4px solid #6C3BFF;
+            box-shadow: 0 0 40px rgba(108, 59, 255, 0.45);
+        }
+        .dark .circle-glow {
+            border-color: #8B6CFF;
+            box-shadow: 0 0 40px rgba(108, 59, 255, 0.6);
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
 </head>
-
 <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors">
+    <div id="navbar-placeholder"></div>
 
-  <!-- ===== NAVIGATION ===== -->
-  <nav class="fixed top-0 left-0 w-full glass dark:bg-gray-900/70 shadow-sm z-50">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-      <a href="/" class="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent whitespace-nowrap">
-        Bibek Patra
-      </a>
-      <div class="hidden md:flex space-x-7">
-        <a href="/" class="nav-link active text-primary dark:text-primary">Home</a>
-        <a href="/about" class="nav-link">About</a>
-        <a href="/#projects" class="nav-link">Projects</a>
-        <a href="/#services" class="nav-link">Services</a>
-        <a href="/#blog" class="nav-link">Blog</a>
-        <a href="/#contact" class="nav-link">Contact</a>
-      </div>
-      <div class="flex items-center gap-3">
-        <button onclick="document.documentElement.classList.toggle('dark')"
-          class="p-2 rounded-full bg-white/90 dark:bg-gray-800/90 shadow-lg text-gray-700 dark:text-gray-200 hover:shadow-xl transition border border-gray-200/50 dark:border-gray-700/50"
-          aria-label="Toggle dark mode">
-          <i class="fas fa-moon dark:hidden"></i>
-          <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
-        </button>
-        <button id="menu-btn" class="md:hidden text-2xl text-gray-700 dark:text-gray-200 p-1 -mr-1" aria-label="Toggle menu">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-t border-gray-200/50 dark:border-gray-700/50">
-      <a href="/" class="block px-4 py-3 border-b dark:border-gray-700 text-primary">Home</a>
-      <a href="/about" class="block px-4 py-3 border-b dark:border-gray-700">About</a>
-      <a href="/#projects" class="block px-4 py-3 border-b dark:border-gray-700">Projects</a>
-      <a href="/#services" class="block px-4 py-3 border-b dark:border-gray-700">Services</a>
-      <a href="/#blog" class="block px-4 py-3 border-b dark:border-gray-700">Blog</a>
-      <a href="/#contact" class="block px-4 py-3">Contact</a>
-    </div>
-  </nav>
-
-  <!-- ===== HERO SECTION ===== -->
-  <section class="min-h-screen flex items-center justify-center pt-24 pb-12 bg-gradient-to-br from-primary/8 via-white to-accent/8 dark:from-primary/15 dark:via-gray-900 dark:to-accent/10">
-    <div class="max-w-5xl mx-auto px-4 text-center" data-aos="fade-up">
-
-      <!-- Rectangle Banner -->
-      <div class="rounded-3xl overflow-hidden shadow-2xl shadow-primary/20 dark:shadow-primary/30 mb-6">
-        <img src="/images/hero-rectangle.jpg" alt="Bibek Patra" class="hero-rectangle" loading="eager" />
-      </div>
-
-      <!-- Circle Photo -->
-      <div class="relative -mt-16 sm:-mt-20 md:-mt-24 mb-4">
-        <img src="/images/hero-circle.jpg" alt="Bibek Patra"
-          class="w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-full mx-auto circle-glow bg-white dark:bg-gray-900 object-cover"
-          loading="eager" />
-      </div>
-
-      <!-- Headline -->
-      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-tight">
-        Hi, I'm Bibek Patra
-      </h1>
-      <p class="text-lg sm:text-xl md:text-2xl mt-3 font-medium text-gray-800 dark:text-gray-200">
-        Founder of BibekBook, Gengram, Vivika AI &amp; Krayvo
-      </p>
-      <p class="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-3">
-        I build innovative digital products in publishing, AI, social media, e‑commerce, web development and 3D design.
-      </p>
-
-      <!-- CTA Buttons — only 2 essential ones, no Download Resume / Contact -->
-      <div class="flex flex-wrap justify-center gap-4 mt-7">
-        <a href="/#projects" class="btn-primary inline-flex items-center gap-2">
-          <i class="fas fa-rocket text-sm"></i> View Projects
-        </a>
-        <a href="/about" class="btn-outline inline-flex items-center gap-2">
-          <i class="fas fa-user text-sm"></i> About Me
-        </a>
-      </div>
-
-      <!-- subtle hint -->
-      <p class="text-xs text-gray-400 dark:text-gray-500 mt-5 tracking-wide">
-        <i class="fas fa-chevron-down text-primary/60 mr-1"></i> Explore my work below
-      </p>
-    </div>
-  </section>
-
-  <!-- ===== STATS SECTION ===== -->
-  <section class="py-14 max-w-6xl mx-auto px-4">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
-      <div class="stat-card glass p-6 rounded-2xl text-center border border-white/20 dark:border-gray-700/30">
-        <div class="text-3xl font-bold text-primary">5+</div>
-        <p class="mt-1 text-sm font-medium text-gray-600 dark:text-gray-400">Years Experience</p>
-      </div>
-      <div class="stat-card glass p-6 rounded-2xl text-center border border-white/20 dark:border-gray-700/30">
-        <div class="text-3xl font-bold text-primary">20+</div>
-        <p class="mt-1 text-sm font-medium text-gray-600 dark:text-gray-400">Projects Delivered</p>
-      </div>
-      <div class="stat-card glass p-6 rounded-2xl text-center border border-white/20 dark:border-gray-700/30">
-        <div class="text-3xl font-bold text-primary">500+</div>
-        <p class="mt-1 text-sm font-medium text-gray-600 dark:text-gray-400">Happy Clients</p>
-      </div>
-      <div class="stat-card glass p-6 rounded-2xl text-center border border-white/20 dark:border-gray-700/30">
-        <div class="text-3xl font-bold text-primary">4</div>
-        <p class="mt-1 text-sm font-medium text-gray-600 dark:text-gray-400">Products Launched</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FEATURED PRODUCTS ===== -->
-  <section id="projects" class="py-16 max-w-7xl mx-auto px-4">
-    <div class="text-center mb-12" data-aos="fade-up">
-      <span class="text-primary text-sm font-semibold tracking-wider uppercase">My Work</span>
-      <h2 class="text-4xl font-bold mt-2">Featured Products</h2>
-      <p class="text-gray-600 dark:text-gray-400 mt-2">Products I've built from the ground up</p>
-    </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- BibekBook -->
-      <div class="product-card glass rounded-2xl p-6 text-center border border-white/20 dark:border-gray-700/30" data-aos="zoom-in">
-        <div class="w-16 h-16 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center mx-auto mb-4 text-2xl text-primary">
-          <i class="fas fa-book-open"></i>
+    <!-- HERO -->
+    <section class="min-h-screen flex items-center justify-center pt-20 pb-10 bg-gradient-to-br from-primary/10 to-accent/10">
+        <div class="max-w-4xl mx-auto px-4 text-center" data-aos="fade-up">
+            <div class="rounded-3xl overflow-hidden shadow-2xl shadow-primary/20 dark:shadow-primary/30 mb-6">
+                <img src="/images/hero-rectangle.jpg" alt="Bibek Patra" class="hero-rectangle" loading="eager" />
+            </div>
+            <div class="relative -mt-16 sm:-mt-20 md:-mt-24 mb-4">
+                <img src="/images/hero-circle.jpg" alt="Bibek Patra" class="w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-full mx-auto circle-glow bg-white dark:bg-gray-900" loading="eager" />
+            </div>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-tight">Hi, I'm Bibek Patra</h1>
+            <p class="text-lg sm:text-xl md:text-2xl mt-3 font-medium">Founder of BibekBook, Gengram, Vivika AI & Krayvo</p>
+            <p class="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-3">I build innovative digital products in publishing, AI, social media, e‑commerce, web development and 3D design.</p>
         </div>
-        <h3 class="text-xl font-bold">BibekBook</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Publishing platform for authors to publish and manage books digitally.</p>
-        <a href="/projects/bibekbook" class="inline-block mt-4 text-primary font-semibold text-sm hover:underline">Explore →</a>
-      </div>
-      <!-- Gengram -->
-      <div class="product-card glass rounded-2xl p-6 text-center border border-white/20 dark:border-gray-700/30" data-aos="zoom-in" data-aos-delay="100">
-        <div class="w-16 h-16 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center mx-auto mb-4 text-2xl text-primary">
-          <i class="fas fa-users"></i>
-        </div>
-        <h3 class="text-xl font-bold">Gengram</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Next‑gen social networking built for engagement and community.</p>
-        <a href="/projects/gengram" class="inline-block mt-4 text-primary font-semibold text-sm hover:underline">Explore →</a>
-      </div>
-      <!-- Vivika AI -->
-      <div class="product-card glass rounded-2xl p-6 text-center border border-white/20 dark:border-gray-700/30" data-aos="zoom-in" data-aos-delay="200">
-        <div class="w-16 h-16 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center mx-auto mb-4 text-2xl text-primary">
-          <i class="fas fa-robot"></i>
-        </div>
-        <h3 class="text-xl font-bold">Vivika AI</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Advanced conversational AI for natural, human-like interactions.</p>
-        <a href="/projects/vivika-ai" class="inline-block mt-4 text-primary font-semibold text-sm hover:underline">Explore →</a>
-      </div>
-      <!-- Krayvo -->
-      <div class="product-card glass rounded-2xl p-6 text-center border border-white/20 dark:border-gray-700/30" data-aos="zoom-in" data-aos-delay="300">
-        <div class="w-16 h-16 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center mx-auto mb-4 text-2xl text-primary">
-          <i class="fas fa-shopping-cart"></i>
-        </div>
-        <h3 class="text-xl font-bold">Krayvo</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Smart e‑commerce platform connecting multiple marketplaces.</p>
-        <a href="/projects/krayvo" class="inline-block mt-4 text-primary font-semibold text-sm hover:underline">Explore →</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== TESTIMONIALS ===== -->
-  <section class="py-16 bg-gray-50/60 dark:bg-gray-800/40">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <span class="text-primary text-sm font-semibold tracking-wider uppercase">Testimonials</span>
-      <h2 class="text-4xl font-bold mt-2 mb-10">What Clients Say</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="testimonial-card glass p-6 rounded-2xl border border-white/20 dark:border-gray-700/30">
-          <i class="fas fa-quote-left text-primary/30 text-2xl mb-3"></i>
-          <p class="italic text-gray-700 dark:text-gray-300">"Bibek delivered a stunning website and increased our online sales by 200%."</p>
-          <p class="mt-4 font-semibold text-primary">— Rajesh Kumar</p>
-          <p class="text-xs text-gray-400">Founder, TechStart</p>
+    <!-- STATS -->
+    <section class="py-16 max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="glass p-6 rounded-2xl">
+                <div class="text-3xl font-bold text-primary">5+</div>
+                <p class="mt-1">Years Experience</p>
+            </div>
+            <div class="glass p-6 rounded-2xl">
+                <div class="text-3xl font-bold text-primary">20+</div>
+                <p class="mt-1">Projects Delivered</p>
+            </div>
+            <div class="glass p-6 rounded-2xl">
+                <div class="text-3xl font-bold text-primary">500+</div>
+                <p class="mt-1">Happy Clients</p>
+            </div>
+            <div class="glass p-6 rounded-2xl">
+                <div class="text-3xl font-bold text-primary">4</div>
+                <p class="mt-1">Products Launched</p>
+            </div>
         </div>
-        <div class="testimonial-card glass p-6 rounded-2xl border border-white/20 dark:border-gray-700/30">
-          <i class="fas fa-quote-left text-primary/30 text-2xl mb-3"></i>
-          <p class="italic text-gray-700 dark:text-gray-300">"His AI chatbot saved our support team hours every day. Incredible work."</p>
-          <p class="mt-4 font-semibold text-primary">— Priya Sharma</p>
-          <p class="text-xs text-gray-400">CTO, AI Solutions</p>
-        </div>
-        <div class="testimonial-card glass p-6 rounded-2xl border border-white/20 dark:border-gray-700/30">
-          <i class="fas fa-quote-left text-primary/30 text-2xl mb-3"></i>
-          <p class="italic text-gray-700 dark:text-gray-300">"Professional, fast, and highly skilled. One of the best developers I've worked with."</p>
-          <p class="mt-4 font-semibold text-primary">— Amit Patel</p>
-          <p class="text-xs text-gray-400">CEO, DigitalEdge</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== LATEST BLOG ===== -->
-  <section id="blog" class="py-16 max-w-7xl mx-auto px-4">
-    <div class="text-center mb-12" data-aos="fade-up">
-      <span class="text-primary text-sm font-semibold tracking-wider uppercase">Insights</span>
-      <h2 class="text-4xl font-bold mt-2">Latest from Blog</h2>
-      <p class="text-gray-600 dark:text-gray-400 mt-2">Thoughts, tutorials, and behind‑the‑scenes</p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="glass rounded-2xl overflow-hidden border border-white/20 dark:border-gray-700/30" data-aos="fade-up">
-        <img src="/images/krayvo.jpg" class="w-full h-52 object-cover" alt="Krayvo Blog" />
-        <div class="p-6">
-          <span class="text-xs text-primary font-semibold bg-primary/10 px-3 py-1 rounded-full">E‑Commerce</span>
-          <h3 class="text-lg font-bold mt-2">How We Built Krayvo</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Behind the scenes of our smart e‑commerce platform and the tech stack behind it.</p>
-          <a href="/blog/post1" class="inline-block mt-4 text-primary text-sm font-semibold hover:underline">Read More →</a>
+    <!-- FEATURED PRODUCTS -->
+    <section class="py-16 max-w-7xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-10" data-aos="fade-up">Featured Products</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="glass rounded-2xl overflow-hidden p-6 flex flex-col items-center text-center" data-aos="zoom-in">
+                <img src="/images/bibekbook.jpg" class="w-16 h-16 rounded-xl mb-4" alt="BibekBook" />
+                <h3 class="text-xl font-bold">BibekBook</h3>
+                <p class="text-sm mt-2">Publishing platform for authors.</p>
+                <a href="/projects/bibekbook" class="mt-4 bg-primary text-white px-4 py-2 rounded-lg text-sm">Explore</a>
+            </div>
+            <div class="glass rounded-2xl overflow-hidden p-6 flex flex-col items-center text-center" data-aos="zoom-in">
+                <img src="/images/gengram.jpg" class="w-16 h-16 rounded-xl mb-4" alt="Gengram" />
+                <h3 class="text-xl font-bold">Gengram</h3>
+                <p class="text-sm mt-2">Next‑gen social networking.</p>
+                <a href="/projects/gengram" class="mt-4 bg-primary text-white px-4 py-2 rounded-lg text-sm">Explore</a>
+            </div>
+            <div class="glass rounded-2xl overflow-hidden p-6 flex flex-col items-center text-center" data-aos="zoom-in">
+                <img src="/images/vivika-ai.jpg" class="w-16 h-16 rounded-xl mb-4" alt="Vivika AI" />
+                <h3 class="text-xl font-bold">Vivika AI</h3>
+                <p class="text-sm mt-2">Advanced conversational AI.</p>
+                <a href="/projects/vivika-ai" class="mt-4 bg-primary text-white px-4 py-2 rounded-lg text-sm">Explore</a>
+            </div>
+            <div class="glass rounded-2xl overflow-hidden p-6 flex flex-col items-center text-center" data-aos="zoom-in">
+                <img src="/images/krayvo.jpg" class="w-16 h-16 rounded-xl mb-4" alt="Krayvo" />
+                <h3 class="text-xl font-bold">Krayvo</h3>
+                <p class="text-sm mt-2">Smart e‑commerce platform.</p>
+                <a href="/projects/krayvo" class="mt-4 bg-primary text-white px-4 py-2 rounded-lg text-sm">Explore</a>
+            </div>
         </div>
-      </div>
-      <div class="glass rounded-2xl overflow-hidden border border-white/20 dark:border-gray-700/30" data-aos="fade-up" data-aos-delay="100">
-        <img src="/images/chitt-vijay.jpg" class="w-full h-52 object-cover" alt="Chitt Vijay" />
-        <div class="p-6">
-          <span class="text-xs text-primary font-semibold bg-primary/10 px-3 py-1 rounded-full">Books</span>
-          <h3 class="text-lg font-bold mt-2">The Journey of Chitt Vijay</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Writing a book that changes lives — the story behind 'Chitt Vijay'.</p>
-          <a href="/blog/chitt-vijay-journey" class="inline-block mt-4 text-primary text-sm font-semibold hover:underline">Read More →</a>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8">What Clients Say</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass p-6 rounded-2xl">
+                    <p class="italic">"Bibek delivered a stunning website and increased our online sales by 200%."</p>
+                    <p class="mt-3 font-semibold">— Rajesh Kumar</p>
+                </div>
+                <div class="glass p-6 rounded-2xl">
+                    <p class="italic">"His AI chatbot saved our support team hours every day."</p>
+                    <p class="mt-3 font-semibold">— Priya Sharma</p>
+                </div>
+                <div class="glass p-6 rounded-2xl">
+                    <p class="italic">"Professional, fast, and highly skilled. Highly recommended."</p>
+                    <p class="mt-3 font-semibold">— Amit Patel</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="glass rounded-2xl overflow-hidden border border-white/20 dark:border-gray-700/30" data-aos="fade-up" data-aos-delay="200">
-        <img src="/images/sbinumberchange.jpg" class="w-full h-52 object-cover" alt="Banking Tips" />
-        <div class="p-6">
-          <span class="text-xs text-primary font-semibold bg-primary/10 px-3 py-1 rounded-full">YouTube</span>
-          <h3 class="text-lg font-bold mt-2">SBI Mobile Number Change</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Step‑by‑step guide to change your SBI account mobile number from home.</p>
-          <a href="https://youtu.be/etlv68d8RyI" target="_blank" class="inline-block mt-4 text-primary text-sm font-semibold hover:underline">Watch →</a>
+    </section>
+
+    <!-- LATEST BLOG -->
+    <section class="py-16 max-w-7xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-8">Latest from Blog</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="glass rounded-2xl overflow-hidden" data-aos="fade-up">
+                <img src="/images/krayvo.jpg" class="w-full h-48 object-cover" alt="Krayvo Blog" />
+                <div class="p-6">
+                    <span class="text-xs text-primary font-semibold">E-Commerce</span>
+                    <h3 class="text-lg font-bold mt-1">How We Built Krayvo</h3>
+                    <p class="text-sm mt-2">Behind the scenes of our smart e‑commerce platform.</p>
+                    <a href="/blog/post1" class="inline-block mt-4 text-primary text-sm font-medium">Read More →</a>
+                </div>
+            </div>
+            <div class="glass rounded-2xl overflow-hidden" data-aos="fade-up">
+                <img src="/images/chitt-vijay.jpg" class="w-full h-48 object-cover" alt="Chitt Vijay" />
+                <div class="p-6">
+                    <span class="text-xs text-primary font-semibold">Books</span>
+                    <h3 class="text-lg font-bold mt-1">The Journey of Chitt Vijay</h3>
+                    <p class="text-sm mt-2">Writing a book that changes lives.</p>
+                    <a href="/blog/chitt-vijay-journey" class="inline-block mt-4 text-primary text-sm font-medium">Read More →</a>
+                </div>
+            </div>
+            <div class="glass rounded-2xl overflow-hidden" data-aos="fade-up">
+                <img src="/images/sbinumberchange.jpg" class="w-full h-48 object-cover" alt="Banking Tips" />
+                <div class="p-6">
+                    <span class="text-xs text-primary font-semibold">YouTube</span>
+                    <h3 class="text-lg font-bold mt-1">SBI Mobile Number Change</h3>
+                    <p class="text-sm mt-2">Step‑by‑step guide from home.</p>
+                    <a href="https://youtu.be/etlv68d8RyI" target="_blank" class="inline-block mt-4 text-primary text-sm font-medium">Watch →</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== NEWSLETTER / CTA ===== -->
-  <section class="py-16 bg-gradient-to-r from-primary to-accent text-white text-center">
-    <div class="max-w-3xl mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-3">Let's Build Something Amazing</h2>
-      <p class="mb-6 text-white/90">Have a project in mind? Let's connect and bring your ideas to life.</p>
-      <a href="/#contact" class="inline-block bg-white text-primary px-8 py-3 rounded-xl font-bold hover:bg-gray-100 transition shadow-lg shadow-black/20 hover:shadow-black/30">
-        Get in Touch
-      </a>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="bg-gray-100 dark:bg-gray-900 py-10">
-    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-6 text-center md:text-left">
-      <div>
-        <h4 class="font-bold text-lg mb-2">Bibek Patra</h4>
-        <p class="text-sm text-gray-600 dark:text-gray-400">Founder of BibekBook, Gengram, Vivika AI &amp; Krayvo</p>
-        <div class="flex justify-center md:justify-start gap-4 mt-3">
-          <a href="https://www.instagram.com/itsbibekpatra" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition text-xl"><i class="fab fa-instagram"></i></a>
-          <a href="https://youtube.com/@gtbcreates" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition text-xl"><i class="fab fa-youtube"></i></a>
-          <a href="https://www.linkedin.com/in/bibek-patra-932213293" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition text-xl"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.facebook.com/thesideincomeguru" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition text-xl"><i class="fab fa-facebook"></i></a>
+    <!-- NEWSLETTER CTA -->
+    <section class="py-16 bg-gradient-to-r from-primary to-accent text-white text-center">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-4">Stay Updated</h2>
+            <p class="mb-6">Get the latest articles, products, and tips straight to your inbox.</p>
+            <form action="#" class="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
+                <input type="email" placeholder="Enter your email" class="p-3 rounded-xl text-gray-800 w-full" required />
+                <button type="submit" class="bg-black text-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-800">Subscribe</button>
+            </form>
         </div>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-2">Quick Links</h4>
-        <ul class="space-y-1 text-sm text-gray-600 dark:text-gray-400">
-          <li><a href="/" class="hover:text-primary transition">Home</a></li>
-          <li><a href="/about" class="hover:text-primary transition">About</a></li>
-          <li><a href="/#projects" class="hover:text-primary transition">Projects</a></li>
-          <li><a href="/#services" class="hover:text-primary transition">Services</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-2">Connect</h4>
-        <ul class="space-y-1 text-sm text-gray-600 dark:text-gray-400">
-          <li><a href="https://wa.me/918280482686" target="_blank" class="hover:text-primary transition">WhatsApp</a></li>
-          <li><a href="https://www.instagram.com/itsbibekpatra" target="_blank" class="hover:text-primary transition">Instagram</a></li>
-          <li><a href="https://www.linkedin.com/in/bibek-patra-932213293" target="_blank" class="hover:text-primary transition">LinkedIn</a></li>
-          <li><a href="https://youtube.com/@gtbcreates" target="_blank" class="hover:text-primary transition">YouTube</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-2">Legal</h4>
-        <ul class="space-y-1 text-sm text-gray-600 dark:text-gray-400">
-          <li><a href="/privacy" class="hover:text-primary transition">Privacy Policy</a></li>
-          <li><a href="/terms" class="hover:text-primary transition">Terms</a></li>
-          <li><a href="/copyright" class="hover:text-primary transition">Copyright</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="text-center text-sm text-gray-500 dark:text-gray-500 mt-8 border-t dark:border-gray-800 pt-6">
-      © 2026 Bibek Patra. All Rights Reserved. Developed by Bibek Patra.
-    </div>
-  </footer>
+    </section>
 
-  <!-- WhatsApp Float -->
-  <a href="https://wa.me/918280482686" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+    <div id="footer-placeholder"></div>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 800, once: true });
-  </script>
-  <script>
-    document.getElementById('menu-btn').addEventListener('click', function() {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
-    });
-    document.querySelectorAll('#mobile-menu a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        document.getElementById('mobile-menu').classList.add('hidden');
-      });
-    });
-  </script>
+    <a href="https://wa.me/918280482686" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+    <script src="/js/script.js">
+    </script>
 </body>
 </html>
