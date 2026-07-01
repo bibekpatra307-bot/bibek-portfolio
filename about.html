@@ -7,7 +7,6 @@
     <meta name="description" content="Learn more about Bibek Patra, founder, developer, entrepreneur." />
     <link rel="canonical" href="https://bibekpatra.site/about" />
 
-    <!-- Tailwind, FontAwesome, AOS, global.css -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -121,6 +120,7 @@
 
         .skill-tag {
             transition: all 0.2s ease;
+            cursor: default;
         }
         .skill-tag:hover {
             transform: scale(1.05);
@@ -160,8 +160,7 @@
             border-radius: 4px;
             margin: 0 auto;
         }
-        
-        /* Download button hover effect */
+
         .download-btn {
             transition: all 0.3s ease;
         }
@@ -298,8 +297,8 @@
             </div>
         </div>
 
-        <!-- 3. SKILLS -->
-        <div class="mb-20" data-aos="fade-up">
+        <!-- 3. SKILLS + LANGUAGES (COMBINED - Language is now subtle) -->
+        <div class="mb-16" data-aos="fade-up">
             <div class="text-center mb-12">
                 <div class="divider-gradient mx-auto mb-4"></div>
                 <h2 class="text-3xl md:text-4xl font-bold">Skills &amp; Expertise</h2>
@@ -307,49 +306,28 @@
             </div>
 
             <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">Web Development</span>
-                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">AI Development</span>
-                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">3D Design (Blender)</span>
-                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">Graphic Design</span>
-                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">Video Editing (DaVinci Resolve)</span>
-                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">Digital Marketing</span>
-                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">SEO</span>
-                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">Book Publishing</span>
-                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">Financial &amp; Marketing Management</span>
-                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">Teaching &amp; Team Management</span>
-                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">Microsoft Office Suite</span>
-                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20 cursor-default transition">Adobe Photoshop</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">Web Development</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">AI Development</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">3D Design (Blender)</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">Graphic Design</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">Video Editing (DaVinci Resolve)</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">Digital Marketing</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">SEO</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">Book Publishing</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">Financial &amp; Marketing Mgmt</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">Teaching &amp; Team Management</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">Microsoft Office Suite</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">Adobe Photoshop</span>
+            </div>
+
+            <!-- Languages - subtle inline mention -->
+            <div class="text-center mt-6 text-sm text-gray-500 dark:text-gray-400">
+                <span class="font-medium text-gray-700 dark:text-gray-300">Languages:</span>
+                Odia (Fluent) · Hindi (Fluent) · English (Fluent)
             </div>
         </div>
 
-        <!-- 4. LANGUAGES -->
-        <div class="mb-16" data-aos="fade-up">
-            <div class="text-center mb-10">
-                <div class="divider-gradient mx-auto mb-4"></div>
-                <h2 class="text-3xl md:text-4xl font-bold">Languages</h2>
-                <p class="text-gray-600 dark:text-gray-400 mt-2">Connecting with people across cultures</p>
-            </div>
-
-            <div class="flex flex-wrap justify-center gap-8 max-w-3xl mx-auto">
-                <div class="bg-white dark:bg-gray-800 rounded-2xl px-8 py-5 shadow-md border border-gray-100 dark:border-gray-700 text-center min-w-[120px] premium-card">
-                    <span class="text-3xl block mb-1">🇮🇳</span>
-                    <span class="font-bold text-lg">Odia</span>
-                    <p class="text-sm text-primary font-medium">Fluent</p>
-                </div>
-                <div class="bg-white dark:bg-gray-800 rounded-2xl px-8 py-5 shadow-md border border-gray-100 dark:border-gray-700 text-center min-w-[120px] premium-card">
-                    <span class="text-3xl block mb-1">🇮🇳</span>
-                    <span class="font-bold text-lg">Hindi</span>
-                    <p class="text-sm text-primary font-medium">Fluent</p>
-                </div>
-                <div class="bg-white dark:bg-gray-800 rounded-2xl px-8 py-5 shadow-md border border-gray-100 dark:border-gray-700 text-center min-w-[120px] premium-card">
-                    <span class="text-3xl block mb-1">🇬🇧</span>
-                    <span class="font-bold text-lg">English</span>
-                    <p class="text-sm text-primary font-medium">Fluent</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 5. MISSION + DOWNLOAD BUTTONS (UPDATED) -->
+        <!-- 4. MISSION + DOWNLOAD BUTTONS -->
         <div class="mt-8 p-8 md:p-12 rounded-3xl bg-gradient-to-br from-primary/5 to-accent/5 dark:from-primary/10 dark:to-accent/10 border border-primary/10 dark:border-primary/20" data-aos="fade-up">
             <div class="max-w-3xl mx-auto text-center">
                 <div class="text-4xl mb-4">🚀</div>
@@ -357,8 +335,7 @@
                 <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                     To build <strong class="text-primary">technology that matters</strong> — tools that empower creators, connect communities, and push the boundaries of what's possible. I believe in <strong class="text-primary">innovation with purpose</strong>, design with soul, and code that changes lives.
                 </p>
-                
-                <!-- Action Buttons Row 1 -->
+
                 <div class="flex flex-wrap justify-center gap-4 mt-6">
                     <a href="/#projects" class="bg-primary text-white px-6 py-3 rounded-xl font-medium hover:bg-purple-700 transition shadow-lg shadow-primary/25 hover:shadow-primary/40">
                         View My Work
@@ -367,21 +344,19 @@
                         Let's Connect
                     </a>
                 </div>
-                
-                <!-- Divider -->
+
                 <div class="flex items-center gap-4 my-6">
                     <div class="flex-1 h-px bg-primary/10 dark:bg-primary/20"></div>
                     <span class="text-sm text-gray-400 dark:text-gray-500 font-medium">OR</span>
                     <div class="flex-1 h-px bg-primary/10 dark:bg-primary/20"></div>
                 </div>
 
-                <!-- Download Buttons Row 2 (NEW) -->
                 <div class="flex flex-wrap justify-center gap-4">
-                    <a href="/resume.pdf" download 
+                    <a href="/resume.pdf" download
                        class="download-btn bg-accent text-black px-8 py-3.5 rounded-xl font-bold shadow-lg shadow-accent/30 hover:shadow-accent/50 flex items-center gap-3 transition">
                         <i class="fas fa-file-pdf text-lg"></i> Download Resume
                     </a>
-                    <a href="/cv.pdf" download 
+                    <a href="/cv.pdf" download
                        class="download-btn bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-8 py-3.5 rounded-xl font-bold shadow-lg shadow-black/10 hover:shadow-black/20 border border-gray-200 dark:border-gray-700 flex items-center gap-3 transition">
                         <i class="fas fa-file-alt text-lg text-primary"></i> Download CV
                     </a>
