@@ -84,11 +84,12 @@
             display: block;
         }
         .hero-rectangle {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            object-position: center 25%;
-            border-radius: 24px;
+    width: 100%;
+    height: 200px;   /* जैसा पहले था */
+    object-fit: contain;
+    object-position: center;
+    background-color: #f3f4f6; /* हल्का बैकग्राउंड */
+}
         }
         @media (min-width: 640px) {
             .hero-rectangle {
