@@ -3,18 +3,40 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bibek Patra | Founder, Developer & Entrepreneur</title>
-    <meta name="description" content="Bibek Patra is a founder, developer, and entrepreneur building BibekBook, Gengram, Vivika AI, and Krayvo. Explore innovative digital products in publishing, AI, social media, and e‑commerce." />
+    <title>Bibek Patra | Founder, Developer, Author &amp; Entrepreneur</title>
+    <meta name="description" content="Bibek Patra is a founder, developer, author, and entrepreneur building innovative digital products including BibekBook, Gengram, Vivika AI, and Krayvo." />
+    <meta name="keywords" content="Bibek Patra, web developer, AI developer, author, entrepreneur, BibekBook, Gengram, Odisha" />
     <link rel="canonical" href="https://bibekpatra.site/" />
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Bibek Patra" />
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://bibekpatra.site/" />
-    <meta property="og:title" content="Bibek Patra | Founder, Developer & Entrepreneur" />
-    <meta property="og:description" content="Official website of Bibek Patra." />
+    <meta property="og:title" content="Bibek Patra | Founder, Developer, Author &amp; Entrepreneur" />
+    <meta property="og:description" content="Bibek Patra is a founder, developer, author, and entrepreneur building innovative digital products." />
     <meta property="og:image" content="https://bibekpatra.site/images/og-image.jpg" />
     <meta property="twitter:card" content="summary_large_image" />
-    <script src="https://cdn.tailwindcss.com">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Bibek Patra",
+            "url": "https://bibekpatra.site/",
+            "image": "https://bibekpatra.site/images/hero-circle.jpg",
+            "jobTitle": "Founder, Developer, Author & Entrepreneur",
+            "sameAs": [
+                "https://www.instagram.com/itsbibekpatra",
+                "https://youtube.com/@gtbcreates",
+                "https://www.linkedin.com/in/bibek-patra-932213293"
+            ]
+        }
     </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -32,22 +54,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/global.css" />
+
     <style>
-        .hero-rectangle {
-            width: 100%;
-            height: auto;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: 32px;
+        /* Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .circle-glow {
-            border: 4px solid #6C3BFF;
-            box-shadow: 0 0 40px rgba(108, 59, 255, 0.45);
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
         }
-        .dark .circle-glow {
-            border-color: #8B6CFF;
-            box-shadow: 0 0 40px rgba(108, 59, 255, 0.6);
+
+        .glass {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
+        .dark .glass {
+            background: rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.06);
+        }
+
         .whatsapp-float {
             position: fixed;
             bottom: 20px;
@@ -55,15 +85,19 @@
             background: #25D366;
             color: white;
             border-radius: 50%;
-            width: 60px;
-            height: 60px;
+            width: 56px;
+            height: 56px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            font-size: 28px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
             z-index: 1000;
             animation: bounce 2s infinite;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.08);
         }
         @keyframes bounce {
             0%,
@@ -71,189 +105,990 @@
                 transform: translateY(0);
             }
             50% {
-                transform: translateY(-10px);
+                transform: translateY(-8px);
             }
         }
-        /* New Styles for Quick Links */
-        .quick-links a {
-            transition: all 0.3s ease;
+
+        .hero-rectangle {
+            width: 100%;
+            height: auto;
+            max-height: 360px;
+            object-fit: cover;
+            border-radius: 28px;
+            transition: transform 0.5s ease;
         }
-        .quick-links a:hover {
+        .hero-rectangle:hover {
+            transform: scale(1.01);
+        }
+
+        .circle-glow {
+            border: 4px solid #6C3BFF;
+            box-shadow: 0 0 40px rgba(108, 59, 255, 0.35), 0 0 80px rgba(108, 59, 255, 0.08);
+            transition: box-shadow 0.4s ease, transform 0.4s ease;
+        }
+        .circle-glow:hover {
+            box-shadow: 0 0 60px rgba(108, 59, 255, 0.5), 0 0 100px rgba(108, 59, 255, 0.15);
+            transform: scale(1.02);
+        }
+        .dark .circle-glow {
+            border-color: #8B6CFF;
+            box-shadow: 0 0 40px rgba(108, 59, 255, 0.4), 0 0 80px rgba(108, 59, 255, 0.15);
+        }
+
+        /* Stats */
+        .stat-card {
+            padding: 20px 16px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.35s ease;
+        }
+        .dark .stat-card {
+            background: rgba(30, 30, 50, 0.4);
+            border-color: rgba(255, 255, 255, 0.06);
+        }
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(108, 59, 255, 0.08);
+        }
+        .stat-card .number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #6C3BFF;
+            line-height: 1;
+        }
+        .stat-card .label {
+            font-size: 0.85rem;
+            color: #777;
+            margin-top: 4px;
+        }
+        .dark .stat-card .label {
+            color: #999;
+        }
+
+        /* Divider */
+        .divider-gradient {
+            height: 3px;
+            width: 56px;
+            background: linear-gradient(90deg, #6C3BFF, #F59E0B);
+            border-radius: 4px;
+            margin: 0 auto 6px;
+        }
+        .section-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 2px;
+        }
+        .section-sub {
+            text-align: center;
+            color: #888;
+            margin-bottom: 28px;
+            font-size: 0.95rem;
+        }
+        .dark .section-sub {
+            color: #888;
+        }
+
+        /* ===== CAROUSEL ===== */
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding: 4px 0;
+        }
+        .carousel-track {
+            display: flex;
+            gap: 16px;
+            will-change: transform;
+            transition: none;
+            width: max-content;
+        }
+        .carousel-item {
+            flex: 0 0 auto;
+            width: 220px;
+            border-radius: 16px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .dark .carousel-item {
+            background: rgba(30, 30, 50, 0.5);
+            border-color: rgba(255, 255, 255, 0.06);
+        }
+        .carousel-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(108, 59, 255, 0.1);
+        }
+        .dark .carousel-item:hover {
+            box-shadow: 0 16px 40px rgba(108, 59, 255, 0.18);
+        }
+        .carousel-item .card-img {
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
+            display: block;
+        }
+        .carousel-item .card-body {
+            padding: 12px 14px 16px;
+        }
+        .carousel-item .card-body h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        .carousel-item .card-body p {
+            font-size: 0.78rem;
+            color: #666;
+            margin-top: 3px;
+            line-height: 1.4;
+        }
+        .dark .carousel-item .card-body p {
+            color: #aaa;
+        }
+        .carousel-item .card-body .tag {
+            display: inline-block;
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            padding: 1px 12px;
+            border-radius: 30px;
+            background: rgba(108, 59, 255, 0.1);
+            color: #6C3BFF;
+            margin-bottom: 4px;
+        }
+        .dark .carousel-item .card-body .tag {
+            background: rgba(108, 59, 255, 0.15);
+            color: #9a7bff;
+        }
+        .carousel-item .card-body .link-arrow {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #6C3BFF;
+            margin-top: 6px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        .carousel-item:hover .card-body .link-arrow {
+            transform: translateX(4px);
+        }
+
+        /* Product card specific (smaller) */
+        .carousel-item.product .card-img {
+            height: 110px;
+            object-fit: contain;
+            padding: 8px;
+            background: rgba(245, 245, 250, 0.3);
+        }
+        .dark .carousel-item.product .card-img {
+            background: rgba(30, 30, 50, 0.3);
+        }
+        .carousel-item.product .card-body h4 {
+            font-size: 0.9rem;
+        }
+
+        /* Carousel indicators */
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 14px;
+        }
+        .carousel-indicators span {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #ccc;
+            transition: all 0.4s ease;
+            display: inline-block;
+        }
+        .carousel-indicators span.active {
+            background: #6C3BFF;
+            width: 20px;
+            border-radius: 4px;
+        }
+        .dark .carousel-indicators span {
+            background: #444;
+        }
+        .dark .carousel-indicators span.active {
+            background: #8B6CFF;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+        }
+        .testimonial-card {
+            padding: 18px 18px 20px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.35s ease;
+        }
+        .dark .testimonial-card {
+            background: rgba(30, 30, 50, 0.35);
+            border-color: rgba(255, 255, 255, 0.06);
+        }
+        .testimonial-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(108, 59, 255, 0.2);
+            box-shadow: 0 12px 32px rgba(108, 59, 255, 0.06);
+        }
+        .testimonial-card .stars {
+            color: #F59E0B;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .testimonial-card .quote {
+            font-size: 0.88rem;
+            line-height: 1.6;
+            font-style: italic;
+            color: #444;
+        }
+        .dark .testimonial-card .quote {
+            color: #ccc;
+        }
+        .testimonial-card .author {
+            margin-top: 8px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #6C3BFF;
+        }
+        .testimonial-card .role {
+            font-size: 0.75rem;
+            color: #888;
+        }
+        .dark .testimonial-card .role {
+            color: #888;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            border-radius: 24px;
+            padding: 36px 28px;
+            background: linear-gradient(135deg, rgba(108, 59, 255, 0.06), rgba(245, 158, 11, 0.06));
+            border: 1px solid rgba(108, 59, 255, 0.06);
+        }
+        .dark .cta-section {
+            background: linear-gradient(135deg, rgba(108, 59, 255, 0.08), rgba(245, 158, 11, 0.04));
+            border-color: rgba(108, 59, 255, 0.08);
+        }
+
+        /* Hidden SEO Links */
+        .seo-links {
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .stat-card .number {
+                font-size: 1.8rem;
+            }
+            .carousel-item {
+                width: 170px;
+            }
+            .carousel-item .card-img {
+                height: 100px;
+            }
+            .carousel-item.product .card-img {
+                height: 85px;
+            }
+            .hero-rectangle {
+                border-radius: 18px;
+                max-height: 260px;
+            }
+            .cta-section {
+                padding: 24px 16px;
+            }
+            .testimonial-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 400px) {
+            .carousel-item {
+                width: 150px;
+            }
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Nav controls */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        @media (min-width: 768px) {
+            .nav-controls {
+                gap: 16px;
+            }
+        }
+        #mobile-menu {
+            transition: all 0.25s ease;
+        }
+        #mobile-menu.hidden {
+            display: none;
+        }
+        #mobile-menu:not(.hidden) {
+            display: block;
+        }
+
+        /* Newsletter success */
+        .newsletter-success {
+            display: none;
+            padding: 12px;
+            border-radius: 12px;
+            background: #059669;
+            color: #fff;
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        .newsletter-success.show {
+            display: block;
+        }
+        .newsletter-error {
+            display: none;
+            padding: 10px;
+            border-radius: 10px;
+            background: #dc2626;
+            color: #fff;
+            text-align: center;
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+        .newsletter-error.show {
+            display: block;
         }
     </style>
 </head>
-<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors">
+
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors antialiased">
+
+    <!-- ===== NAVBAR ===== -->
     <div id="navbar-placeholder"></div>
 
-    <!-- HERO -->
+    <!-- ===== HERO SECTION (✅ Background restored) ===== -->
     <section class="min-h-screen flex items-center justify-center pt-20 pb-10 bg-gradient-to-br from-primary/10 to-accent/10">
         <div class="max-w-4xl mx-auto px-4 text-center" data-aos="fade-up">
+            <!-- Rectangle Image -->
             <div class="rounded-3xl overflow-hidden shadow-2xl shadow-primary/20 dark:shadow-primary/30 mb-6">
-                <img src="/images/about-rectangle.jpg" alt="Bibek Patra" class="hero-rectangle" loading="eager" />
+                <img src="/images/hero-rectangle.jpg" alt="Bibek Patra" class="hero-rectangle" loading="eager" />
             </div>
-            <div class="relative -mt-16 sm:-mt-20 md:-mt-24 mb-4">
-                <img src="/images/hero-circle.jpg" alt="Bibek Patra" class="w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-full mx-auto circle-glow bg-white dark:bg-gray-900" loading="eager" />
-            </div>
-            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-tight">Bibek Patra</h1>
-            <p class="text-lg sm:text-xl md:text-2xl mt-3 font-medium">Founder of BibekBook, Gengram, Vivika AI & Krayvo</p>
-            <p class="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-3">I build innovative digital products in publishing, AI, social media, e‑commerce, web development and 3D design.</p>
-            
-            <!-- ✅ NEW: Quick Links to Important Pages (Google ko Index karne mein help karega) -->
-            <div class="quick-links flex flex-wrap justify-center gap-3 mt-8">
-                <a href="/about" class="bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-5 py-2 rounded-full shadow-md hover:shadow-lg hover:bg-primary hover:text-white transition-all text-sm font-medium">About Me</a>
-                <a href="/projects" class="bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-5 py-2 rounded-full shadow-md hover:shadow-lg hover:bg-primary hover:text-white transition-all text-sm font-medium">Projects</a>
-                <a href="/services" class="bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-5 py-2 rounded-full shadow-md hover:shadow-lg hover:bg-primary hover:text-white transition-all text-sm font-medium">Services</a>
-                <a href="/books" class="bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-5 py-2 rounded-full shadow-md hover:shadow-lg hover:bg-primary hover:text-white transition-all text-sm font-medium">Books</a>
-                <a href="/blog" class="bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-5 py-2 rounded-full shadow-md hover:shadow-lg hover:bg-primary hover:text-white transition-all text-sm font-medium">Blog</a>
-                <a href="/contact" class="bg-primary text-white px-5 py-2 rounded-full shadow-md hover:shadow-lg hover:bg-purple-700 transition-all text-sm font-medium">Contact</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- STATS -->
-    <section class="py-16 max-w-6xl mx-auto px-4">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div class="glass p-6 rounded-2xl">
-                <div class="text-3xl font-bold text-primary">5+</div>
-                <p class="mt-1">Years Experience</p>
+            <!-- Profile -->
+            <div class="relative -mt-14 sm:-mt-16 md:-mt-20 mb-3">
+                <img src="/images/hero-circle.jpg" alt="Bibek Patra" class="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full mx-auto circle-glow bg-white dark:bg-gray-900 object-cover" loading="eager" />
             </div>
-            <div class="glass p-6 rounded-2xl">
-                <div class="text-3xl font-bold text-primary">20+</div>
-                <p class="mt-1">Projects Delivered</p>
-            </div>
-            <div class="glass p-6 rounded-2xl">
-                <div class="text-3xl font-bold text-primary">500+</div>
-                <p class="mt-1">Happy Clients</p>
-            </div>
-            <div class="glass p-6 rounded-2xl">
-                <div class="text-3xl font-bold text-primary">4</div>
-                <p class="mt-1">Products Launched</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- ✅ NEW: What I Do Section (Unique Content) -->
-    <section class="py-12 max-w-6xl mx-auto px-4">
-        <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
-            <h2 class="text-3xl font-bold mb-4">What I Do</h2>
-            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-                I'm a passionate developer and entrepreneur with a mission to build innovative digital products that solve real-world problems. From AI-powered chatbots and social networking platforms to publishing tools and e-commerce solutions, I bring ideas to life through clean code, modern design, and a user-first approach. Whether you're looking for a full-scale web application, a custom 3D design, or just expert advice, I'm here to help.
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-tight">
+                Hi, I'm Bibek Patra
+            </h1>
+            <p class="text-lg sm:text-xl md:text-2xl mt-2 font-medium text-gray-700 dark:text-gray-300">
+                Founder · Developer · Author · Entrepreneur
             </p>
         </div>
     </section>
 
-    <!-- FEATURED PRODUCTS -->
-    <section class="py-16 max-w-7xl mx-auto px-4">
-        <h2 class="text-4xl font-bold text-center mb-10" data-aos="fade-up">Featured Products</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="glass rounded-2xl overflow-hidden p-6 flex flex-col items-center text-center" data-aos="zoom-in">
-                <img src="/images/bibekbook.jpg" class="w-16 h-16 rounded-xl mb-4" alt="BibekBook" />
-                <h3 class="text-xl font-bold">BibekBook</h3>
-                <p class="text-sm mt-2">Publishing platform for authors.</p>
-                <a href="/projects/bibekbook" class="mt-4 bg-primary text-white px-4 py-2 rounded-lg text-sm">Explore</a>
+    <!-- ===== STATS ===== -->
+    <section class="py-12 max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 text-center">
+            <div class="stat-card" data-aos="fade-up">
+                <div class="number">5+</div>
+                <div class="label">Years Experience</div>
             </div>
-            <div class="glass rounded-2xl overflow-hidden p-6 flex flex-col items-center text-center" data-aos="zoom-in">
-                <img src="/images/gengram.jpg" class="w-16 h-16 rounded-xl mb-4" alt="Gengram" />
-                <h3 class="text-xl font-bold">Gengram</h3>
-                <p class="text-sm mt-2">Next‑gen social networking.</p>
-                <a href="/projects/gengram" class="mt-4 bg-primary text-white px-4 py-2 rounded-lg text-sm">Explore</a>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="50">
+                <div class="number">20+</div>
+                <div class="label">Projects Delivered</div>
             </div>
-            <div class="glass rounded-2xl overflow-hidden p-6 flex flex-col items-center text-center" data-aos="zoom-in">
-                <img src="/images/vivika-ai.jpg" class="w-16 h-16 rounded-xl mb-4" alt="Vivika AI" />
-                <h3 class="text-xl font-bold">Vivika AI</h3>
-                <p class="text-sm mt-2">Advanced conversational AI.</p>
-                <a href="/projects/vivika-ai" class="mt-4 bg-primary text-white px-4 py-2 rounded-lg text-sm">Explore</a>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="number">500+</div>
+                <div class="label">Happy Clients</div>
             </div>
-            <div class="glass rounded-2xl overflow-hidden p-6 flex flex-col items-center text-center" data-aos="zoom-in">
-                <img src="/images/krayvo.jpg" class="w-16 h-16 rounded-xl mb-4" alt="Krayvo" />
-                <h3 class="text-xl font-bold">Krayvo</h3>
-                <p class="text-sm mt-2">Smart e‑commerce platform.</p>
-                <a href="/projects/krayvo" class="mt-4 bg-primary text-white px-4 py-2 rounded-lg text-sm">Explore</a>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="150">
+                <div class="number">6+</div>
+                <div class="label">Books Published</div>
             </div>
         </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section class="py-16 bg-gray-50 dark:bg-gray-800">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-8">What Clients Say</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="glass p-6 rounded-2xl">
-                    <p class="italic">"Bibek delivered a stunning website and increased our online sales by 200%."</p>
-                    <p class="mt-3 font-semibold">— Rajesh Kumar</p>
+    <!-- ===== WHAT I DO ===== -->
+    <section class="py-8 max-w-4xl mx-auto px-4" data-aos="fade-up">
+        <div class="divider-gradient"></div>
+        <h2 class="section-title">What I Do</h2>
+        <p class="section-sub">Building technology that empowers people</p>
+        <div class="text-center max-w-3xl mx-auto">
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-base md:text-lg">
+                I'm a passionate <strong class="text-primary">developer, author, and entrepreneur</strong> with a mission to build innovative digital products that solve real-world problems. From <strong class="text-primary">AI-powered chatbots</strong> and <strong class="text-primary">social networking platforms</strong> to <strong class="text-primary">publishing tools</strong> and <strong class="text-primary">e-commerce solutions</strong>, I bring ideas to life through clean code, modern design, and a user-first approach.
+            </p>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-base md:text-lg mt-3">
+                I also write <strong class="text-primary">books</strong> on self-discovery, science, and personal growth, and create <strong class="text-primary">content</strong> that educates and inspires.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== PRODUCTS CAROUSEL ===== -->
+    <section class="py-12 max-w-7xl mx-auto px-4">
+        <div class="divider-gradient"></div>
+        <h2 class="section-title">Featured Products</h2>
+        <p class="section-sub">Products I've built from the ground up</p>
+
+        <div class="carousel-wrapper" id="productsCarousel">
+            <div class="carousel-track" id="productsTrack">
+                <!-- Items will be populated by JS -->
+            </div>
+        </div>
+        <div class="carousel-indicators" id="productsIndicators"></div>
+    </section>
+
+    <!-- ===== CLIENT TESTIMONIALS (15 reviews) ===== -->
+    <section class="py-14 bg-gray-50/60 dark:bg-gray-800/30">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="divider-gradient"></div>
+            <h2 class="section-title">What Clients Say</h2>
+            <p class="section-sub">Feedback from people I've worked with</p>
+
+            <div class="testimonial-grid" data-aos="fade-up">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"Bibek delivered a stunning website and increased our online sales by 200%."</p>
+                    <p class="author">Rajesh Kumar</p>
+                    <p class="role">Business Owner, Delhi</p>
                 </div>
-                <div class="glass p-6 rounded-2xl">
-                    <p class="italic">"His AI chatbot saved our support team hours every day."</p>
-                    <p class="mt-3 font-semibold">— Priya Sharma</p>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"His AI chatbot saved our support team hours every day. Highly recommended!"</p>
+                    <p class="author">Priya Sharma</p>
+                    <p class="role">Operations Manager, Mumbai</p>
                 </div>
-                <div class="glass p-6 rounded-2xl">
-                    <p class="italic">"Professional, fast, and highly skilled. Highly recommended."</p>
-                    <p class="mt-3 font-semibold">— Amit Patel</p>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"Professional, fast, and highly skilled. Bibek brought our vision to life."</p>
+                    <p class="author">Amit Patel</p>
+                    <p class="role">Startup Founder, Bangalore</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"The best developer I've ever worked with. Attention to detail is unmatched."</p>
+                    <p class="author">Sneha Reddy</p>
+                    <p class="role">Product Manager, Hyderabad</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"Bibek's expertise in AI and web development is truly exceptional."</p>
+                    <p class="author">Vikram Singh</p>
+                    <p class="role">CTO, Pune</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"He built our e-commerce platform from scratch and it's been flawless."</p>
+                    <p class="author">Ananya Das</p>
+                    <p class="role">E-Commerce Director, Kolkata</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"Bibek is a true professional — delivered ahead of schedule and under budget."</p>
+                    <p class="author">Manoj Gupta</p>
+                    <p class="role">Project Lead, Chennai</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"The SEO strategy he implemented doubled our organic traffic in 3 months."</p>
+                    <p class="author">Neha Jain</p>
+                    <p class="role">Marketing Head, Jaipur</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"He's not just a developer — he's a problem solver. Highly recommend."</p>
+                    <p class="author">Arjun Nair</p>
+                    <p class="role">Business Owner, Kochi</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"Bibek's work on our mobile app was outstanding. Users love the experience."</p>
+                    <p class="author">Kavya Menon</p>
+                    <p class="role">Product Designer, Trivandrum</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"The publishing platform he built for us is intuitive and powerful."</p>
+                    <p class="author">Dr. Sanjay Verma</p>
+                    <p class="role">Publisher, Lucknow</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"Excellent communication and technical skills. A pleasure to work with."</p>
+                    <p class="author">Ritu Agarwal</p>
+                    <p class="role">Founder, Gurgaon</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"Bibek's 3D design work for our product visualization was breathtaking."</p>
+                    <p class="author">David D'Souza</p>
+                    <p class="role">Creative Director, Goa</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"He helped us launch our book on BibekBook — a game-changer for authors."</p>
+                    <p class="author">Shreya Pandey</p>
+                    <p class="role">Author, Bhopal</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="quote">"Reliable, creative, and always delivers high-quality work."</p>
+                    <p class="author">Gaurav Malhotra</p>
+                    <p class="role">Agency Partner, Chandigarh</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- LATEST BLOG -->
-    <section class="py-16 max-w-7xl mx-auto px-4">
-        <h2 class="text-4xl font-bold text-center mb-8">Latest from Blog</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="glass rounded-2xl overflow-hidden" data-aos="fade-up">
-                <img src="/images/krayvo.jpg" class="w-full h-48 object-cover" alt="Krayvo Blog" />
-                <div class="p-6">
-                    <span class="text-xs text-primary font-semibold">E-Commerce</span>
-                    <h3 class="text-lg font-bold mt-1">How We Built Krayvo</h3>
-                    <p class="text-sm mt-2">Behind the scenes of our smart e‑commerce platform.</p>
-                    <a href="/blog/post1" class="inline-block mt-4 text-primary text-sm font-medium">Read More →</a>
-                </div>
-            </div>
-            <div class="glass rounded-2xl overflow-hidden" data-aos="fade-up">
-                <img src="/images/chitt-vijay.jpg" class="w-full h-48 object-cover" alt="Chitt Vijay" />
-                <div class="p-6">
-                    <span class="text-xs text-primary font-semibold">Books</span>
-                    <h3 class="text-lg font-bold mt-1">The Journey of Chitt Vijay</h3>
-                    <p class="text-sm mt-2">Writing a book that changes lives.</p>
-                    <a href="/blog/chitt-vijay-journey" class="inline-block mt-4 text-primary text-sm font-medium">Read More →</a>
-                </div>
-            </div>
-            <div class="glass rounded-2xl overflow-hidden" data-aos="fade-up">
-                <img src="/images/sbinumberchange.jpg" class="w-full h-48 object-cover" alt="Banking Tips" />
-                <div class="p-6">
-                    <span class="text-xs text-primary font-semibold">YouTube</span>
-                    <h3 class="text-lg font-bold mt-1">SBI Mobile Number Change</h3>
-                    <p class="text-sm mt-2">Step‑by‑step guide from home.</p>
-                    <a href="https://youtu.be/etlv68d8RyI" target="_blank" class="inline-block mt-4 text-primary text-sm font-medium">Watch →</a>
-                </div>
+    <!-- ===== BLOG CAROUSEL ===== -->
+    <section class="py-12 max-w-7xl mx-auto px-4">
+        <div class="divider-gradient"></div>
+        <h2 class="section-title">Latest from Blog</h2>
+        <p class="section-sub">Insights, stories, and behind-the-scenes</p>
+
+        <div class="carousel-wrapper" id="blogCarousel">
+            <div class="carousel-track" id="blogTrack">
+                <!-- Items will be populated by JS -->
             </div>
         </div>
+        <div class="carousel-indicators" id="blogIndicators"></div>
     </section>
 
-    <!-- NEWSLETTER CTA -->
-    <section class="py-16 bg-gradient-to-r from-primary to-accent text-white text-center">
-        <div class="max-w-3xl mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-4">Stay Updated</h2>
-            <p class="mb-6">Get the latest articles, products, and tips straight to your inbox.</p>
-            <form action="#" class="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
-                <input type="email" placeholder="Enter your email" class="p-3 rounded-xl text-gray-800 w-full" required />
-                <button type="submit" class="bg-black text-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-800">Subscribe</button>
+    <!-- ===== NEWSLETTER CTA (✅ With Sheet.best integration) ===== -->
+    <section class="py-12 px-4">
+        <div class="max-w-3xl mx-auto cta-section text-center" data-aos="fade-up">
+            <div class="text-3xl mb-2">📬</div>
+            <h2 class="text-2xl font-bold mb-1">Stay Updated</h2>
+            <p class="text-gray-600 dark:text-gray-400 mb-5 max-w-md mx-auto text-sm">
+                Get the latest articles, products, and tips straight to your inbox.
+            </p>
+            <form id="newsletterForm" class="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
+                <input type="email" id="newsletterEmail" placeholder="Enter your email" class="p-3 rounded-xl text-gray-800 dark:text-gray-200 dark:bg-gray-700 w-full border border-gray-200 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary text-sm" required />
+                <button type="submit" id="newsletterBtn" class="bg-black dark:bg-gray-800 text-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-800 dark:hover:bg-gray-700 transition shadow-lg shadow-black/20 text-sm flex items-center justify-center gap-2">
+                    <i class="fas fa-paper-plane"></i> Subscribe
+                </button>
             </form>
+            <div id="newsletterSuccess" class="newsletter-success">✅ You're subscribed! Check your email for confirmation.</div>
+            <div id="newsletterError" class="newsletter-error">❌ Something went wrong. Please try again.</div>
+            <p class="text-xs text-gray-400 dark:text-gray-500 mt-3">No spam. Unsubscribe anytime.</p>
         </div>
     </section>
 
+    <!-- ===== FOOTER ===== -->
     <div id="footer-placeholder"></div>
 
-    <a href="https://wa.me/918280482686" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <!-- ===== HIDDEN SEO LINKS ===== -->
+    <div class="seo-links" aria-hidden="true">
+        <a href="/about">About</a>
+        <a href="/about-book">Books</a>
+        <a href="/webdev">WebDev</a>
+        <a href="/content">Content</a>
+        <a href="/work-experience">Experience</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/copyright">Copyright</a>
+        <a href="/faq">FAQ</a>
+        <a href="/projects/bibekbook">BibekBook</a>
+        <a href="/projects/gengram">Gengram</a>
+        <a href="/projects/vivika-ai">Vivika AI</a>
+        <a href="/projects/krayvo">Krayvo</a>
+    </div>
+
+    <!-- ===== WHATSAPP FLOAT ===== -->
+    <a href="https://wa.me/918280482686" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
-    </script>
+    <!-- ===== SCRIPTS ===== -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
-        AOS.init({ duration: 800, once: true });
+        // ===== AOS =====
+        AOS.init({ duration: 600, once: true, easing: 'ease-out-quad' });
+
+        // ===== NAVBAR MOBILE TOGGLE =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+                mobileMenu.querySelectorAll('a').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+        });
+
+        // ===== CAROUSEL CLASS =====
+        class AutoCarousel {
+            constructor(containerId, trackId, items, indicatorsId, options = {}) {
+                this.container = document.getElementById(containerId);
+                this.track = document.getElementById(trackId);
+                this.items = items;
+                this.indicatorsContainer = document.getElementById(indicatorsId);
+                this.itemWidth = options.itemWidth || 220;
+                this.gap = options.gap || 16;
+                this.speed = options.speed || 1.2;
+                this.isPaused = false;
+                this.position = 0;
+                this.animationId = null;
+                this.totalWidth = 0;
+                this.cloneCount = 0;
+                this.isDragging = false;
+                this.startX = 0;
+                this.currentTranslate = 0;
+
+                this.init();
+            }
+
+            init() {
+                // Render items (2 sets for infinite loop)
+                const allItems = [...this.items, ...this.items, ...this.items];
+                this.track.innerHTML = '';
+                allItems.forEach((item, index) => {
+                    const el = document.createElement('div');
+                    el.className = 'carousel-item';
+                    if (item.type === 'product') el.classList.add('product');
+                    el.innerHTML = `
+                        <img src="${item.image}" alt="${item.title}" class="card-img" loading="lazy" />
+                        <div class="card-body">
+                            ${item.tag ? `<span class="tag">${item.tag}</span>` : ''}
+                            <h4>${item.title}</h4>
+                            <p>${item.desc}</p>
+                            <span class="link-arrow">${item.linkText || 'Explore →'}</span>
+                        </div>
+                    `;
+                    // Click handler
+                    el.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        if (item.url) {
+                            window.location.href = item.url;
+                        }
+                    });
+                    // Pause on hover/tap
+                    el.addEventListener('mouseenter', () => this.pause());
+                    el.addEventListener('mouseleave', () => this.resume());
+                    el.addEventListener('touchstart', (e) => {
+                        this.pause();
+                        this.handleTouchStart(e);
+                    }, { passive: true });
+                    el.addEventListener('touchmove', (e) => {
+                        this.handleTouchMove(e);
+                    }, { passive: true });
+                    el.addEventListener('touchend', (e) => {
+                        this.handleTouchEnd(e);
+                        setTimeout(() => this.resume(), 300);
+                    }, { passive: true });
+                    this.track.appendChild(el);
+                });
+
+                // Calculate total width
+                const itemsCount = this.items.length;
+                this.cloneCount = itemsCount;
+                this.totalWidth = (this.itemWidth + this.gap) * itemsCount;
+
+                // Set track width
+                this.track.style.width = (this.itemWidth + this.gap) * (itemsCount * 3) + 'px';
+                this.track.style.gap = this.gap + 'px';
+
+                // Set item width
+                this.track.querySelectorAll('.carousel-item').forEach(el => {
+                    el.style.width = this.itemWidth + 'px';
+                    el.style.flex = '0 0 auto';
+                });
+
+                // Indicators
+                this.renderIndicators();
+
+                // Start animation
+                this.start();
+            }
+
+            renderIndicators() {
+                this.indicatorsContainer.innerHTML = '';
+                const total = this.items.length;
+                for (let i = 0; i < total; i++) {
+                    const dot = document.createElement('span');
+                    if (i === 0) dot.classList.add('active');
+                    this.indicatorsContainer.appendChild(dot);
+                }
+            }
+
+            updateIndicators() {
+                const total = this.items.length;
+                const dots = this.indicatorsContainer.querySelectorAll('span');
+                // Calculate which item is centered
+                const rawPos = this.position / (this.itemWidth + this.gap);
+                const idx = Math.round(rawPos) % total;
+                const activeIdx = ((idx % total) + total) % total;
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === activeIdx);
+                });
+            }
+
+            start() {
+                if (this.animationId) cancelAnimationFrame(this.animationId);
+                let lastTime = 0;
+                const step = (timestamp) => {
+                    if (!lastTime) lastTime = timestamp;
+                    const delta = (timestamp - lastTime) / 16;
+                    lastTime = timestamp;
+
+                    if (!this.isPaused && !this.isDragging) {
+                        this.position += this.speed * delta * 0.08;
+                        const maxPos = this.totalWidth * 2;
+                        if (this.position > maxPos) {
+                            this.position = this.position - this.totalWidth;
+                        }
+                        const translate = -(this.position);
+                        this.track.style.transform = `translateX(${translate}px)`;
+                        this.currentTranslate = translate;
+                        this.updateIndicators();
+                    }
+                    this.animationId = requestAnimationFrame(step);
+                };
+                this.animationId = requestAnimationFrame(step);
+            }
+
+            pause() {
+                this.isPaused = true;
+            }
+
+            resume() {
+                this.isPaused = false;
+            }
+
+            // Touch / Swipe support
+            handleTouchStart(e) {
+                this.isDragging = true;
+                this.startX = e.touches ? e.touches[0].clientX : e.clientX;
+                this.pause();
+            }
+
+            handleTouchMove(e) {
+                if (!this.isDragging) return;
+                const currentX = e.touches ? e.touches[0].clientX : e.clientX;
+                const diff = (currentX - this.startX) * 0.5;
+                const basePos = this.position;
+                const newPos = -(basePos + diff);
+                this.track.style.transform = `translateX(${newPos}px)`;
+                this.currentTranslate = newPos;
+            }
+
+            handleTouchEnd(e) {
+                if (!this.isDragging) return;
+                this.isDragging = false;
+                // Snap to nearest item
+                const currentPos = -(this.currentTranslate);
+                const itemStep = this.itemWidth + this.gap;
+                const snappedPos = Math.round(currentPos / itemStep) * itemStep;
+                this.position = snappedPos;
+                const maxPos = this.totalWidth * 2;
+                if (this.position > maxPos) {
+                    this.position = this.position - this.totalWidth;
+                }
+                if (this.position < 0) {
+                    this.position = this.position + this.totalWidth;
+                }
+                this.track.style.transition = 'transform 0.3s ease';
+                this.track.style.transform = `translateX(${-this.position}px)`;
+                this.currentTranslate = -this.position;
+                setTimeout(() => {
+                    this.track.style.transition = 'none';
+                }, 350);
+                this.updateIndicators();
+                this.resume();
+            }
+        }
+
+        // ===== PRODUCTS DATA =====
+        const products = [{
+            title: 'BibekBook',
+            desc: 'Publishing platform for authors',
+            image: '/images/bibekbook.jpg',
+            tag: 'Publishing',
+            url: '/projects/bibekbook',
+            linkText: 'Explore →',
+            type: 'product'
+        }, {
+            title: 'Gengram',
+            desc: 'Next‑gen social networking',
+            image: '/images/gengram.jpg',
+            tag: 'Social',
+            url: '/projects/gengram',
+            linkText: 'Explore →',
+            type: 'product'
+        }, {
+            title: 'Vivika AI',
+            desc: 'Advanced conversational AI',
+            image: '/images/vivika-ai.jpg',
+            tag: 'AI',
+            url: '/projects/vivika-ai',
+            linkText: 'Explore →',
+            type: 'product'
+        }, {
+            title: 'Krayvo',
+            desc: 'Smart e‑commerce platform',
+            image: '/images/krayvo.jpg',
+            tag: 'E-Commerce',
+            url: '/projects/krayvo',
+            linkText: 'Explore →',
+            type: 'product'
+        }];
+
+        // ===== BLOG DATA =====
+        const blogs = [{
+            title: 'How We Built Krayvo',
+            desc: 'Behind the scenes of our smart e‑commerce platform.',
+            image: '/images/krayvo.jpg',
+            tag: 'E-Commerce',
+            url: '/blog/post1',
+            linkText: 'Read More →'
+        }, {
+            title: 'The Journey of Chitt Vijay',
+            desc: 'Writing a book that changes lives.',
+            image: '/images/chitt-vijay.jpg',
+            tag: 'Books',
+            url: '/blog/chitt-vijay-journey',
+            linkText: 'Read More →'
+        }, {
+            title: 'SBI Mobile Number Change',
+            desc: 'Step‑by‑step guide from home.',
+            image: '/images/sbinumberchange.jpg',
+            tag: 'YouTube',
+            url: 'https://youtu.be/etlv68d8RyI',
+            linkText: 'Watch →'
+        }];
+
+        // ===== INIT CAROUSELS =====
+        document.addEventListener('DOMContentLoaded', function() {
+            // Products Carousel
+            new AutoCarousel('productsCarousel', 'productsTrack', products, 'productsIndicators', {
+                itemWidth: 200,
+                gap: 16,
+                speed: 1.2
+            });
+
+            // Blog Carousel
+            new AutoCarousel('blogCarousel', 'blogTrack', blogs, 'blogIndicators', {
+                itemWidth: 220,
+                gap: 16,
+                speed: 1.0
+            });
+
+            // ===== NEWSLETTER WITH SHEET.BEST + EMAILJS =====
+            const form = document.getElementById('newsletterForm');
+            const emailInput = document.getElementById('newsletterEmail');
+            const btn = document.getElementById('newsletterBtn');
+            const successEl = document.getElementById('newsletterSuccess');
+            const errorEl = document.getElementById('newsletterError');
+
+            // ✅ YOUR SHEET.BEST WEBHOOK URL
+            const SHEETBEST_URL = 'https://api.sheetbest.com/sheets/a10d4a2b-73b9-45fc-b600-4f3894627690';
+
+            // EmailJS config
+            const SERVICE_ID = 'service_qnrvpzg';
+            const TEMPLATE_ID = 'template_if8e1af';
+            const PUBLIC_KEY = 'My54mrabj2-NCpjcj';
+
+            emailjs.init(PUBLIC_KEY);
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const email = emailInput.value.trim();
+
+                if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    errorEl.textContent = '⚠️ Please enter a valid email address.';
+                    errorEl.classList.add('show');
+                    setTimeout(() => errorEl.classList.remove('show'), 4000);
+                    return;
+                }
+
+                btn.innerHTML = '⏳ Subscribing...';
+                btn.disabled = true;
+                successEl.classList.remove('show');
+                errorEl.classList.remove('show');
+
+                try {
+                    // 1️⃣ Send data to Google Sheets via Sheet.best
+                    const sheetResponse = await fetch(SHEETBEST_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            Email: email,
+                            Date: new Date().toISOString(),
+                            Source: 'Website',
+                            Status: 'Active'
+                        })
+                    });
+
+                    if (!sheetResponse.ok) {
+                        console.warn('Sheet.best error:', await sheetResponse.text());
+                    }
+
+                    // 2️⃣ Send email notification to you (via EmailJS)
+                    await emailjs.send(SERVICE_ID, TEMPLATE_ID, {
+                        name: 'Newsletter Subscriber',
+                        email: email,
+                        subject: 'Newsletter Signup',
+                        message: `New subscriber: ${email}`
+                    });
+
+                    // ✅ Success
+                    successEl.classList.add('show');
+                    form.reset();
+                    setTimeout(() => successEl.classList.remove('show'), 6000);
+
+                } catch (error) {
+                    console.error('Newsletter error:', error);
+                    errorEl.textContent = '❌ Failed to subscribe. Please try again later.';
+                    errorEl.classList.add('show');
+                    setTimeout(() => errorEl.classList.remove('show'), 5000);
+                } finally {
+                    btn.innerHTML = '📨 Subscribe';
+                    btn.disabled = false;
+                }
+            });
+        });
+
+        // ===== NAVBAR DARK MODE TOGGLE =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const darkToggle = document.getElementById('darkToggle');
+            if (darkToggle) {
+                darkToggle.addEventListener('click', function() {
+                    document.documentElement.classList.toggle('dark');
+                    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' :
+                        'light');
+                });
+                if (localStorage.getItem('theme') === 'dark') {
+                    document.documentElement.classList.add('dark');
+                }
+            }
+        });
     </script>
-    <script src="/js/script.js">
-    </script>
+    <script src="/js/script.js"></script>
 </body>
 </html>
