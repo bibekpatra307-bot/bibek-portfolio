@@ -4,33 +4,139 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FAQ - Bibek Patra</title>
-  <meta name="description" content="Frequently asked questions about Bibek Patra's services and products.">
+  <meta name="description" content="Frequently asked questions about Bibek Patra's services, products, and process. Get answers about web development, AI, publishing, and more.">
   <link rel="canonical" href="https://bibekpatra.site/faq">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = { darkMode:'class', theme: { extend: { colors: { primary:'#6C3BFF', secondary:'#111827', accent:'#F59E0B' } } } }</script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/global.css">
+  <style>
+    .faq-item {
+      transition: all 0.3s ease;
+    }
+    .faq-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(108, 59, 255, 0.08);
+    }
+  </style>
 </head>
 <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
   <div id="navbar-placeholder"></div>
-  <main class="pt-24 pb-20 max-w-3xl mx-auto px-4">
-    <h1 class="text-4xl font-bold mb-8">Frequently Asked Questions</h1>
-    <div class="space-y-6">
-      <div class="glass p-6 rounded-2xl">
-        <h3 class="text-xl font-semibold">What services do you offer?</h3>
-        <p class="mt-2">I offer web development, AI solutions, SEO, branding, digital marketing, and graphic design.</p>
+  
+  <main class="pt-28 pb-20 max-w-4xl mx-auto px-4">
+    <h1 class="text-4xl md:text-5xl font-bold text-center mb-4" data-aos="fade-up">Frequently Asked Questions</h1>
+    <p class="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+      Find answers to common questions about my services, process, and products. If you don't see your question here, feel free to <a href="/contact" class="text-primary hover:underline">contact me</a>.
+    </p>
+
+    <div class="space-y-6" data-aos="fade-up" data-aos-delay="200">
+      <!-- FAQ 1 -->
+      <div class="glass p-6 rounded-2xl faq-item">
+        <h3 class="text-xl font-semibold text-primary">What services do you offer?</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-400">I provide web development, AI/chatbot solutions, SEO, branding, digital marketing, graphic design, and 3D modeling. I specialize in building custom digital products for startups and businesses.</p>
       </div>
-      <div class="glass p-6 rounded-2xl">
-        <h3 class="text-xl font-semibold">How can I hire you?</h3>
-        <p class="mt-2">Simply <a href="/contact" class="text-primary">contact me</a> or book a free call via Calendly.</p>
+
+      <!-- FAQ 2 -->
+      <div class="glass p-6 rounded-2xl faq-item">
+        <h3 class="text-xl font-semibold text-primary">How can I hire you?</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-400">You can <a href="/contact" class="text-primary hover:underline">contact me</a> directly via the contact form or book a free consultation call using the Calendly link on the contact page. I typically respond within 24 hours.</p>
       </div>
-      <div class="glass p-6 rounded-2xl">
-        <h3 class="text-xl font-semibold">Do you work remotely?</h3>
-        <p class="mt-2">Yes, I work with clients worldwide remotely.</p>
+
+      <!-- FAQ 3 -->
+      <div class="glass p-6 rounded-2xl faq-item">
+        <h3 class="text-xl font-semibold text-primary">Do you work remotely?</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-400">Yes, I work with clients worldwide remotely. I use tools like Slack, Zoom, and Google Meet to collaborate effectively across time zones.</p>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="glass p-6 rounded-2xl faq-item">
+        <h3 class="text-xl font-semibold text-primary">What is BibekBook?</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-400">BibekBook is a publishing platform I founded that helps authors self-publish their books easily. It offers tools for writing, formatting, cover design, and distribution.</p>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="glass p-6 rounded-2xl faq-item">
+        <h3 class="text-xl font-semibold text-primary">What is Gengram?</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-400">Gengram is a next-generation social networking platform I built, focusing on privacy, real engagement, and community building. It's designed to be a healthier alternative to traditional social media.</p>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="glass p-6 rounded-2xl faq-item">
+        <h3 class="text-xl font-semibold text-primary">What is Vivika AI?</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-400">Vivika AI is an advanced conversational AI assistant that can be integrated into websites and apps to automate customer support, lead generation, and user engagement.</p>
+      </div>
+
+      <!-- FAQ 7 -->
+      <div class="glass p-6 rounded-2xl faq-item">
+        <h3 class="text-xl font-semibold text-primary">What is Krayvo?</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-400">Krayvo is a smart e-commerce platform I developed to help businesses set up online stores quickly with AI-powered recommendations, inventory management, and seamless checkout.</p>
+      </div>
+
+      <!-- FAQ 8 -->
+      <div class="glass p-6 rounded-2xl faq-item">
+        <h3 class="text-xl font-semibold text-primary">How much do your services cost?</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-400">Pricing depends on the project scope, complexity, and timeline. I offer competitive rates and flexible payment plans. Contact me for a custom quote.</p>
+      </div>
+
+      <!-- FAQ 9 -->
+      <div class="glass p-6 rounded-2xl faq-item">
+        <h3 class="text-xl font-semibold text-primary">How long does it take to build a website?</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-400">A simple website can take 1-2 weeks, while a complex web application may take 4-8 weeks. I always provide a clear timeline before starting any project.</p>
+      </div>
+
+      <!-- FAQ 10 -->
+      <div class="glass p-6 rounded-2xl faq-item">
+        <h3 class="text-xl font-semibold text-primary">Do you offer SEO services?</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-400">Yes, I offer comprehensive SEO services including keyword research, on-page optimization, technical SEO, content strategy, and backlink building to help your website rank higher on Google.</p>
+      </div>
+
+      <!-- FAQ 11 -->
+      <div class="glass p-6 rounded-2xl faq-item">
+        <h3 class="text-xl font-semibold text-primary">Can you redesign my existing website?</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-400">Absolutely. I can redesign your website with a modern look, improved user experience, and better performance. I also handle migration and SEO preservation.</p>
+      </div>
+
+      <!-- FAQ 12 -->
+      <div class="glass p-6 rounded-2xl faq-item">
+        <h3 class="text-xl font-semibold text-primary">What programming languages do you use?</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-400">I primarily use HTML, CSS, JavaScript (and frameworks like React, Vue), Python (for AI/backend), PHP, and SQL. I also work with 3D design tools like Blender.</p>
+      </div>
+
+      <!-- FAQ 13 -->
+      <div class="glass p-6 rounded-2xl faq-item">
+        <h3 class="text-xl font-semibold text-primary">Do you provide maintenance and support after project completion?</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-400">Yes, I offer ongoing maintenance, security updates, bug fixes, and performance monitoring as part of a support package. You can choose a monthly or yearly plan.</p>
+      </div>
+
+      <!-- FAQ 14 -->
+      <div class="glass p-6 rounded-2xl faq-item">
+        <h3 class="text-xl font-semibold text-primary">Can you help me with content creation?</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-400">Yes, I can assist with content creation including blog posts, product descriptions, social media content, and video scripts. I also have a network of professional writers and designers.</p>
+      </div>
+
+      <!-- FAQ 15 -->
+      <div class="glass p-6 rounded-2xl faq-item">
+        <h3 class="text-xl font-semibold text-primary">How do I get started with a project?</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-400">Simply <a href="/contact" class="text-primary hover:underline">contact me</a> with a brief description of your project. We'll schedule a free consultation call, discuss your requirements, and I'll provide a proposal and timeline.</p>
       </div>
     </div>
+
+    <!-- Call to Action -->
+    <div class="mt-16 text-center p-8 bg-primary/10 dark:bg-primary/5 rounded-3xl" data-aos="fade-up" data-aos-delay="300">
+      <h2 class="text-2xl font-bold mb-4">Still have questions?</h2>
+      <p class="text-gray-600 dark:text-gray-400 mb-6">I'm here to help. Reach out and I'll get back to you promptly.</p>
+      <a href="/contact" class="bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:bg-purple-700 transition inline-block">Contact Me</a>
+    </div>
   </main>
+
   <div id="footer-placeholder"></div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
   <script src="/js/script.js"></script>
 </body>
 </html>
