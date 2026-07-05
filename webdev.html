@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebDev - Bibek Patra</title>
+    <meta name="description" content="All websites and web applications built by Bibek Patra - portfolio, projects, and more." />
+    <link rel="canonical" href="https://bibekpatra.site/webdev" />
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6C3BFF',
+                        secondary: '#111827',
+                        accent: '#F59E0B',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/global.css" />
+
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dark .glass {
+            background: rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(108, 59, 255, 0.15);
+        }
+        .dark .project-card:hover {
+            box-shadow: 0 20px 40px rgba(108, 59, 255, 0.25);
+        }
+        .divider-gradient {
+            height: 3px;
+            width: 60px;
+            background: linear-gradient(90deg, #6C3BFF, #F59E0B);
+            border-radius: 4px;
+            margin: 0 auto;
+        }
+        .tech-tag {
+            display: inline-block;
+            padding: 2px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            background: rgba(108, 59, 255, 0.1);
+            color: #6C3BFF;
+            margin-right: 4px;
+        }
+        .dark .tech-tag {
+            background: rgba(108, 59, 255, 0.2);
+        }
+        .project-preview {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid rgba(108, 59, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors">
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="fixed top-0 left-0 w-full glass dark:bg-gray-900/70 shadow-sm z-40">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent whitespace-nowrap">Bibek Patra</a>
+            <div class="hidden md:flex items-center space-x-5">
+                <a href="/" class="font-medium hover:text-primary transition">Home</a>
+                <a href="/about" class="font-medium hover:text-primary transition">About</a>
+                <a href="/books" class="font-medium hover:text-primary transition">Books</a>
+                <a href="/webdev" class="font-medium text-primary">WebDev</a>
+                <a href="/content" class="font-medium hover:text-primary transition">Content</a>
+                <a href="/contact" class="font-medium bg-primary text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">Contact</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="document.documentElement.classList.toggle('dark')"
+                    class="p-2 rounded-full bg-white/90 dark:bg-gray-800/90 shadow-lg text-gray-700 dark:text-gray-200 hover:shadow-xl transition border border-gray-200/50 dark:border-gray-700/50">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                </button>
+                <button id="menu-btn" class="md:hidden text-2xl text-gray-700 dark:text-gray-200">☰</button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-t">
+            <a href="/" class="block px-4 py-3 border-b dark:border-gray-700">Home</a>
+            <a href="/about" class="block px-4 py-3 border-b dark:border-gray-700">About</a>
+            <a href="/books" class="block px-4 py-3 border-b dark:border-gray-700">Books</a>
+            <a href="/webdev" class="block px-4 py-3 border-b dark:border-gray-700 text-primary">WebDev</a>
+            <a href="/content" class="block px-4 py-3 border-b dark:border-gray-700">Content</a>
+            <a href="/contact" class="block px-4 py-3 border-b dark:border-gray-700">Contact</a>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="pt-28 pb-12 text-center bg-gradient-to-br from-primary/10 to-accent/10">
+        <div class="max-w-4xl mx-auto px-4" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Web Development</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 mt-3 max-w-2xl mx-auto">
+                Every website and web application I've built — from concept to deployment.
+            </p>
+            <div class="divider-gradient mx-auto mt-4"></div>
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS GRID ===== -->
+    <main class="py-12 pb-20 max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-8">
+
+            <!-- Project 1: Bibek Patra (Portfolio) -->
+            <div class="project-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700" data-aos="fade-up">
+                <img src="/images/hero-rectangle.jpg" alt="Bibek Patra Portfolio" class="project-preview" />
+                <h3 class="text-2xl font-bold mt-4">Bibek Patra Portfolio</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">My personal portfolio website showcasing my work, books, and services. Built with HTML, Tailwind CSS, and JavaScript.</p>
+                <div class="flex flex-wrap gap-1 mt-3">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">Tailwind CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <div class="flex gap-3 mt-4">
+                    <a href="https://bibekpatra.site" target="_blank" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition">Visit Site</a>
+                    <a href="https://github.com/bibekpatra307-bot/bibek-portfolio" target="_blank" class="border border-gray-300 dark:border-gray-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition">View Code</a>
+                </div>
+            </div>
+
+            <!-- Project 2: BibekBook -->
+            <div class="project-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="50">
+                <img src="/images/bibekbook.jpg" alt="BibekBook" class="project-preview" />
+                <h3 class="text-2xl font-bold mt-4">BibekBook</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">A publishing platform for authors to publish and manage books digitally. Features include book listing, author profiles, and more.</p>
+                <div class="flex flex-wrap gap-1 mt-3">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <div class="flex gap-3 mt-4">
+                    <a href="https://bibekbook.store" target="_blank" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition">Visit Site</a>
+                    <a href="https://github.com/bibekpatra307-bot/BibekBook" target="_blank" class="border border-gray-300 dark:border-gray-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition">View Code</a>
+                </div>
+            </div>
+
+            <!-- Project 3: Gengram -->
+            <div class="project-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="100">
+                <img src="/images/gengram.jpg" alt="Gengram" class="project-preview" />
+                <h3 class="text-2xl font-bold mt-4">Gengram</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">A next-generation social networking platform focused on privacy, real engagement, and community building.</p>
+                <div class="flex flex-wrap gap-1 mt-3">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <div class="flex gap-3 mt-4">
+                    <a href="https://gengram.online" target="_blank" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition">Visit Site</a>
+                    <a href="https://github.com/bibekpatra307-bot/Gengram" target="_blank" class="border border-gray-300 dark:border-gray-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition">View Code</a>
+                </div>
+            </div>
+
+            <!-- Project 4: Vivika AI -->
+            <div class="project-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="150">
+                <img src="/images/vivika-ai.jpg" alt="Vivika AI" class="project-preview" />
+                <h3 class="text-2xl font-bold mt-4">Vivika AI</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">An advanced conversational AI assistant designed for natural, human-like interactions. Built with cutting-edge AI technologies.</p>
+                <div class="flex flex-wrap gap-1 mt-3">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">AI/ML</span>
+                </div>
+                <div class="flex gap-3 mt-4">
+                    <a href="https://bibekpatra307-bot.github.io/Vivika/" target="_blank" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition">Visit Site</a>
+                    <a href="https://github.com/bibekpatra307-bot/Vivika" target="_blank" class="border border-gray-300 dark:border-gray-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition">View Code</a>
+                </div>
+            </div>
+
+            <!-- Project 5: Krayvo -->
+            <div class="project-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="200">
+                <img src="/images/krayvo.jpg" alt="Krayvo" class="project-preview" />
+                <h3 class="text-2xl font-bold mt-4">Krayvo</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">A smart e-commerce platform connecting multiple marketplaces seamlessly. Features include product management, orders, and analytics.</p>
+                <div class="flex flex-wrap gap-1 mt-3">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <div class="flex gap-3 mt-4">
+                    <a href="https://bibekpatra307-bot.github.io/Krayvo/" target="_blank" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition">Visit Site</a>
+                    <a href="https://github.com/bibekpatra307-bot/Krayvo" target="_blank" class="border border-gray-300 dark:border-gray-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition">View Code</a>
+                </div>
+            </div>
+
+            <!-- Project 6: Chitt Vijay (Book Landing) -->
+            <div class="project-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="250">
+                <img src="/images/chitt-vijay.jpg" alt="Chitt Vijay Landing" class="project-preview" />
+                <h3 class="text-2xl font-bold mt-4">Chitt Vijay Book Landing</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">A dedicated landing page for the book "Chitt Vijay" — with author info, book description, and purchase links.</p>
+                <div class="flex flex-wrap gap-1 mt-3">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">Tailwind CSS</span>
+                </div>
+                <div class="flex gap-3 mt-4">
+                    <a href="https://bibekpatra.site/books/chitt-vijay" target="_blank" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition">Visit Site</a>
+                    <a href="https://github.com/bibekpatra307-bot/bibek-portfolio/tree/main/books" target="_blank" class="border border-gray-300 dark:border-gray-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition">View Code</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-16 text-center p-8 bg-primary/10 dark:bg-primary/5 rounded-3xl" data-aos="fade-up">
+            <h3 class="text-2xl font-bold mb-3">Want a website like these?</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">I build custom websites and web applications for clients worldwide.</p>
+            <a href="/contact" class="bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-purple-700 transition inline-block">
+                <i class="fas fa-paper-plane mr-2"></i> Let's Build Something
+            </a>
+        </div>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-gray-100 dark:bg-gray-900 py-8">
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-6 text-center md:text-left">
+            <div>
+                <h4 class="font-bold text-lg mb-2">Bibek Patra</h4>
+                <p class="text-sm">Founder · Author · Developer</p>
+                <div class="flex justify-center md:justify-start gap-4 mt-3">
+                    <a href="https://www.instagram.com/itsbibekpatra" target="_blank"><i class="fab fa-instagram text-xl hover:text-primary transition"></i></a>
+                    <a href="https://youtube.com/@gtbcreates" target="_blank"><i class="fab fa-youtube text-xl hover:text-primary transition"></i></a>
+                    <a href="https://www.linkedin.com/in/bibek-patra-932213293" target="_blank"><i class="fab fa-linkedin text-xl hover:text-primary transition"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-2">Quick Links</h4>
+                <ul class="space-y-1 text-sm">
+                    <li><a href="/" class="hover:text-primary transition">Home</a></li>
+                    <li><a href="/about" class="hover:text-primary transition">About</a></li>
+                    <li><a href="/books" class="hover:text-primary transition">Books</a></li>
+                    <li><a href="/webdev" class="hover:text-primary transition">WebDev</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-2">Connect</h4>
+                <ul class="space-y-1 text-sm">
+                    <li><a href="https://wa.me/918280482686" target="_blank" class="hover:text-primary transition">WhatsApp</a></li>
+                    <li><a href="https://www.instagram.com/itsbibekpatra" target="_blank" class="hover:text-primary transition">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/in/bibek-patra-932213293" target="_blank" class="hover:text-primary transition">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-2">Legal</h4>
+                <ul class="space-y-1 text-sm">
+                    <li><a href="/privacy" class="hover:text-primary transition">Privacy Policy</a></li>
+                    <li><a href="/terms" class="hover:text-primary transition">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center text-sm mt-8 border-t dark:border-gray-700 pt-4">
+            © 2026 Bibek Patra. All Rights Reserved.
+        </div>
+    </footer>
+
+    <a href="https://wa.me/918280482686" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
