@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content - Bibek Patra</title>
+    <meta name="description" content="All content by Bibek Patra - YouTube videos, blog posts, articles, and more." />
+    <link rel="canonical" href="https://bibekpatra.site/content" />
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6C3BFF',
+                        secondary: '#111827',
+                        accent: '#F59E0B',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/global.css" />
+
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dark .glass {
+            background: rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .content-card {
+            transition: all 0.3s ease;
+        }
+        .content-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(108, 59, 255, 0.15);
+        }
+        .dark .content-card:hover {
+            box-shadow: 0 20px 40px rgba(108, 59, 255, 0.25);
+        }
+        .divider-gradient {
+            height: 3px;
+            width: 60px;
+            background: linear-gradient(90deg, #6C3BFF, #F59E0B);
+            border-radius: 4px;
+            margin: 0 auto;
+        }
+        .type-tag {
+            display: inline-block;
+            padding: 2px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+        .type-tag.video {
+            background: #FF0000;
+            color: white;
+        }
+        .type-tag.blog {
+            background: #6C3BFF;
+            color: white;
+        }
+        .type-tag.article {
+            background: #059669;
+            color: white;
+        }
+        .content-thumb {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors">
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="fixed top-0 left-0 w-full glass dark:bg-gray-900/70 shadow-sm z-40">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent whitespace-nowrap">Bibek Patra</a>
+            <div class="hidden md:flex items-center space-x-5">
+                <a href="/" class="font-medium hover:text-primary transition">Home</a>
+                <a href="/about" class="font-medium hover:text-primary transition">About</a>
+                <a href="/books" class="font-medium hover:text-primary transition">Books</a>
+                <a href="/webdev" class="font-medium hover:text-primary transition">WebDev</a>
+                <a href="/content" class="font-medium text-primary">Content</a>
+                <a href="/contact" class="font-medium bg-primary text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">Contact</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="document.documentElement.classList.toggle('dark')"
+                    class="p-2 rounded-full bg-white/90 dark:bg-gray-800/90 shadow-lg text-gray-700 dark:text-gray-200 hover:shadow-xl transition border border-gray-200/50 dark:border-gray-700/50">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                </button>
+                <button id="menu-btn" class="md:hidden text-2xl text-gray-700 dark:text-gray-200">☰</button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-t">
+            <a href="/" class="block px-4 py-3 border-b dark:border-gray-700">Home</a>
+            <a href="/about" class="block px-4 py-3 border-b dark:border-gray-700">About</a>
+            <a href="/books" class="block px-4 py-3 border-b dark:border-gray-700">Books</a>
+            <a href="/webdev" class="block px-4 py-3 border-b dark:border-gray-700">WebDev</a>
+            <a href="/content" class="block px-4 py-3 border-b dark:border-gray-700 text-primary">Content</a>
+            <a href="/contact" class="block px-4 py-3 border-b dark:border-gray-700">Contact</a>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="pt-28 pb-12 text-center bg-gradient-to-br from-primary/10 to-accent/10">
+        <div class="max-w-4xl mx-auto px-4" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">My Content</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 mt-3 max-w-2xl mx-auto">
+                Videos, blog posts, articles, and resources created by me to educate and inspire.
+            </p>
+            <div class="divider-gradient mx-auto mt-4"></div>
+        </div>
+    </section>
+
+    <!-- ===== CONTENT GRID ===== -->
+    <main class="py-12 pb-20 max-w-7xl mx-auto px-4">
+
+        <div class="grid md:grid-cols-2 gap-8">
+
+            <!-- Content 1: SBI Mobile Number Change (YouTube) -->
+            <div class="content-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700" data-aos="fade-up">
+                <img src="/images/sbinumberchange.jpg" alt="SBI Mobile Number Change" class="content-thumb" />
+                <div class="flex items-center gap-2 mt-4">
+                    <span class="type-tag video">YouTube</span>
+                    <span class="text-xs text-gray-500 dark:text-gray-400">2.5K views</span>
+                </div>
+                <h3 class="text-xl font-bold mt-2">SBI Mobile Number Change</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Step-by-step guide to change your mobile number in SBI banking from home.</p>
+                <a href="https://youtu.be/etlv68d8RyI" target="_blank" class="inline-block mt-4 text-primary font-medium hover:underline">
+                    Watch Video →
+                </a>
+            </div>
+
+            <!-- Content 2: How We Built Krayvo (Blog) -->
+            <div class="content-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="50">
+                <img src="/images/krayvo.jpg" alt="How We Built Krayvo" class="content-thumb" />
+                <div class="flex items-center gap-2 mt-4">
+                    <span class="type-tag blog">Blog</span>
+                    <span class="text-xs text-gray-500 dark:text-gray-400">5 min read</span>
+                </div>
+                <h3 class="text-xl font-bold mt-2">How We Built Krayvo</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Behind the scenes of building Krayvo — a smart e-commerce platform from scratch.</p>
+                <a href="/blog/post1" class="inline-block mt-4 text-primary font-medium hover:underline">
+                    Read More →
+                </a>
+            </div>
+
+            <!-- Content 3: Chitt Vijay Journey (Blog) -->
+            <div class="content-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="100">
+                <img src="/images/chitt-vijay.jpg" alt="Chitt Vijay Journey" class="content-thumb" />
+                <div class="flex items-center gap-2 mt-4">
+                    <span class="type-tag blog">Blog</span>
+                    <span class="text-xs text-gray-500 dark:text-gray-400">7 min read</span>
+                </div>
+                <h3 class="text-xl font-bold mt-2">The Journey of Chitt Vijay</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Writing a book that changes lives — the story behind "Chitt Vijay" and its impact.</p>
+                <a href="/blog/chitt-vijay-journey" class="inline-block mt-4 text-primary font-medium hover:underline">
+                    Read More →
+                </a>
+            </div>
+
+            <!-- Content 4: Upcoming Content -->
+            <div class="content-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700 flex items-center justify-center min-h-[280px]" data-aos="fade-up" data-aos-delay="150">
+                <div class="text-center">
+                    <div class="text-5xl text-gray-300 dark:text-gray-600 mb-4">🎬</div>
+                    <h3 class="text-xl font-bold text-gray-400 dark:text-gray-500">More Content Coming Soon</h3>
+                    <p class="text-sm text-gray-400 dark:text-gray-500 mt-2">Subscribe to stay updated!</p>
+                    <a href="https://youtube.com/@gtbcreates" target="_blank" class="inline-block mt-4 bg-red-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-red-700 transition">
+                        <i class="fab fa-youtube mr-2"></i> Subscribe
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- YouTube Channel CTA -->
+        <div class="mt-16 text-center p-8 bg-gradient-to-r from-red-500/10 to-primary/10 dark:from-red-500/5 dark:to-primary/5 rounded-3xl border border-red-500/20" data-aos="fade-up">
+            <h3 class="text-2xl font-bold mb-3">📺 YouTube Channel</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">Watch my videos on technology, book reviews, and creative content.</p>
+            <a href="https://youtube.com/@gtbcreates" target="_blank" class="bg-red-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-red-700 transition inline-block">
+                <i class="fab fa-youtube mr-2"></i> Visit My Channel
+            </a>
+        </div>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-gray-100 dark:bg-gray-900 py-8">
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-6 text-center md:text-left">
+            <div>
+                <h4 class="font-bold text-lg mb-2">Bibek Patra</h4>
+                <p class="text-sm">Founder · Author · Developer · Creator</p>
+                <div class="flex justify-center md:justify-start gap-4 mt-3">
+                    <a href="https://www.instagram.com/itsbibekpatra" target="_blank"><i class="fab fa-instagram text-xl hover:text-primary transition"></i></a>
+                    <a href="https://youtube.com/@gtbcreates" target="_blank"><i class="fab fa-youtube text-xl hover:text-primary transition"></i></a>
+                    <a href="https://www.linkedin.com/in/bibek-patra-932213293" target="_blank"><i class="fab fa-linkedin text-xl hover:text-primary transition"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-2">Quick Links</h4>
+                <ul class="space-y-1 text-sm">
+                    <li><a href="/" class="hover:text-primary transition">Home</a></li>
+                    <li><a href="/about" class="hover:text-primary transition">About</a></li>
+                    <li><a href="/books" class="hover:text-primary transition">Books</a></li>
+                    <li><a href="/webdev" class="hover:text-primary transition">WebDev</a></li>
+                    <li><a href="/content" class="hover:text-primary transition">Content</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-2">Connect</h4>
+                <ul class="space-y-1 text-sm">
+                    <li><a href="https://wa.me/918280482686" target="_blank" class="hover:text-primary transition">WhatsApp</a></li>
+                    <li><a href="https://www.instagram.com/itsbibekpatra" target="_blank" class="hover:text-primary transition">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/in/bibek-patra-932213293" target="_blank" class="hover:text-primary transition">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-2">Legal</h4>
+                <ul class="space-y-1 text-sm">
+                    <li><a href="/privacy" class="hover:text-primary transition">Privacy Policy</a></li>
+                    <li><a href="/terms" class="hover:text-primary transition">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center text-sm mt-8 border-t dark:border-gray-700 pt-4">
+            © 2026 Bibek Patra. All Rights Reserved.
+        </div>
+    </footer>
+
+    <a href="https://wa.me/918280482686" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
