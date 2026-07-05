@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Books - Bibek Patra</title>
-    <meta name="description" content="Explore all books by Bibek Patra - fiction, non-fiction, poetry, and more." />
-    <link rel="canonical" href="https://bibekpatra.site/books" />
+    <meta name="description" content="Explore the collection of books written by Bibek Patra — stories of self-discovery, action, and inspiration." />
+    <link rel="canonical" href="https://bibekpatra.site/about-book" />
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -50,45 +50,13 @@
             align-items: center;
             justify-content: center;
             font-size: 30px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             z-index: 1000;
             animation: bounce 2s infinite;
         }
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
-        }
-        .book-card {
-            transition: all 0.3s ease;
-        }
-        .book-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(108, 59, 255, 0.15);
-        }
-        .dark .book-card:hover {
-            box-shadow: 0 20px 40px rgba(108, 59, 255, 0.25);
-        }
-        .book-cover {
-            width: 100%;
-            aspect-ratio: 3/4;
-            object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-        .price-tag {
-            display: inline-block;
-            background: #6C3BFF;
-            color: white;
-            padding: 2px 14px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-        .price-tag .original {
-            text-decoration: line-through;
-            opacity: 0.6;
-            font-weight: 400;
-            margin-right: 6px;
         }
         .divider-gradient {
             height: 3px;
@@ -97,30 +65,322 @@
             border-radius: 4px;
             margin: 0 auto;
         }
-        .category-filter {
-            display: inline-block;
-            padding: 6px 18px;
+
+        /* Book Card - Professional, Clean, No Price */
+        .book-card {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             border-radius: 20px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            position: relative;
+        }
+        .dark .book-card {
+            background: rgba(30, 30, 50, 0.6);
+            border-color: rgba(255, 255, 255, 0.06);
+        }
+        .book-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 24px 60px rgba(108, 59, 255, 0.15);
+        }
+        .dark .book-card:hover {
+            box-shadow: 0 24px 60px rgba(108, 59, 255, 0.25);
+        }
+        .book-card .cover-wrap {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            background: linear-gradient(145deg, #f0f0f5, #e8e8ef);
+        }
+        .dark .book-card .cover-wrap {
+            background: linear-gradient(145deg, #1a1a2e, #2a2a3e);
+        }
+        .book-card .cover-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .book-card:hover .cover-wrap img {
+            transform: scale(1.04);
+        }
+        .book-card .cover-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+        .book-card:hover .cover-overlay {
+            opacity: 1;
+        }
+        .book-card .cover-overlay span {
+            color: white;
             font-size: 13px;
             font-weight: 500;
+            letter-spacing: 0.5px;
+            background: rgba(108, 59, 255, 0.85);
+            padding: 6px 18px;
+            border-radius: 30px;
+            backdrop-filter: blur(4px);
+        }
+        .book-card .book-info {
+            padding: 18px 20px 22px;
+        }
+        .book-card .book-info h3 {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            line-height: 1.3;
+        }
+        .book-card .book-info .author {
+            font-size: 13px;
+            color: #6C3BFF;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+        .book-card .book-info .desc {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+            margin-top: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            opacity: 0.85;
+        }
+        .dark .book-card .book-info .desc {
+            color: #b0b0c0;
+        }
+        .book-card .book-info .read-more {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #6C3BFF;
+            transition: all 0.3s ease;
+        }
+        .book-card .book-info .read-more i {
+            transition: transform 0.3s ease;
+        }
+        .book-card:hover .book-info .read-more i {
+            transform: translateX(4px);
+        }
+
+        /* Book Detail Modal / Page Overlay */
+        .book-detail-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+        .book-detail-overlay.active {
+            display: flex;
+        }
+        .book-detail-overlay .detail-card {
+            max-width: 820px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 28px;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+            padding: 40px 44px;
+            position: relative;
+            animation: slideUp 0.35s ease;
+        }
+        .dark .book-detail-overlay .detail-card {
+            background: rgba(25, 25, 45, 0.95);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(30px) scale(0.96); opacity: 0; }
+            to { transform: translateY(0) scale(1); opacity: 1; }
+        }
+        .detail-card .close-btn {
+            position: sticky;
+            top: 0;
+            float: right;
+            background: rgba(0,0,0,0.06);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 18px;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+        .dark .detail-card .close-btn {
+            background: rgba(255,255,255,0.06);
+            color: #ccc;
+        }
+        .detail-card .close-btn:hover {
+            background: #6C3BFF;
+            color: white;
+            transform: rotate(90deg);
+        }
+        .detail-card .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 32px;
+            margin-top: 8px;
+        }
+        .detail-card .detail-cover {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+            aspect-ratio: 3/4;
+            background: #f0f0f5;
+        }
+        .dark .detail-card .detail-cover {
+            background: #1a1a2e;
+        }
+        .detail-card .detail-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .detail-card .detail-content h2 {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            margin-top: 0;
+        }
+        .detail-card .detail-content .meta {
+            font-size: 14px;
+            color: #6C3BFF;
+            font-weight: 500;
+            margin-top: 4px;
+        }
+        .detail-card .detail-content .full-desc {
+            font-size: 15.5px;
+            line-height: 1.8;
+            color: #444;
+            margin-top: 16px;
+        }
+        .dark .detail-card .detail-content .full-desc {
+            color: #c0c0d0;
+        }
+        .detail-card .detail-content .full-desc p {
+            margin-bottom: 12px;
+        }
+        .detail-card .detail-content .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .detail-card .detail-content .tags span {
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            background: rgba(108, 59, 255, 0.1);
+            color: #6C3BFF;
+        }
+        .dark .detail-card .detail-content .tags span {
+            background: rgba(108, 59, 255, 0.2);
+        }
+        .detail-card .detail-content .action-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 28px;
+            background: #6C3BFF;
+            color: white;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .detail-card .detail-content .action-link:hover {
+            background: #5530cc;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(108, 59, 255, 0.3);
+        }
+
+        @media (max-width: 700px) {
+            .detail-card .detail-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .detail-card .detail-cover {
+                max-width: 260px;
+                margin: 0 auto;
+            }
+            .detail-card {
+                padding: 24px 20px;
+            }
+            .book-detail-overlay .detail-card {
+                max-height: 95vh;
+                padding: 24px 18px;
+            }
+            .detail-card .detail-content h2 {
+                font-size: 22px;
+            }
+        }
+
+        /* Category filter chips */
+        .chip {
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 500;
             background: rgba(108, 59, 255, 0.08);
             color: #6C3BFF;
-            border: 1px solid rgba(108, 59, 255, 0.15);
+            border: 1px solid rgba(108, 59, 255, 0.12);
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
-        .category-filter:hover, .category-filter.active {
+        .chip:hover, .chip.active {
+            background: #6C3BFF;
+            color: white;
+            border-color: #6C3BFF;
+        }
+        .dark .chip {
+            background: rgba(108, 59, 255, 0.15);
+            color: #9a7bff;
+            border-color: rgba(108, 59, 255, 0.2);
+        }
+        .dark .chip:hover, .dark .chip.active {
             background: #6C3BFF;
             color: white;
         }
-        .dark .category-filter {
-            background: rgba(108, 59, 255, 0.2);
-            border-color: rgba(108, 59, 255, 0.25);
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
-        .dark .category-filter:hover, .dark .category-filter.active {
-            background: #6C3BFF;
-            color: white;
+        @media (min-width: 768px) {
+            .nav-controls { gap: 16px; }
         }
+        #mobile-menu {
+            transition: all 0.25s ease;
+        }
+        #mobile-menu.hidden { display: none; }
+        #mobile-menu:not(.hidden) { display: block; }
     </style>
 </head>
 
@@ -133,12 +393,13 @@
             <div class="hidden md:flex items-center space-x-5">
                 <a href="/" class="font-medium hover:text-primary transition">Home</a>
                 <a href="/about" class="font-medium hover:text-primary transition">About</a>
-                <a href="/books" class="font-medium text-primary">Books</a>
+                <a href="/about-book" class="font-medium text-primary">Books</a>
                 <a href="/webdev" class="font-medium hover:text-primary transition">WebDev</a>
                 <a href="/content" class="font-medium hover:text-primary transition">Content</a>
+                <a href="/work-experience" class="font-medium hover:text-primary transition">Experience</a>
                 <a href="/contact" class="font-medium bg-primary text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">Contact</a>
             </div>
-            <div class="flex items-center gap-4">
+            <div class="nav-controls">
                 <button onclick="document.documentElement.classList.toggle('dark')"
                     class="p-2 rounded-full bg-white/90 dark:bg-gray-800/90 shadow-lg text-gray-700 dark:text-gray-200 hover:shadow-xl transition border border-gray-200/50 dark:border-gray-700/50">
                     <i class="fas fa-moon dark:hidden"></i>
@@ -150,9 +411,10 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-t">
             <a href="/" class="block px-4 py-3 border-b dark:border-gray-700">Home</a>
             <a href="/about" class="block px-4 py-3 border-b dark:border-gray-700">About</a>
-            <a href="/books" class="block px-4 py-3 border-b dark:border-gray-700 text-primary">Books</a>
+            <a href="/about-book" class="block px-4 py-3 border-b dark:border-gray-700 text-primary">Books</a>
             <a href="/webdev" class="block px-4 py-3 border-b dark:border-gray-700">WebDev</a>
             <a href="/content" class="block px-4 py-3 border-b dark:border-gray-700">Content</a>
+            <a href="/work-experience" class="block px-4 py-3 border-b dark:border-gray-700">Experience</a>
             <a href="/contact" class="block px-4 py-3 border-b dark:border-gray-700">Contact</a>
         </div>
     </nav>
@@ -162,125 +424,134 @@
         <div class="max-w-4xl mx-auto px-4" data-aos="fade-up">
             <h1 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">My Books</h1>
             <p class="text-lg text-gray-600 dark:text-gray-400 mt-3 max-w-2xl mx-auto">
-                Explore my published works — each book is a journey of ideas, emotions, and insights.
+                Each book is a journey — of thought, emotion, and discovery. Explore my published works.
             </p>
             <div class="divider-gradient mx-auto mt-4"></div>
         </div>
     </section>
 
     <!-- ===== BOOKS GRID ===== -->
-    <main class="py-12 pb-20 max-w-7xl mx-auto px-4">
+    <main class="py-10 pb-20 max-w-6xl mx-auto px-4">
 
-        <!-- Categories -->
-        <div class="flex flex-wrap justify-center gap-3 mb-10" data-aos="fade-up">
-            <span class="category-filter active">All</span>
-            <span class="category-filter">Spiritual</span>
-            <span class="category-filter">Fiction</span>
-            <span class="category-filter">Non-Fiction</span>
-            <span class="category-filter">Poetry</span>
-            <span class="category-filter">Science</span>
-            <span class="category-filter">Business</span>
+        <!-- Category Filters -->
+        <div class="flex flex-wrap justify-center gap-2 mb-10" data-aos="fade-up">
+            <span class="chip active" data-filter="all">All</span>
+            <span class="chip" data-filter="spiritual">Spiritual</span>
+            <span class="chip" data-filter="nonfiction">Non-Fiction</span>
+            <span class="chip" data-filter="poetry">Poetry</span>
+            <span class="chip" data-filter="science">Science</span>
+            <span class="chip" data-filter="fiction">Fiction</span>
         </div>
 
         <!-- Books Grid -->
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="booksGrid">
 
             <!-- Book 1: Chitt Vijay -->
-            <div class="book-card bg-white dark:bg-gray-800 rounded-2xl p-5 shadow-lg border border-gray-100 dark:border-gray-700" data-aos="fade-up">
-                <img src="/images/chitt-vijay.jpg" alt="Chitt Vijay" class="book-cover" />
-                <h3 class="text-xl font-bold mt-4">Chitt Vijay</h3>
-                <p class="text-sm text-primary font-medium">by Bibek Patra</p>
-                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 line-clamp-3">A journey of self-discovery and inner victory. This book explores the path to mastering your mind and achieving true success.</p>
-                <div class="flex items-center justify-between mt-4">
-                    <div>
-                        <span class="price-tag"><span class="original">₹499</span> ₹50</span>
-                    </div>
-                    <a href="#" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition">Buy</a>
+            <div class="book-card" data-category="spiritual" data-aos="fade-up" onclick="openDetail('chitt-vijay')">
+                <div class="cover-wrap">
+                    <img src="/images/chitt-vijay.jpg" alt="Chitt Vijay" loading="lazy" />
+                    <div class="cover-overlay"><span>View Details</span></div>
+                </div>
+                <div class="book-info">
+                    <h3>Chitt Vijay</h3>
+                    <p class="author">by Bibek Patra</p>
+                    <p class="desc">A journey of self-discovery and inner victory. This book explores the path to mastering your mind and achieving true success from within.</p>
+                    <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
                 </div>
             </div>
 
             <!-- Book 2: Newton's 3rd Law -->
-            <div class="book-card bg-white dark:bg-gray-800 rounded-2xl p-5 shadow-lg border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="50">
-                <img src="/images/newton-3rd-law.jpg" alt="Newton's 3rd Law" class="book-cover" />
-                <h3 class="text-xl font-bold mt-4">Newton's 3rd Law</h3>
-                <p class="text-sm text-primary font-medium">by Bibek Patra</p>
-                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 line-clamp-3">Applying the principles of action and reaction to real life — a practical guide to understanding cause and effect in everyday situations.</p>
-                <div class="flex items-center justify-between mt-4">
-                    <div>
-                        <span class="price-tag"><span class="original">₹499</span> ₹200</span>
-                    </div>
-                    <a href="#" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition">Buy</a>
+            <div class="book-card" data-category="science" data-aos="fade-up" data-aos-delay="50" onclick="openDetail('newton-3rd-law')">
+                <div class="cover-wrap">
+                    <img src="/images/newton-3rd-law.jpg" alt="Newton's 3rd Law" loading="lazy" />
+                    <div class="cover-overlay"><span>View Details</span></div>
+                </div>
+                <div class="book-info">
+                    <h3>Newton's 3rd Law</h3>
+                    <p class="author">by Bibek Patra</p>
+                    <p class="desc">Applying the principles of action and reaction to real life — a practical guide to understanding cause and effect in everyday situations.</p>
+                    <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
                 </div>
             </div>
 
             <!-- Book 3: Newton's 3rd Law (English) -->
-            <div class="book-card bg-white dark:bg-gray-800 rounded-2xl p-5 shadow-lg border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="100">
-                <img src="/images/newton-3rd-law-english.jpg" alt="Newton's 3rd Law English" class="book-cover" />
-                <h3 class="text-xl font-bold mt-4">Newton's 3rd Law (English)</h3>
-                <p class="text-sm text-primary font-medium">by Bibek Patra</p>
-                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 line-clamp-3">The English edition of Newton's 3rd Law — a global perspective on the universal principles of action and reaction.</p>
-                <div class="flex items-center justify-between mt-4">
-                    <div>
-                        <span class="price-tag"><span class="original">₹499</span> ₹175</span>
-                    </div>
-                    <a href="#" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition">Buy</a>
+            <div class="book-card" data-category="science" data-aos="fade-up" data-aos-delay="100" onclick="openDetail('newton-3rd-law-english')">
+                <div class="cover-wrap">
+                    <img src="/images/newton-3rd-law-english.jpg" alt="Newton's 3rd Law English" loading="lazy" />
+                    <div class="cover-overlay"><span>View Details</span></div>
+                </div>
+                <div class="book-info">
+                    <h3>Newton's 3rd Law (English)</h3>
+                    <p class="author">by Bibek Patra</p>
+                    <p class="desc">The English edition — a global perspective on the universal principles of action and reaction, making science accessible to all.</p>
+                    <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
                 </div>
             </div>
 
             <!-- Book 4: Observe -->
-            <div class="book-card bg-white dark:bg-gray-800 rounded-2xl p-5 shadow-lg border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="150">
-                <img src="/images/observe.jpg" alt="Observe" class="book-cover" />
-                <h3 class="text-xl font-bold mt-4">Observe</h3>
-                <p class="text-sm text-primary font-medium">by Bibek Patra</p>
-                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 line-clamp-3">The art of observation — learning to see beyond the surface and understand the deeper patterns of life.</p>
-                <div class="flex items-center justify-between mt-4">
-                    <div>
-                        <span class="price-tag"><span class="original">₹499</span> ₹100</span>
-                    </div>
-                    <a href="#" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition">Buy</a>
+            <div class="book-card" data-category="nonfiction" data-aos="fade-up" data-aos-delay="150" onclick="openDetail('observe')">
+                <div class="cover-wrap">
+                    <img src="/images/observe.jpg" alt="Observe" loading="lazy" />
+                    <div class="cover-overlay"><span>View Details</span></div>
+                </div>
+                <div class="book-info">
+                    <h3>Observe</h3>
+                    <p class="author">by Bibek Patra</p>
+                    <p class="desc">The art of observation — learning to see beyond the surface and understand the deeper patterns of life, relationships, and the world around you.</p>
+                    <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
                 </div>
             </div>
 
             <!-- Book 5: Take an Action -->
-            <div class="book-card bg-white dark:bg-gray-800 rounded-2xl p-5 shadow-lg border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="200">
-                <img src="/images/take-an-action.jpg" alt="Take an Action" class="book-cover" />
-                <h3 class="text-xl font-bold mt-4">Take an Action</h3>
-                <p class="text-sm text-primary font-medium">by Bibek Patra</p>
-                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 line-clamp-3">A powerful guide to overcoming hesitation and taking decisive action toward your goals and dreams.</p>
-                <div class="flex items-center justify-between mt-4">
-                    <div>
-                        <span class="price-tag"><span class="original">₹499</span> ₹150</span>
-                    </div>
-                    <a href="#" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition">Buy</a>
+            <div class="book-card" data-category="nonfiction" data-aos="fade-up" data-aos-delay="200" onclick="openDetail('take-an-action')">
+                <div class="cover-wrap">
+                    <img src="/images/take-an-action.jpg" alt="Take an Action" loading="lazy" />
+                    <div class="cover-overlay"><span>View Details</span></div>
+                </div>
+                <div class="book-info">
+                    <h3>Take an Action</h3>
+                    <p class="author">by Bibek Patra</p>
+                    <p class="desc">A powerful guide to overcoming hesitation and taking decisive action toward your goals and dreams, with practical strategies for lasting change.</p>
+                    <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
                 </div>
             </div>
 
             <!-- Book 6: Akele Nahi Ho -->
-            <div class="book-card bg-white dark:bg-gray-800 rounded-2xl p-5 shadow-lg border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="250">
-                <img src="/images/akele-nahi-ho.jpg" alt="Akele Nahi Ho" class="book-cover" />
-                <h3 class="text-xl font-bold mt-4">Akele Nahi Ho</h3>
-                <p class="text-sm text-primary font-medium">by Bibek Patra</p>
-                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 line-clamp-3">A heartfelt reminder that you are never alone — a book about connection, support, and the strength of community.</p>
-                <div class="flex items-center justify-between mt-4">
-                    <div>
-                        <span class="price-tag"><span class="original">₹499</span> ₹175</span>
-                    </div>
-                    <a href="#" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition">Buy</a>
+            <div class="book-card" data-category="poetry" data-aos="fade-up" data-aos-delay="250" onclick="openDetail('akele-nahi-ho')">
+                <div class="cover-wrap">
+                    <img src="/images/akele-nahi-ho.jpg" alt="Akele Nahi Ho" loading="lazy" />
+                    <div class="cover-overlay"><span>View Details</span></div>
+                </div>
+                <div class="book-info">
+                    <h3>Akele Nahi Ho</h3>
+                    <p class="author">by Bibek Patra</p>
+                    <p class="desc">A heartfelt reminder that you are never alone — a book about connection, support, and the strength of community in times of struggle.</p>
+                    <span class="read-more">Read More <i class="fas fa-arrow-right"></i></span>
                 </div>
             </div>
 
         </div>
 
-        <!-- CTA -->
+        <!-- CTA: BibekBook -->
         <div class="mt-16 text-center p-8 bg-primary/10 dark:bg-primary/5 rounded-3xl" data-aos="fade-up">
-            <h3 class="text-2xl font-bold mb-3">Want to publish your book?</h3>
-            <p class="text-gray-600 dark:text-gray-400 mb-4">I also help authors publish their books through BibekBook.</p>
+            <h3 class="text-2xl font-bold mb-3">📚 Want to publish your own book?</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">I help authors publish their works through BibekBook — from editing to design and distribution.</p>
             <a href="https://bibekbook.store" target="_blank" class="bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-purple-700 transition inline-block">
                 <i class="fas fa-book-open mr-2"></i> Visit BibekBook
             </a>
         </div>
 
     </main>
+
+    <!-- ===== BOOK DETAIL OVERLAY ===== -->
+    <div class="book-detail-overlay" id="bookDetailOverlay" onclick="if(event.target===this) closeDetail()">
+        <div class="detail-card">
+            <button class="close-btn" onclick="closeDetail()"><i class="fas fa-times"></i></button>
+            <div class="detail-grid" id="detailContent">
+                <!-- Dynamically filled by JavaScript -->
+            </div>
+        </div>
+    </div>
 
     <!-- ===== FOOTER ===== -->
     <footer class="bg-gray-100 dark:bg-gray-900 py-8">
@@ -299,8 +570,9 @@
                 <ul class="space-y-1 text-sm">
                     <li><a href="/" class="hover:text-primary transition">Home</a></li>
                     <li><a href="/about" class="hover:text-primary transition">About</a></li>
-                    <li><a href="/books" class="hover:text-primary transition">Books</a></li>
+                    <li><a href="/about-book" class="hover:text-primary transition">Books</a></li>
                     <li><a href="/webdev" class="hover:text-primary transition">WebDev</a></li>
+                    <li><a href="/content" class="hover:text-primary transition">Content</a></li>
                 </ul>
             </div>
             <div>
@@ -331,16 +603,132 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true });
+
+        // Mobile menu toggle
         document.getElementById('menu-btn').addEventListener('click', function() {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
-        // Category filter (visual only)
-        document.querySelectorAll('.category-filter').forEach(function(el) {
-            el.addEventListener('click', function() {
-                document.querySelectorAll('.category-filter').forEach(function(e) {
-                    e.classList.remove('active');
-                });
+
+        // ---- BOOK DATA (AI-Generated Descriptions) ----
+        const booksData = {
+            'chitt-vijay': {
+                title: 'Chitt Vijay',
+                author: 'Bibek Patra',
+                category: 'Spiritual',
+                cover: '/images/chitt-vijay.jpg',
+                description: `<p><strong>Chitt Vijay</strong> is a profound exploration of the inner battlefield — the mind. In this transformative book, Bibek Patra takes readers on a journey of self-discovery, revealing how the greatest victory is the one we achieve over ourselves.</p>
+                <p>The book delves deep into the nature of thoughts, emotions, and the patterns that hold us back. With practical wisdom and spiritual insights, it guides readers toward mastering their mental landscape, finding clarity, and unlocking their true potential. Each chapter is a stepping stone toward inner peace, resilience, and authentic success.</p>
+                <p>Drawing from ancient philosophies and modern psychology, <strong>Chitt Vijay</strong> is not just a book — it's a companion for anyone seeking to understand themselves better and live a life of purpose and fulfillment.</p>`,
+                tags: ['Spiritual', 'Self-Help', 'Mindfulness', 'Personal Growth']
+            },
+            'newton-3rd-law': {
+                title: "Newton's 3rd Law",
+                author: 'Bibek Patra',
+                category: 'Science',
+                cover: '/images/newton-3rd-law.jpg',
+                description: `<p><strong>Newton's 3rd Law</strong> — for every action, there is an equal and opposite reaction. But what does this mean beyond physics? Bibek Patra brilliantly translates this universal law into the language of everyday life, showing how every choice, every word, and every action creates a ripple effect.</p>
+                <p>This book is a practical guide to understanding the invisible forces that shape our relationships, careers, and personal growth. Through real-life examples and thought-provoking insights, readers learn how to harness the power of cause and effect to create meaningful change.</p>
+                <p>Whether you're navigating a difficult situation or striving for a breakthrough, <strong>Newton's 3rd Law</strong> offers a fresh perspective on how to take intentional action and navigate the reactions that follow with grace and clarity.</p>`,
+                tags: ['Science', 'Philosophy', 'Practical Wisdom', 'Life Lessons']
+            },
+            'newton-3rd-law-english': {
+                title: "Newton's 3rd Law (English)",
+                author: 'Bibek Patra',
+                category: 'Science',
+                cover: '/images/newton-3rd-law-english.jpg',
+                description: `<p><strong>Newton's 3rd Law — English Edition</strong> brings the profound wisdom of the original work to a global audience. This edition preserves the depth and insight of the original while making it accessible to readers worldwide.</p>
+                <p>With clear language and relatable examples, the book explores the universal principle of action and reaction — not just in physics, but in the way we live, love, learn, and lead. It's a call to conscious living, where every action is intentional and every reaction is an opportunity for growth.</p>
+                <p>Perfect for readers who seek a deeper understanding of how the world works and how they can navigate it with purpose, this English edition is a bridge between science and the art of living well.</p>`,
+                tags: ['Science', 'Philosophy', 'Global Perspective', 'English']
+            },
+            'observe': {
+                title: 'Observe',
+                author: 'Bibek Patra',
+                category: 'Non-Fiction',
+                cover: '/images/observe.jpg',
+                description: `<p><strong>Observe</strong> is an invitation to see the world anew — to look beyond the obvious and discover the hidden patterns that shape our existence. In this thought-provoking book, Bibek Patra explores the art of observation as a superpower.</p>
+                <p>From the subtle cues in human behavior to the intricate workings of nature, the book teaches readers how to become keen observers of life. It reveals how observation can deepen relationships, improve decision-making, and unlock creativity.</p>
+                <p>With a blend of storytelling, science, and practical exercises, <strong>Observe</strong> empowers readers to slow down, pay attention, and find meaning in the details that others overlook. It's a guide to living with awareness and intention.</p>`,
+                tags: ['Non-Fiction', 'Mindfulness', 'Perception', 'Self-Awareness']
+            },
+            'take-an-action': {
+                title: 'Take an Action',
+                author: 'Bibek Patra',
+                category: 'Non-Fiction',
+                cover: '/images/take-an-action.jpg',
+                description: `<p><strong>Take an Action</strong> is the book for anyone who has ever felt stuck, overwhelmed, or uncertain. Bibek Patra cuts through the noise and delivers a powerful, no-nonsense guide to overcoming hesitation and taking meaningful action.</p>
+                <p>Drawing from real-life stories and proven strategies, the book breaks down the psychological barriers that keep us from moving forward — fear, doubt, and perfectionism — and replaces them with a clear framework for action.</p>
+                <p>Whether you're launching a business, starting a new project, or making a life change, <strong>Take an Action</strong> provides the motivation, clarity, and practical steps you need to turn your intentions into reality. It's a call to stop waiting and start doing.</p>`,
+                tags: ['Non-Fiction', 'Motivation', 'Action', 'Productivity']
+            },
+            'akele-nahi-ho': {
+                title: 'Akele Nahi Ho',
+                author: 'Bibek Patra',
+                category: 'Poetry',
+                cover: '/images/akele-nahi-ho.jpg',
+                description: `<p><strong>Akele Nahi Ho</strong> is a tender and heartfelt collection of poetry and prose that reminds us of a simple, profound truth — we are never truly alone. In a world that often feels isolating, Bibek Patra's words offer comfort, connection, and hope.</p>
+                <p>The book weaves together stories of struggle, resilience, and the quiet strength that comes from community and human connection. Each piece is a gentle nudge toward healing, a reminder that even in our darkest moments, there is always a hand reaching out.</p>
+                <p>With its lyrical language and emotional depth, <strong>Akele Nahi Ho</strong> is for anyone who has ever felt lost, lonely, or uncertain. It's a book to return to again and again — a source of solace and a celebration of the bonds that make us human.</p>`,
+                tags: ['Poetry', 'Emotional', 'Healing', 'Connection']
+            }
+        };
+
+        // ---- Open Detail ----
+        function openDetail(bookKey) {
+            const book = booksData[bookKey];
+            if (!book) return;
+
+            const overlay = document.getElementById('bookDetailOverlay');
+            const container = document.getElementById('detailContent');
+
+            container.innerHTML = `
+                <div class="detail-cover">
+                    <img src="${book.cover}" alt="${book.title}" />
+                </div>
+                <div class="detail-content">
+                    <h2>${book.title}</h2>
+                    <p class="meta">by ${book.author} · ${book.category}</p>
+                    <div class="full-desc">${book.description}</div>
+                    <div class="tags">
+                        ${book.tags.map(tag => `<span>#${tag}</span>`).join('')}
+                    </div>
+                    <a href="https://bibekbook.store" target="_blank" class="action-link">
+                        <i class="fas fa-book-open mr-2"></i> Available at BibekBook
+                    </a>
+                </div>
+            `;
+
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // ---- Close Detail ----
+        function closeDetail() {
+            document.getElementById('bookDetailOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeDetail();
+        });
+
+        // ---- Category Filter ----
+        document.querySelectorAll('.chip').forEach(function(chip) {
+            chip.addEventListener('click', function() {
+                document.querySelectorAll('.chip').forEach(function(c) { c.classList.remove('active'); });
                 this.classList.add('active');
+
+                const filter = this.dataset.filter;
+                const cards = document.querySelectorAll('.book-card');
+
+                cards.forEach(function(card) {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
             });
         });
     </script>
