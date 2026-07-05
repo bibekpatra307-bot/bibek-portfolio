@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bibek Patra | Founder, Developer & Entrepreneur</title>
-    <meta name="description" content="Official website of Bibek Patra, founder of BibekBook, Gengram, Vivika AI, and Krayvo. Building innovative digital products." />
+    <meta name="description" content="Bibek Patra is a founder, developer, and entrepreneur building BibekBook, Gengram, Vivika AI, and Krayvo. Explore innovative digital products in publishing, AI, social media, and e‑commerce." />
     <link rel="canonical" href="https://bibekpatra.site/" />
     <link rel="icon" type="image/png" href="/favicon.png">
     <meta property="og:type" content="website" />
@@ -74,6 +74,14 @@
                 transform: translateY(-10px);
             }
         }
+        /* New Styles for Quick Links */
+        .quick-links a {
+            transition: all 0.3s ease;
+        }
+        .quick-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(108, 59, 255, 0.2);
+        }
     </style>
 </head>
 <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors">
@@ -91,6 +99,16 @@
             <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-tight">Hi, I'm Bibek Patra</h1>
             <p class="text-lg sm:text-xl md:text-2xl mt-3 font-medium">Founder of BibekBook, Gengram, Vivika AI & Krayvo</p>
             <p class="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-3">I build innovative digital products in publishing, AI, social media, e‑commerce, web development and 3D design.</p>
+            
+            <!-- ✅ NEW: Quick Links to Important Pages (Google ko Index karne mein help karega) -->
+            <div class="quick-links flex flex-wrap justify-center gap-3 mt-8">
+                <a href="/about" class="bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-5 py-2 rounded-full shadow-md hover:shadow-lg hover:bg-primary hover:text-white transition-all text-sm font-medium">About Me</a>
+                <a href="/projects" class="bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-5 py-2 rounded-full shadow-md hover:shadow-lg hover:bg-primary hover:text-white transition-all text-sm font-medium">Projects</a>
+                <a href="/services" class="bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-5 py-2 rounded-full shadow-md hover:shadow-lg hover:bg-primary hover:text-white transition-all text-sm font-medium">Services</a>
+                <a href="/books" class="bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-5 py-2 rounded-full shadow-md hover:shadow-lg hover:bg-primary hover:text-white transition-all text-sm font-medium">Books</a>
+                <a href="/blog" class="bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-5 py-2 rounded-full shadow-md hover:shadow-lg hover:bg-primary hover:text-white transition-all text-sm font-medium">Blog</a>
+                <a href="/contact" class="bg-primary text-white px-5 py-2 rounded-full shadow-md hover:shadow-lg hover:bg-purple-700 transition-all text-sm font-medium">Contact</a>
+            </div>
         </div>
     </section>
 
@@ -113,6 +131,16 @@
                 <div class="text-3xl font-bold text-primary">4</div>
                 <p class="mt-1">Products Launched</p>
             </div>
+        </div>
+    </section>
+
+    <!-- ✅ NEW: What I Do Section (Unique Content) -->
+    <section class="py-12 max-w-6xl mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-4">What I Do</h2>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                I'm a passionate developer and entrepreneur with a mission to build innovative digital products that solve real-world problems. From AI-powered chatbots and social networking platforms to publishing tools and e-commerce solutions, I bring ideas to life through clean code, modern design, and a user-first approach. Whether you're looking for a full-scale web application, a custom 3D design, or just expert advice, I'm here to help.
+            </p>
         </div>
     </section>
 
