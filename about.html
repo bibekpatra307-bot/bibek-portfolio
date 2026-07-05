@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About - Bibek Patra</title>
-    <meta name="description" content="Learn more about Bibek Patra, founder, developer, entrepreneur." />
+    <meta name="description" content="Learn more about Bibek Patra, founder, developer, entrepreneur, author, and content creator." />
     <link rel="canonical" href="https://bibekpatra.site/about" />
+    <link rel="icon" type="image/png" href="/favicon.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -55,13 +56,8 @@
             animation: bounce 2s infinite;
         }
         @keyframes bounce {
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
         .nav-controls {
             display: flex;
@@ -69,19 +65,13 @@
             gap: 12px;
         }
         @media (min-width: 768px) {
-            .nav-controls {
-                gap: 16px;
-            }
+            .nav-controls { gap: 16px; }
         }
         #mobile-menu {
             transition: all 0.25s ease;
         }
-        #mobile-menu.hidden {
-            display: none;
-        }
-        #mobile-menu:not(.hidden) {
-            display: block;
-        }
+        #mobile-menu.hidden { display: none; }
+        #mobile-menu:not(.hidden) { display: block; }
 
         .hero-rectangle {
             width: 100%;
@@ -132,22 +122,31 @@
             color: #fff;
         }
 
-        .project-icon {
-            width: 56px;
-            height: 56px;
+        .venture-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .venture-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(108, 59, 255, 0.2);
+        }
+        .venture-card .icon-wrap {
+            width: 72px;
+            height: 72px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 16px;
-            font-size: 24px;
-            background: rgba(108, 59, 255, 0.1);
+            border-radius: 20px;
+            font-size: 32px;
+            background: rgba(108, 59, 255, 0.12);
             color: #6C3BFF;
             transition: all 0.3s ease;
+            margin: 0 auto 16px;
         }
-        .dark .project-icon {
+        .dark .venture-card .icon-wrap {
             background: rgba(108, 59, 255, 0.2);
         }
-        .premium-card:hover .project-icon {
+        .venture-card:hover .icon-wrap {
             background: #6C3BFF;
             color: #fff;
             transform: scale(1.1) rotate(-4deg);
@@ -167,6 +166,21 @@
         .download-btn:hover {
             transform: translateY(-3px);
         }
+
+        .category-tag {
+            display: inline-block;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: rgba(108, 59, 255, 0.12);
+            color: #6C3BFF;
+        }
+        .dark .category-tag {
+            background: rgba(108, 59, 255, 0.25);
+        }
     </style>
 </head>
 
@@ -178,55 +192,53 @@
             <a href="/" class="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent whitespace-nowrap">
                 Bibek Patra
             </a>
-            <div class="hidden md:flex space-x-6">
-                <a href="/" class="font-medium hover:text-primary">Home</a>
+            <div class="hidden md:flex items-center space-x-5">
+                <a href="/" class="font-medium hover:text-primary transition">Home</a>
                 <a href="/about" class="font-medium text-primary">About</a>
-                <a href="/#portfolio" class="font-medium hover:text-primary">Portfolio</a>
-                <a href="/#projects" class="font-medium hover:text-primary">Projects</a>
-                <a href="/#services" class="font-medium hover:text-primary">Services</a>
-                <a href="/#blog" class="font-medium hover:text-primary">Blog</a>
-                <a href="/#contact" class="font-medium hover:text-primary">Contact</a>
+                <a href="/books" class="font-medium hover:text-primary transition">Books</a>
+                <a href="/webdev" class="font-medium hover:text-primary transition">WebDev</a>
+                <a href="/content" class="font-medium hover:text-primary transition">Content</a>
+                <a href="/contact" class="font-medium bg-primary text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">Contact</a>
             </div>
             <div class="nav-controls">
                 <button onclick="document.documentElement.classList.toggle('dark')"
-                class="p-2 rounded-full bg-white/90 dark:bg-gray-800/90 shadow-lg text-gray-700 dark:text-gray-200 hover:shadow-xl transition border border-gray-200/50 dark:border-gray-700/50"
-                aria-label="Toggle dark mode">
-                <i class="fas fa-moon dark:hidden"></i>
-                <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
-            </button>
-            <button id="menu-btn" class="md:hidden text-2xl text-gray-700 dark:text-gray-200 p-1 -mr-1" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
+                    class="p-2 rounded-full bg-white/90 dark:bg-gray-800/90 shadow-lg text-gray-700 dark:text-gray-200 hover:shadow-xl transition border border-gray-200/50 dark:border-gray-700/50"
+                    aria-label="Toggle dark mode">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                </button>
+                <button id="menu-btn" class="md:hidden text-2xl text-gray-700 dark:text-gray-200 p-1 -mr-1" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-t border-gray-200/50 dark:border-gray-700/50">
-        <a href="/" class="block px-4 py-3 border-b dark:border-gray-700">Home</a>
-        <a href="/about" class="block px-4 py-3 border-b dark:border-gray-700 text-primary">About</a>
-        <a href="/#portfolio" class="block px-4 py-3 border-b dark:border-gray-700">Portfolio</a>
-        <a href="/#projects" class="block px-4 py-3 border-b dark:border-gray-700">Projects</a>
-        <a href="/#services" class="block px-4 py-3 border-b dark:border-gray-700">Services</a>
-        <a href="/#blog" class="block px-4 py-3 border-b dark:border-gray-700">Blog</a>
-        <a href="/#contact" class="block px-4 py-3 border-b dark:border-gray-700">Contact</a>
-        <a href="privacy.html" class="block px-4 py-3">Privacy Policy</a>
-    </div>
-</nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-t border-gray-200/50 dark:border-gray-700/50">
+            <a href="/" class="block px-4 py-3 border-b dark:border-gray-700">Home</a>
+            <a href="/about" class="block px-4 py-3 border-b dark:border-gray-700 text-primary">About</a>
+            <a href="/books" class="block px-4 py-3 border-b dark:border-gray-700">Books</a>
+            <a href="/webdev" class="block px-4 py-3 border-b dark:border-gray-700">WebDev</a>
+            <a href="/content" class="block px-4 py-3 border-b dark:border-gray-700">Content</a>
+            <a href="/contact" class="block px-4 py-3 border-b dark:border-gray-700">Contact</a>
+            <a href="/privacy" class="block px-4 py-3">Privacy Policy</a>
+        </div>
+    </nav>
 
     <!-- ===== HERO SECTION ===== -->
-    <section class="min-h-[55vh] flex items-center justify-center pt-24 pb-10 bg-gradient-to-br from-primary/10 to-accent/10">
+    <section class="min-h-[50vh] flex items-center justify-center pt-24 pb-10 bg-gradient-to-br from-primary/10 to-accent/10">
         <div class="w-full max-w-6xl mx-auto px-4 text-center" data-aos="fade-up">
             <div class="w-full max-w-full mx-auto rounded-[24px] md:rounded-[30px] overflow-hidden shadow-2xl shadow-primary/20 dark:shadow-primary/30">
-                <img src="images/about-rectangle.jpg" alt="Bibek Patra" class="hero-rectangle" loading="eager" />
+                <img src="/images/about-rectangle.jpg" alt="Bibek Patra" class="hero-rectangle" loading="eager" />
             </div>
             <div class="relative z-10 -mt-10 sm:-mt-12 md:-mt-16 lg:-mt-20 text-center">
-                <img src="images/about-round.jpg" alt="Bibek Patra"
-                class="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full mx-auto circle-glow bg-white dark:bg-gray-900 object-cover"
-                loading="eager" />
+                <img src="/images/about-round.jpg" alt="Bibek Patra"
+                    class="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full mx-auto circle-glow bg-white dark:bg-gray-900 object-cover"
+                    loading="eager" />
             </div>
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mt-4">
                 About Me
             </h1>
             <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-2">
-                Founder · Developer · 3D Designer · Entrepreneur
+                Founder · Developer · Author · Content Creator · 3D Designer
             </p>
         </div>
     </section>
@@ -239,65 +251,66 @@
             <div class="divider-gradient mx-auto mb-4"></div>
             <h2 class="text-3xl md:text-4xl font-bold mb-6">Building the Future, One Innovation at a Time</h2>
             <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                I'm <strong class="text-primary">Bibek Patra</strong> — a <strong>founder, developer, and creative technologist</strong> from Mayurbhanj, Odisha. I build digital products that merge <strong>design, intelligence, and purpose</strong>. From AI assistants to social platforms, publishing tools to 3D visualization — my work is driven by a simple belief: <strong class="text-primary">technology should empower people</strong>.
+                I'm <strong class="text-primary">Bibek Patra</strong> — a <strong>founder, developer, author, and creative technologist</strong> from Mayurbhanj, Odisha. I build digital products that merge <strong>design, intelligence, and purpose</strong>. From AI assistants to social platforms, publishing tools to 3D visualization — my work is driven by a simple belief: <strong class="text-primary">technology should empower people</strong>.
             </p>
             <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mt-4">
-                I don't just write code. I build <strong>ecosystems</strong>. I architect <strong>experiences</strong>. And I'm constantly pushing the boundaries of what's possible — blending <strong>art, engineering, and entrepreneurship</strong> into everything I create.
+                I don't just write code. I write <strong>books</strong>. I build <strong>websites</strong>. I create <strong>content</strong> that educates and inspires. I architect <strong>experiences</strong>. And I'm constantly pushing the boundaries of what's possible — blending <strong>art, engineering, and entrepreneurship</strong> into everything I create.
             </p>
         </div>
 
-        <!-- 2. MY VENTURES / INNOVATIONS -->
+        <!-- 2. MY VENTURES & INNOVATIONS (Updated: Author, WebDev, Content) -->
         <div class="mb-20" data-aos="fade-up">
             <div class="text-center mb-12">
                 <div class="divider-gradient mx-auto mb-4"></div>
                 <h2 class="text-3xl md:text-4xl font-bold">My Ventures &amp; Innovations</h2>
-                <p class="text-gray-600 dark:text-gray-400 mt-2">Products I've built from the ground up</p>
+                <p class="text-gray-600 dark:text-gray-400 mt-2">Explore my work across writing, web development, and content creation</p>
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="premium-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700 text-center">
-                    <div class="project-icon mx-auto mb-4">
-                        <i class="fas fa-book-open"></i>
-                    </div>
-                    <h3 class="text-xl font-bold">BibekBook</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Publishing platform for authors to publish and manage books digitally.</p>
-                    <a href="https://bibekbook.store" target="_blank" class="inline-block mt-4 text-primary font-semibold hover:underline text-sm">
-                        Explore →</a>
-                </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
 
-                <div class="premium-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700 text-center">
-                    <div class="project-icon mx-auto mb-4">
-                        <i class="fas fa-users"></i>
+                <!-- AUTHOR / BOOKS CARD -->
+                <a href="/books" class="venture-card bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700 text-center block no-underline">
+                    <div class="icon-wrap">
+                        <i class="fas fa-pen-fancy"></i>
                     </div>
-                    <h3 class="text-xl font-bold">Gengram</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Next‑gen social networking platform built for engagement and community.</p>
-                    <a href="https://gengram.online" target="_blank" class="inline-block mt-4 text-primary font-semibold hover:underline text-sm">
-                        Explore →</a>
-                </div>
+                    <span class="category-tag">Author</span>
+                    <h3 class="text-2xl font-bold mt-3 text-gray-800 dark:text-gray-100">Books</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Explore my published books — fiction, non-fiction, poetry, and more. Each book is a journey of ideas and emotions.</p>
+                    <div class="mt-4 text-primary font-semibold text-sm flex items-center justify-center gap-2">
+                        View All Books <i class="fas fa-arrow-right text-xs"></i>
+                    </div>
+                </a>
 
-                <div class="premium-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700 text-center">
-                    <div class="project-icon mx-auto mb-4">
-                        <i class="fas fa-robot"></i>
+                <!-- WEBDEV CARD -->
+                <a href="/webdev" class="venture-card bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700 text-center block no-underline">
+                    <div class="icon-wrap">
+                        <i class="fas fa-code"></i>
                     </div>
-                    <h3 class="text-xl font-bold">Vivika AI</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Advanced conversational AI assistant for natural, human-like interactions.</p>
-                    <a href="https://bibekpatra307-bot.github.io/Vivika/" target="_blank" class="inline-block mt-4 text-primary font-semibold hover:underline text-sm">
-                        Explore →</a>
-                </div>
+                    <span class="category-tag">Web Development</span>
+                    <h3 class="text-2xl font-bold mt-3 text-gray-800 dark:text-gray-100">WebDev</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">A showcase of every website and web application I've built — from static sites to full-stack platforms.</p>
+                    <div class="mt-4 text-primary font-semibold text-sm flex items-center justify-center gap-2">
+                        View All Projects <i class="fas fa-arrow-right text-xs"></i>
+                    </div>
+                </a>
 
-                <div class="premium-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700 text-center">
-                    <div class="project-icon mx-auto mb-4">
-                        <i class="fas fa-shopping-cart"></i>
+                <!-- CONTENT CARD -->
+                <a href="/content" class="venture-card bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700 text-center block no-underline">
+                    <div class="icon-wrap">
+                        <i class="fas fa-video"></i>
                     </div>
-                    <h3 class="text-xl font-bold">Krayvo</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Smart e‑commerce platform connecting multiple marketplaces seamlessly.</p>
-                    <a href="https://bibekpatra307-bot.github.io/Krayvo/" target="_blank" class="inline-block mt-4 text-primary font-semibold hover:underline text-sm">
-                        Explore →</a>
-                </div>
+                    <span class="category-tag">Content Creator</span>
+                    <h3 class="text-2xl font-bold mt-3 text-gray-800 dark:text-gray-100">Content</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">All my content in one place — YouTube videos, blog posts, articles, and educational resources.</p>
+                    <div class="mt-4 text-primary font-semibold text-sm flex items-center justify-center gap-2">
+                        View All Content <i class="fas fa-arrow-right text-xs"></i>
+                    </div>
+                </a>
+
             </div>
         </div>
 
-        <!-- 3. SKILLS + LANGUAGES (COMBINED - Language is now subtle) -->
+        <!-- 3. SKILLS + LANGUAGES -->
         <div class="mb-16" data-aos="fade-up">
             <div class="text-center mb-12">
                 <div class="divider-gradient mx-auto mb-4"></div>
@@ -310,17 +323,16 @@
                 <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">AI Development</span>
                 <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">3D Design (Blender)</span>
                 <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">Graphic Design</span>
-                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">Video Editing (DaVinci Resolve)</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">Video Editing</span>
                 <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">Digital Marketing</span>
                 <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">SEO</span>
                 <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">Book Publishing</span>
-                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">Financial &amp; Marketing Mgmt</span>
-                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">Teaching &amp; Team Management</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">Content Writing</span>
+                <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">Teaching &amp; Mentoring</span>
                 <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">Microsoft Office Suite</span>
                 <span class="skill-tag bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-medium border border-primary/20">Adobe Photoshop</span>
             </div>
 
-            <!-- Languages - subtle inline mention -->
             <div class="text-center mt-6 text-sm text-gray-500 dark:text-gray-400">
                 <span class="font-medium text-gray-700 dark:text-gray-300">Languages:</span>
                 Odia (Fluent) · Hindi (Fluent) · English (Fluent)
@@ -333,14 +345,14 @@
                 <div class="text-4xl mb-4">🚀</div>
                 <h3 class="text-2xl md:text-3xl font-bold mb-3">My Mission</h3>
                 <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                    To build <strong class="text-primary">technology that matters</strong> — tools that empower creators, connect communities, and push the boundaries of what's possible. I believe in <strong class="text-primary">innovation with purpose</strong>, design with soul, and code that changes lives.
+                    To build <strong class="text-primary">technology that matters</strong> — tools that empower creators, connect communities, and push the boundaries of what's possible. To write <strong class="text-primary">books that inspire</strong> and create <strong class="text-primary">content that educates</strong>. I believe in <strong class="text-primary">innovation with purpose</strong>, design with soul, and code that changes lives.
                 </p>
 
                 <div class="flex flex-wrap justify-center gap-4 mt-6">
-                    <a href="/#projects" class="bg-primary text-white px-6 py-3 rounded-xl font-medium hover:bg-purple-700 transition shadow-lg shadow-primary/25 hover:shadow-primary/40">
-                        View My Work
+                    <a href="/books" class="bg-primary text-white px-6 py-3 rounded-xl font-medium hover:bg-purple-700 transition shadow-lg shadow-primary/25 hover:shadow-primary/40">
+                        <i class="fas fa-book mr-2"></i> Explore My Books
                     </a>
-                    <a href="/#contact" class="border-2 border-primary text-primary px-6 py-3 rounded-xl font-medium hover:bg-primary hover:text-white transition">
+                    <a href="/contact" class="border-2 border-primary text-primary px-6 py-3 rounded-xl font-medium hover:bg-primary hover:text-white transition">
                         Let's Connect
                     </a>
                 </div>
@@ -374,7 +386,7 @@
         <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-6 text-center md:text-left">
             <div>
                 <h4 class="font-bold text-lg mb-2">Bibek Patra</h4>
-                <p class="text-sm">Founder of BibekBook, Gengram, Vivika AI &amp; Krayvo</p>
+                <p class="text-sm">Founder · Author · Developer · Content Creator</p>
                 <div class="flex justify-center md:justify-start gap-4 mt-3">
                     <a href="https://www.instagram.com/itsbibekpatra" target="_blank"><i class="fab fa-instagram text-xl hover:text-primary transition"></i></a>
                     <a href="https://youtube.com/@gtbcreates" target="_blank"><i class="fab fa-youtube text-xl hover:text-primary transition"></i></a>
@@ -387,9 +399,9 @@
                 <ul class="space-y-1 text-sm">
                     <li><a href="/" class="hover:text-primary transition">Home</a></li>
                     <li><a href="/about" class="hover:text-primary transition">About</a></li>
-                    <li><a href="/#portfolio" class="hover:text-primary transition">Portfolio</a></li>
-                    <li><a href="/#projects" class="hover:text-primary transition">Projects</a></li>
-                    <li><a href="/#services" class="hover:text-primary transition">Services</a></li>
+                    <li><a href="/books" class="hover:text-primary transition">Books</a></li>
+                    <li><a href="/webdev" class="hover:text-primary transition">WebDev</a></li>
+                    <li><a href="/content" class="hover:text-primary transition">Content</a></li>
                 </ul>
             </div>
             <div>
@@ -404,14 +416,14 @@
             <div>
                 <h4 class="font-semibold mb-2">Legal</h4>
                 <ul class="space-y-1 text-sm">
-                    <li><a href="privacy.html" class="hover:text-primary transition">Privacy Policy</a></li>
-                    <li><a href="terms.html" class="hover:text-primary transition">Terms</a></li>
-                    <li><a href="copyright.html" class="hover:text-primary transition">Copyright</a></li>
+                    <li><a href="/privacy" class="hover:text-primary transition">Privacy Policy</a></li>
+                    <li><a href="/terms" class="hover:text-primary transition">Terms</a></li>
+                    <li><a href="/copyright" class="hover:text-primary transition">Copyright</a></li>
                 </ul>
             </div>
         </div>
         <div class="text-center text-sm mt-8 border-t dark:border-gray-700 pt-4">
-            © 2026 Bibek Patra. All Rights Reserved. Developed by Bibek Patra.
+            © 2026 Bibek Patra. All Rights Reserved.
         </div>
     </footer>
 
@@ -424,8 +436,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true });
-    </script>
-    <script>
+
         document.getElementById('menu-btn').addEventListener('click', function() {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
