@@ -3,10 +3,18 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WebDev - Bibek Patra</title>
-    <meta name="description" content="All websites and web applications built by Bibek Patra - portfolio, projects, and more." />
+    <title>Web Development Projects by Bibek Patra</title>
+    <meta name="description" content="Explore the complete portfolio of web development projects by Bibek Patra — including BibekBook, Gengram, Vivika AI, Krayvo, and more. Each project showcases expertise in modern web technologies, AI integration, and user-centric design." />
     <link rel="canonical" href="https://bibekpatra.site/webdev" />
     <link rel="icon" type="image/png" href="/favicon.png">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bibekpatra.site/webdev" />
+    <meta property="og:title" content="Web Development Projects by Bibek Patra" />
+    <meta property="og:description" content="Explore the complete portfolio of web development projects by Bibek Patra — including BibekBook, Gengram, Vivika AI, Krayvo, and more." />
+    <meta property="og:image" content="https://bibekpatra.site/images/og-image.jpg" />
+    <meta property="twitter:card" content="summary_large_image" />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -26,6 +34,65 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/global.css" />
+
+    <!-- ✅ JSON-LD Structured Data (Web Development Portfolio) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "Web Development Projects by Bibek Patra",
+            "description": "A portfolio of web development projects including publishing platforms, social networks, AI assistants, and e-commerce solutions.",
+            "url": "https://bibekpatra.site/webdev",
+            "mainEntity": {
+                "@type": "ItemList",
+                "itemListElement": [{
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item": {
+                        "@type": "SoftwareApplication",
+                        "name": "BibekBook",
+                        "description": "A comprehensive publishing platform that empowers authors to publish, manage, and distribute books digitally with ease.",
+                        "applicationCategory": "Publishing Platform",
+                        "operatingSystem": "Web",
+                        "url": "https://bibekbook.store"
+                    }
+                }, {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item": {
+                        "@type": "SoftwareApplication",
+                        "name": "Gengram",
+                        "description": "A next-generation social networking platform prioritizing privacy, authentic engagement, and community-driven interactions.",
+                        "applicationCategory": "Social Networking",
+                        "operatingSystem": "Web",
+                        "url": "https://gengram.online"
+                    }
+                }, {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "item": {
+                        "@type": "SoftwareApplication",
+                        "name": "Vivika AI",
+                        "description": "An advanced conversational AI assistant that delivers natural, human-like interactions for customer support and user engagement.",
+                        "applicationCategory": "AI Assistant",
+                        "operatingSystem": "Web",
+                        "url": "https://bibekpatra307-bot.github.io/Vivika/"
+                    }
+                }, {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "item": {
+                        "@type": "SoftwareApplication",
+                        "name": "Krayvo",
+                        "description": "A smart e-commerce platform that seamlessly connects multiple marketplaces, offering unified inventory and order management.",
+                        "applicationCategory": "E-Commerce Platform",
+                        "operatingSystem": "Web",
+                        "url": "https://bibekpatra307-bot.github.io/Krayvo/"
+                    }
+                }]
+            }
+        }
+    </script>
 
     <style>
         .glass {
@@ -58,16 +125,6 @@
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
         }
-        .project-card {
-            transition: all 0.3s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(108, 59, 255, 0.15);
-        }
-        .dark .project-card:hover {
-            box-shadow: 0 20px 40px rgba(108, 59, 255, 0.25);
-        }
         .divider-gradient {
             height: 3px;
             width: 60px;
@@ -75,25 +132,101 @@
             border-radius: 4px;
             margin: 0 auto;
         }
-        .tech-tag {
-            display: inline-block;
-            padding: 2px 12px;
-            border-radius: 12px;
-            font-size: 11px;
-            font-weight: 500;
-            background: rgba(108, 59, 255, 0.1);
-            color: #6C3BFF;
-            margin-right: 4px;
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
-        .dark .tech-tag {
-            background: rgba(108, 59, 255, 0.2);
+        @media (min-width: 768px) {
+            .nav-controls { gap: 16px; }
         }
-        .project-preview {
+        #mobile-menu {
+            transition: all 0.25s ease;
+        }
+        #mobile-menu.hidden { display: none; }
+        #mobile-menu:not(.hidden) { display: block; }
+
+        /* Project Card */
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border-radius: 24px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .project-card {
+            background: rgba(30, 30, 50, 0.6);
+            border-color: rgba(255, 255, 255, 0.06);
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 60px rgba(108, 59, 255, 0.15);
+        }
+        .dark .project-card:hover {
+            box-shadow: 0 24px 60px rgba(108, 59, 255, 0.25);
+        }
+        .project-thumb {
             width: 100%;
             aspect-ratio: 16/9;
             object-fit: cover;
-            border-radius: 12px;
-            border: 1px solid rgba(108, 59, 255, 0.1);
+            border-radius: 16px 16px 0 0;
+            background: linear-gradient(145deg, #f0f0f5, #e8e8ef);
+        }
+        .dark .project-thumb {
+            background: linear-gradient(145deg, #1a1a2e, #2a2a3e);
+        }
+        .tech-tag {
+            display: inline-block;
+            padding: 3px 14px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 500;
+            background: rgba(108, 59, 255, 0.1);
+            color: #6C3BFF;
+            border: 1px solid rgba(108, 59, 255, 0.08);
+        }
+        .dark .tech-tag {
+            background: rgba(108, 59, 255, 0.18);
+            color: #9a7bff;
+            border-color: rgba(108, 59, 255, 0.15);
+        }
+        .project-card details {
+            margin-top: 12px;
+        }
+        .project-card details summary {
+            font-size: 14px;
+            font-weight: 600;
+            color: #6C3BFF;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+        .project-card details summary::-webkit-details-marker {
+            display: none;
+        }
+        .project-card details summary::before {
+            content: '▶';
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+        .project-card details[open] summary::before {
+            transform: rotate(90deg);
+        }
+        .project-card details .desc-content {
+            margin-top: 12px;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #444;
+            padding-top: 12px;
+            border-top: 1px solid rgba(108, 59, 255, 0.08);
+        }
+        .dark .project-card details .desc-content {
+            color: #c0c0d0;
+            border-top-color: rgba(255, 255, 255, 0.05);
         }
     </style>
 </head>
@@ -107,12 +240,13 @@
             <div class="hidden md:flex items-center space-x-5">
                 <a href="/" class="font-medium hover:text-primary transition">Home</a>
                 <a href="/about" class="font-medium hover:text-primary transition">About</a>
-                <a href="/books" class="font-medium hover:text-primary transition">Books</a>
+                <a href="/about-book" class="font-medium hover:text-primary transition">Books</a>
                 <a href="/webdev" class="font-medium text-primary">WebDev</a>
                 <a href="/content" class="font-medium hover:text-primary transition">Content</a>
+                <a href="/work-experience" class="font-medium hover:text-primary transition">Experience</a>
                 <a href="/contact" class="font-medium bg-primary text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">Contact</a>
             </div>
-            <div class="flex items-center gap-4">
+            <div class="nav-controls">
                 <button onclick="document.documentElement.classList.toggle('dark')"
                     class="p-2 rounded-full bg-white/90 dark:bg-gray-800/90 shadow-lg text-gray-700 dark:text-gray-200 hover:shadow-xl transition border border-gray-200/50 dark:border-gray-700/50">
                     <i class="fas fa-moon dark:hidden"></i>
@@ -124,9 +258,10 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-t">
             <a href="/" class="block px-4 py-3 border-b dark:border-gray-700">Home</a>
             <a href="/about" class="block px-4 py-3 border-b dark:border-gray-700">About</a>
-            <a href="/books" class="block px-4 py-3 border-b dark:border-gray-700">Books</a>
+            <a href="/about-book" class="block px-4 py-3 border-b dark:border-gray-700">Books</a>
             <a href="/webdev" class="block px-4 py-3 border-b dark:border-gray-700 text-primary">WebDev</a>
             <a href="/content" class="block px-4 py-3 border-b dark:border-gray-700">Content</a>
+            <a href="/work-experience" class="block px-4 py-3 border-b dark:border-gray-700">Experience</a>
             <a href="/contact" class="block px-4 py-3 border-b dark:border-gray-700">Contact</a>
         </div>
     </nav>
@@ -134,123 +269,194 @@
     <!-- ===== HERO ===== -->
     <section class="pt-28 pb-12 text-center bg-gradient-to-br from-primary/10 to-accent/10">
         <div class="max-w-4xl mx-auto px-4" data-aos="fade-up">
-            <h1 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Web Development</h1>
+            <h1 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Web Development Projects</h1>
             <p class="text-lg text-gray-600 dark:text-gray-400 mt-3 max-w-2xl mx-auto">
-                Every website and web application I've built — from concept to deployment.
+                From concept to deployment — each project represents a unique challenge solved with clean code, modern design, and user-first thinking.
             </p>
             <div class="divider-gradient mx-auto mt-4"></div>
         </div>
     </section>
 
     <!-- ===== PROJECTS GRID ===== -->
-    <main class="py-12 pb-20 max-w-7xl mx-auto px-4">
+    <main class="py-12 pb-20 max-w-6xl mx-auto px-4">
+
         <div class="grid md:grid-cols-2 gap-8">
 
-            <!-- Project 1: Bibek Patra (Portfolio) -->
-            <div class="project-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700" data-aos="fade-up">
-                <img src="/images/hero-rectangle.jpg" alt="Bibek Patra Portfolio" class="project-preview" />
-                <h3 class="text-2xl font-bold mt-4">Bibek Patra Portfolio</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">My personal portfolio website showcasing my work, books, and services. Built with HTML, Tailwind CSS, and JavaScript.</p>
-                <div class="flex flex-wrap gap-1 mt-3">
-                    <span class="tech-tag">HTML</span>
-                    <span class="tech-tag">Tailwind CSS</span>
-                    <span class="tech-tag">JavaScript</span>
-                </div>
-                <div class="flex gap-3 mt-4">
-                    <a href="https://bibekpatra.site" target="_blank" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition">Visit Site</a>
-                    <a href="https://github.com/bibekpatra307-bot/bibek-portfolio" target="_blank" class="border border-gray-300 dark:border-gray-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition">View Code</a>
-                </div>
-            </div>
-
-            <!-- Project 2: BibekBook -->
-            <div class="project-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="50">
-                <img src="/images/bibekbook.jpg" alt="BibekBook" class="project-preview" />
-                <h3 class="text-2xl font-bold mt-4">BibekBook</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">A publishing platform for authors to publish and manage books digitally. Features include book listing, author profiles, and more.</p>
-                <div class="flex flex-wrap gap-1 mt-3">
-                    <span class="tech-tag">HTML</span>
-                    <span class="tech-tag">CSS</span>
-                    <span class="tech-tag">JavaScript</span>
-                </div>
-                <div class="flex gap-3 mt-4">
-                    <a href="https://bibekbook.store" target="_blank" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition">Visit Site</a>
-                    <a href="https://github.com/bibekpatra307-bot/BibekBook" target="_blank" class="border border-gray-300 dark:border-gray-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition">View Code</a>
-                </div>
-            </div>
-
-            <!-- Project 3: Gengram -->
-            <div class="project-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="100">
-                <img src="/images/gengram.jpg" alt="Gengram" class="project-preview" />
-                <h3 class="text-2xl font-bold mt-4">Gengram</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">A next-generation social networking platform focused on privacy, real engagement, and community building.</p>
-                <div class="flex flex-wrap gap-1 mt-3">
-                    <span class="tech-tag">HTML</span>
-                    <span class="tech-tag">CSS</span>
-                    <span class="tech-tag">JavaScript</span>
-                </div>
-                <div class="flex gap-3 mt-4">
-                    <a href="https://gengram.online" target="_blank" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition">Visit Site</a>
-                    <a href="https://github.com/bibekpatra307-bot/Gengram" target="_blank" class="border border-gray-300 dark:border-gray-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition">View Code</a>
+            <!-- PROJECT 1: BIBEKBOOK -->
+            <div class="project-card" data-aos="fade-up">
+                <img src="/images/bibekbook.jpg" alt="BibekBook - Publishing Platform for Authors" class="project-thumb" loading="lazy" />
+                <div class="p-6">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h2 class="text-2xl font-bold">BibekBook</h2>
+                            <p class="text-sm text-primary font-medium mt-0.5">Publishing Platform</p>
+                        </div>
+                        <span class="tech-tag">Live</span>
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-3">
+                        A comprehensive publishing platform that empowers authors to publish, manage, and distribute books digitally with ease.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <details>
+                        <summary>Read Full Description</summary>
+                        <div class="desc-content">
+                            <p><strong>BibekBook</strong> is more than just a publishing platform — it's an ecosystem designed to empower authors at every stage of their publishing journey. From manuscript submission to cover design and digital distribution, BibekBook provides a seamless, end-to-end experience.</p>
+                            <p>The platform features a user-friendly dashboard for authors to track their book's progress, manage royalties, and engage with readers. With built-in tools for formatting, editing, and marketing, authors can focus on what they do best — writing — while BibekBook handles the rest.</p>
+                            <p>Whether you're a first-time author or a seasoned publisher, BibekBook simplifies the complex world of self-publishing, making it accessible, affordable, and professional.</p>
+                        </div>
+                    </details>
+                    <div class="mt-4">
+                        <a href="https://bibekbook.store" target="_blank" rel="noopener noreferrer" class="inline-block bg-primary text-white px-5 py-2.5 rounded-xl text-sm font-medium hover:bg-purple-700 transition">
+                            <i class="fas fa-external-link-alt mr-2"></i> Visit Project
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Project 4: Vivika AI -->
-            <div class="project-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="150">
-                <img src="/images/vivika-ai.jpg" alt="Vivika AI" class="project-preview" />
-                <h3 class="text-2xl font-bold mt-4">Vivika AI</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">An advanced conversational AI assistant designed for natural, human-like interactions. Built with cutting-edge AI technologies.</p>
-                <div class="flex flex-wrap gap-1 mt-3">
-                    <span class="tech-tag">HTML</span>
-                    <span class="tech-tag">CSS</span>
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">AI/ML</span>
-                </div>
-                <div class="flex gap-3 mt-4">
-                    <a href="https://bibekpatra307-bot.github.io/Vivika/" target="_blank" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition">Visit Site</a>
-                    <a href="https://github.com/bibekpatra307-bot/Vivika" target="_blank" class="border border-gray-300 dark:border-gray-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition">View Code</a>
+            <!-- PROJECT 2: GENGRAM -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="50">
+                <img src="/images/gengram.jpg" alt="Gengram - Next-Gen Social Networking Platform" class="project-thumb" loading="lazy" />
+                <div class="p-6">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h2 class="text-2xl font-bold">Gengram</h2>
+                            <p class="text-sm text-primary font-medium mt-0.5">Social Networking</p>
+                        </div>
+                        <span class="tech-tag">Live</span>
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-3">
+                        A next-generation social networking platform prioritizing privacy, authentic engagement, and community-driven interactions.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <details>
+                        <summary>Read Full Description</summary>
+                        <div class="desc-content">
+                            <p><strong>Gengram</strong> reimagines social networking by putting privacy and meaningful connection at the forefront. Unlike traditional platforms that prioritize algorithms and advertising, Gengram is built around communities — where users can engage authentically without the noise.</p>
+                            <p>The platform offers a clean, distraction-free interface that encourages real conversations, content sharing, and collaboration. With features like interest-based groups, private messaging, and content discovery, Gengram fosters a sense of belonging and trust.</p>
+                            <p>Designed for users who value quality over quantity, Gengram is the social network of the future — where connections are genuine, engagement is rewarding, and every voice matters.</p>
+                        </div>
+                    </details>
+                    <div class="mt-4">
+                        <a href="https://gengram.online" target="_blank" rel="noopener noreferrer" class="inline-block bg-primary text-white px-5 py-2.5 rounded-xl text-sm font-medium hover:bg-purple-700 transition">
+                            <i class="fas fa-external-link-alt mr-2"></i> Visit Project
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Project 5: Krayvo -->
-            <div class="project-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="200">
-                <img src="/images/krayvo.jpg" alt="Krayvo" class="project-preview" />
-                <h3 class="text-2xl font-bold mt-4">Krayvo</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">A smart e-commerce platform connecting multiple marketplaces seamlessly. Features include product management, orders, and analytics.</p>
-                <div class="flex flex-wrap gap-1 mt-3">
-                    <span class="tech-tag">HTML</span>
-                    <span class="tech-tag">CSS</span>
-                    <span class="tech-tag">JavaScript</span>
-                </div>
-                <div class="flex gap-3 mt-4">
-                    <a href="https://bibekpatra307-bot.github.io/Krayvo/" target="_blank" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition">Visit Site</a>
-                    <a href="https://github.com/bibekpatra307-bot/Krayvo" target="_blank" class="border border-gray-300 dark:border-gray-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition">View Code</a>
+            <!-- PROJECT 3: VIVIKA AI -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="/images/vivika-ai.jpg" alt="Vivika AI - Advanced Conversational AI Assistant" class="project-thumb" loading="lazy" />
+                <div class="p-6">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h2 class="text-2xl font-bold">Vivika AI</h2>
+                            <p class="text-sm text-primary font-medium mt-0.5">AI Assistant</p>
+                        </div>
+                        <span class="tech-tag">Live</span>
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-3">
+                        An advanced conversational AI assistant that delivers natural, human-like interactions for customer support and user engagement.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">AI/ML</span>
+                    </div>
+                    <details>
+                        <summary>Read Full Description</summary>
+                        <div class="desc-content">
+                            <p><strong>Vivika AI</strong> represents the cutting edge of conversational AI — a virtual assistant that understands context, adapts to user needs, and delivers responses that feel genuinely human. Whether it's answering customer queries, guiding users through a process, or providing personalized recommendations, Vivika AI elevates the standard of digital interaction.</p>
+                            <p>Powered by advanced natural language processing, Vivika AI continuously learns and improves, ensuring that every conversation is more accurate, relevant, and helpful than the last. Its integration capabilities make it a versatile solution for websites, mobile apps, and enterprise systems.</p>
+                            <p>With Vivika AI, businesses can automate support, increase engagement, and deliver a seamless user experience — all while maintaining the warmth and personal touch that users expect.</p>
+                        </div>
+                    </details>
+                    <div class="mt-4">
+                        <a href="https://bibekpatra307-bot.github.io/Vivika/" target="_blank" rel="noopener noreferrer" class="inline-block bg-primary text-white px-5 py-2.5 rounded-xl text-sm font-medium hover:bg-purple-700 transition">
+                            <i class="fas fa-external-link-alt mr-2"></i> Visit Project
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Project 6: Chitt Vijay (Book Landing) -->
-            <div class="project-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="250">
-                <img src="/images/chitt-vijay.jpg" alt="Chitt Vijay Landing" class="project-preview" />
-                <h3 class="text-2xl font-bold mt-4">Chitt Vijay Book Landing</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">A dedicated landing page for the book "Chitt Vijay" — with author info, book description, and purchase links.</p>
-                <div class="flex flex-wrap gap-1 mt-3">
-                    <span class="tech-tag">HTML</span>
-                    <span class="tech-tag">Tailwind CSS</span>
-                </div>
-                <div class="flex gap-3 mt-4">
-                    <a href="https://bibekpatra.site/books/chitt-vijay" target="_blank" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition">Visit Site</a>
-                    <a href="https://github.com/bibekpatra307-bot/bibek-portfolio/tree/main/books" target="_blank" class="border border-gray-300 dark:border-gray-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition">View Code</a>
+            <!-- PROJECT 4: KRAYVO -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="150">
+                <img src="/images/krayvo.jpg" alt="Krayvo - Smart E-Commerce Platform" class="project-thumb" loading="lazy" />
+                <div class="p-6">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h2 class="text-2xl font-bold">Krayvo</h2>
+                            <p class="text-sm text-primary font-medium mt-0.5">E-Commerce Platform</p>
+                        </div>
+                        <span class="tech-tag">Live</span>
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-3">
+                        A smart e-commerce platform that seamlessly connects multiple marketplaces, offering unified inventory and order management.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <details>
+                        <summary>Read Full Description</summary>
+                        <div class="desc-content">
+                            <p><strong>Krayvo</strong> is a revolutionary e-commerce solution designed for businesses that operate across multiple sales channels. It brings together inventory, orders, and customer data into a single, unified dashboard — eliminating the complexity of managing multiple platforms.</p>
+                            <p>With intelligent features like real-time inventory sync, automated order routing, and predictive analytics, Krayvo empowers businesses to scale efficiently and make data-driven decisions. The platform also includes a customizable storefront builder, enabling brands to create beautiful, high-converting online stores without technical expertise.</p>
+                            <p>Whether you're a small business or a growing enterprise, Krayvo provides the tools and insights you need to thrive in the competitive world of e-commerce — all in one seamless platform.</p>
+                        </div>
+                    </details>
+                    <div class="mt-4">
+                        <a href="https://bibekpatra307-bot.github.io/Krayvo/" target="_blank" rel="noopener noreferrer" class="inline-block bg-primary text-white px-5 py-2.5 rounded-xl text-sm font-medium hover:bg-purple-700 transition">
+                            <i class="fas fa-external-link-alt mr-2"></i> Visit Project
+                        </a>
+                    </div>
                 </div>
             </div>
 
         </div>
 
-        <!-- CTA -->
-        <div class="mt-16 text-center p-8 bg-primary/10 dark:bg-primary/5 rounded-3xl" data-aos="fade-up">
-            <h3 class="text-2xl font-bold mb-3">Want a website like these?</h3>
-            <p class="text-gray-600 dark:text-gray-400 mb-4">I build custom websites and web applications for clients worldwide.</p>
-            <a href="/contact" class="bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-purple-700 transition inline-block">
-                <i class="fas fa-paper-plane mr-2"></i> Let's Build Something
+        <!-- STATS SECTION -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16" data-aos="fade-up">
+            <div class="text-center p-6 rounded-2xl bg-primary/5 dark:bg-primary/10 border border-primary/10 dark:border-primary/20">
+                <div class="text-3xl font-bold text-primary">4+</div>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Projects Delivered</p>
+            </div>
+            <div class="text-center p-6 rounded-2xl bg-primary/5 dark:bg-primary/10 border border-primary/10 dark:border-primary/20">
+                <div class="text-3xl font-bold text-primary">100%</div>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Client Satisfaction</p>
+            </div>
+            <div class="text-center p-6 rounded-2xl bg-primary/5 dark:bg-primary/10 border border-primary/10 dark:border-primary/20">
+                <div class="text-3xl font-bold text-primary">5+</div>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Technologies Used</p>
+            </div>
+            <div class="text-center p-6 rounded-2xl bg-primary/5 dark:bg-primary/10 border border-primary/10 dark:border-primary/20">
+                <div class="text-3xl font-bold text-primary">1000+</div>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Happy Users</p>
+            </div>
+        </div>
+
+        <!-- CTA SECTION -->
+        <div class="mt-16 text-center p-8 md:p-12 bg-gradient-to-br from-primary/10 to-accent/10 dark:from-primary/5 dark:to-accent/5 rounded-3xl border border-primary/10 dark:border-primary/20" data-aos="fade-up">
+            <h3 class="text-2xl md:text-3xl font-bold mb-3">Let's Build Something Amazing</h3>
+            <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-6">
+                Have a project in mind? I bring ideas to life through clean code, modern design, and a relentless focus on user experience.
+            </p>
+            <a href="/contact" class="bg-primary text-white px-8 py-3.5 rounded-xl font-semibold hover:bg-purple-700 transition inline-block shadow-lg shadow-primary/25 hover:shadow-primary/40">
+                <i class="fas fa-paper-plane mr-2"></i> Start Your Project
             </a>
+            <p class="text-xs text-gray-400 dark:text-gray-500 mt-4">
+                <i class="fas fa-clock mr-1"></i> Free consultation · 24-hour response
+            </p>
         </div>
 
     </main>
@@ -260,11 +466,12 @@
         <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-6 text-center md:text-left">
             <div>
                 <h4 class="font-bold text-lg mb-2">Bibek Patra</h4>
-                <p class="text-sm">Founder · Author · Developer</p>
+                <p class="text-sm">Founder · Developer · Author</p>
                 <div class="flex justify-center md:justify-start gap-4 mt-3">
-                    <a href="https://www.instagram.com/itsbibekpatra" target="_blank"><i class="fab fa-instagram text-xl hover:text-primary transition"></i></a>
-                    <a href="https://youtube.com/@gtbcreates" target="_blank"><i class="fab fa-youtube text-xl hover:text-primary transition"></i></a>
-                    <a href="https://www.linkedin.com/in/bibek-patra-932213293" target="_blank"><i class="fab fa-linkedin text-xl hover:text-primary transition"></i></a>
+                    <a href="https://www.instagram.com/itsbibekpatra" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram text-xl hover:text-primary transition"></i></a>
+                    <a href="https://youtube.com/@gtbcreates" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube text-xl hover:text-primary transition"></i></a>
+                    <a href="https://www.linkedin.com/in/bibek-patra-932213293" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin text-xl hover:text-primary transition"></i></a>
+                    <a href="https://www.facebook.com/thesideincomeguru" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook text-xl hover:text-primary transition"></i></a>
                 </div>
             </div>
             <div>
@@ -272,16 +479,18 @@
                 <ul class="space-y-1 text-sm">
                     <li><a href="/" class="hover:text-primary transition">Home</a></li>
                     <li><a href="/about" class="hover:text-primary transition">About</a></li>
-                    <li><a href="/books" class="hover:text-primary transition">Books</a></li>
+                    <li><a href="/about-book" class="hover:text-primary transition">Books</a></li>
                     <li><a href="/webdev" class="hover:text-primary transition">WebDev</a></li>
+                    <li><a href="/content" class="hover:text-primary transition">Content</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="font-semibold mb-2">Connect</h4>
                 <ul class="space-y-1 text-sm">
-                    <li><a href="https://wa.me/918280482686" target="_blank" class="hover:text-primary transition">WhatsApp</a></li>
-                    <li><a href="https://www.instagram.com/itsbibekpatra" target="_blank" class="hover:text-primary transition">Instagram</a></li>
-                    <li><a href="https://www.linkedin.com/in/bibek-patra-932213293" target="_blank" class="hover:text-primary transition">LinkedIn</a></li>
+                    <li><a href="https://wa.me/918280482686" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition">WhatsApp</a></li>
+                    <li><a href="https://www.instagram.com/itsbibekpatra" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/in/bibek-patra-932213293" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition">LinkedIn</a></li>
+                    <li><a href="https://youtube.com/@gtbcreates" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition">YouTube</a></li>
                 </ul>
             </div>
             <div>
@@ -289,6 +498,7 @@
                 <ul class="space-y-1 text-sm">
                     <li><a href="/privacy" class="hover:text-primary transition">Privacy Policy</a></li>
                     <li><a href="/terms" class="hover:text-primary transition">Terms</a></li>
+                    <li><a href="/copyright" class="hover:text-primary transition">Copyright</a></li>
                 </ul>
             </div>
         </div>
@@ -297,15 +507,21 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/918280482686" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/918280482686" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true });
+
         document.getElementById('menu-btn').addEventListener('click', function() {
             document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        document.querySelectorAll('#mobile-menu a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
         });
     </script>
 </body>
