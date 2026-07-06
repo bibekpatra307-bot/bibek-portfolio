@@ -98,6 +98,20 @@
             flex-shrink: 0;
             margin-left: 5px;
         }
+        .company-badge {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            background: rgba(108, 59, 255, 0.1);
+            color: #6C3BFF;
+            border: 1px solid rgba(108, 59, 255, 0.08);
+        }
+        .dark .company-badge {
+            background: rgba(108, 59, 255, 0.2);
+            border-color: rgba(108, 59, 255, 0.15);
+        }
     </style>
 </head>
 
@@ -141,7 +155,7 @@
         <div class="max-w-4xl mx-auto px-4" data-aos="fade-up">
             <h1 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Work Experience</h1>
             <p class="text-lg text-gray-600 dark:text-gray-400 mt-3 max-w-2xl mx-auto">
-                My professional journey — roles, achievements, and growth.
+                My professional journey — roles, achievements, and growth across industries.
             </p>
             <div class="divider-gradient mx-auto mt-4"></div>
         </div>
@@ -150,7 +164,7 @@
     <!-- ===== EXPERIENCE TIMELINE ===== -->
     <main class="py-12 pb-20 max-w-4xl mx-auto px-4">
 
-        <!-- Experience 1: GroMo -->
+        <!-- ✅ Experience 1: GroMo (Financial Service Provider) -->
         <div class="exp-card mb-6" data-aos="fade-up">
             <div class="flex items-start gap-4">
                 <div class="timeline-dot"></div>
@@ -159,6 +173,7 @@
                         <div>
                             <h3 class="text-xl font-bold">Financial Service Provider</h3>
                             <p class="text-primary font-medium">GroMo (Vitrak Fintech Private Limited)</p>
+                            <span class="company-badge">Tech-Enabled Fintech</span>
                         </div>
                         <span class="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">2022 – 2025</span>
                     </div>
@@ -181,7 +196,7 @@
             </div>
         </div>
 
-        <!-- Experience 2: SkillsBazzar -->
+        <!-- ✅ Experience 2: SkillsBazzar (Affiliate Marketer) -->
         <div class="exp-card mb-6" data-aos="fade-up" data-aos-delay="50">
             <div class="flex items-start gap-4">
                 <div class="timeline-dot"></div>
@@ -190,6 +205,7 @@
                         <div>
                             <h3 class="text-xl font-bold">Affiliate Marketer</h3>
                             <p class="text-primary font-medium">SkillsBazzar</p>
+                            <span class="company-badge">Edtech</span>
                         </div>
                         <span class="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">2022 – 2025</span>
                     </div>
@@ -212,8 +228,44 @@
             </div>
         </div>
 
-        <!-- Experience 3: Rising Sky Academy -->
+        <!-- ✅ Experience 3: Interiorswala (3D Interior Designer) - NEW -->
         <div class="exp-card mb-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex items-start gap-4">
+                <div class="timeline-dot"></div>
+                <div class="flex-1">
+                    <div class="flex flex-wrap items-start justify-between gap-2">
+                        <div>
+                            <h3 class="text-xl font-bold">3D Interior Designer</h3>
+                            <p class="text-primary font-medium">Interiorswala</p>
+                            <span class="company-badge">Interior Design</span>
+                        </div>
+                        <span class="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">2025 – 2026</span>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Leading interior design firm specializing in residential and commercial spaces. Member of Government Interiors Designers Association of India.</p>
+                    <ul class="mt-3 space-y-1.5 text-sm text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                            <span>Created <strong>3D visualizations</strong> and interior design concepts for residential and commercial projects.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                            <span>Collaborated with architects and clients to deliver <strong>customized design solutions</strong>.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                            <span>Used <strong>Blender &amp; 3D design tools</strong> to produce high-quality renders and walkthroughs.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                            <span>Worked on projects in <strong>Jamshedpur</strong> and surrounding regions.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ✅ Experience 4: Rising Sky Academy (Marketing Manager) -->
+        <div class="exp-card mb-6" data-aos="fade-up" data-aos-delay="150">
             <div class="flex items-start gap-4">
                 <div class="timeline-dot"></div>
                 <div class="flex-1">
@@ -221,6 +273,7 @@
                         <div>
                             <h3 class="text-xl font-bold">Marketing Manager</h3>
                             <p class="text-primary font-medium">Rising Sky Academy Private Limited</p>
+                            <span class="company-badge">Education</span>
                         </div>
                         <span class="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">2024 (5 months)</span>
                     </div>
@@ -234,17 +287,13 @@
                             <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
                             <span>Built partnerships with schools and coaching centers to expand reach.</span>
                         </li>
-                        <li class="flex items-start gap-2">
-                            <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
-                            <span>Maintained <strong>100% positive feedback</strong> from students and parents.</span>
-                        </li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Experience 4: Sree Metaliks Ltd. -->
-        <div class="exp-card mb-6" data-aos="fade-up" data-aos-delay="150">
+        <!-- ✅ Experience 5: Sree Metaliks Ltd. (Supervisor) -->
+        <div class="exp-card mb-6" data-aos="fade-up" data-aos-delay="200">
             <div class="flex items-start gap-4">
                 <div class="timeline-dot"></div>
                 <div class="flex-1">
@@ -252,6 +301,7 @@
                         <div>
                             <h3 class="text-xl font-bold">Supervisor (Mechanical Department)</h3>
                             <p class="text-primary font-medium">Sree Metaliks Ltd., Barbil</p>
+                            <span class="company-badge">Manufacturing</span>
                         </div>
                         <span class="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">2024 (3 months)</span>
                     </div>
@@ -270,8 +320,8 @@
             </div>
         </div>
 
-        <!-- Experience 5: Teacher -->
-        <div class="exp-card" data-aos="fade-up" data-aos-delay="200">
+        <!-- ✅ Experience 6: Teacher -->
+        <div class="exp-card" data-aos="fade-up" data-aos-delay="250">
             <div class="flex items-start gap-4">
                 <div class="timeline-dot"></div>
                 <div class="flex-1">
@@ -279,6 +329,7 @@
                         <div>
                             <h3 class="text-xl font-bold">Teacher</h3>
                             <p class="text-primary font-medium">Sri Aurobindo Integral Education Centre &amp; Shree Ganesh Sikhya Kendra</p>
+                            <span class="company-badge">Education</span>
                         </div>
                         <span class="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">Ongoing</span>
                     </div>
@@ -291,10 +342,6 @@
                         <li class="flex items-start gap-2">
                             <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
                             <span>Guided <strong>70% of students</strong> to gain admission into reputed government schools.</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
-                            <span>Mentored students in academic and personal development, improving overall performance.</span>
                         </li>
                     </ul>
                 </div>
@@ -321,7 +368,7 @@
         <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-6 text-center md:text-left">
             <div>
                 <h4 class="font-bold text-lg mb-2">Bibek Patra</h4>
-                <p class="text-sm">Founder · Author · Developer</p>
+                <p class="text-sm">Founder · Developer · 3D Designer · Author</p>
                 <div class="flex justify-center md:justify-start gap-4 mt-3">
                     <a href="https://www.instagram.com/itsbibekpatra" target="_blank"><i class="fab fa-instagram text-xl hover:text-primary transition"></i></a>
                     <a href="https://youtube.com/@gtbcreates" target="_blank"><i class="fab fa-youtube text-xl hover:text-primary transition"></i></a>
