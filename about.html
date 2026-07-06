@@ -111,7 +111,6 @@
             color: #fff;
         }
 
-        /* Professional Mini Cards - No shopping cart feel */
         .mini-card {
             transition: all 0.3s ease;
             border-radius: 16px;
@@ -176,7 +175,6 @@
             transform: translateY(-3px);
         }
 
-        /* Work Experience Card */
         .work-card {
             transition: all 0.3s ease;
             border-radius: 16px;
@@ -210,6 +208,48 @@
         }
         .dark .work-card .icon-sm {
             background: rgba(245, 158, 11, 0.2);
+        }
+
+        /* ✅ New About Cards */
+        .about-card {
+            border-radius: 16px;
+            padding: 24px 28px;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        .dark .about-card {
+            background: rgba(30, 30, 50, 0.5);
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+        .about-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(108, 59, 255, 0.12);
+        }
+        .dark .about-card:hover {
+            box-shadow: 0 12px 30px rgba(108, 59, 255, 0.2);
+        }
+        .about-card .icon-wrap {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 22px;
+            background: rgba(108, 59, 255, 0.1);
+            color: #6C3BFF;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+        .dark .about-card .icon-wrap {
+            background: rgba(108, 59, 255, 0.2);
+        }
+        .about-card:hover .icon-wrap {
+            background: #6C3BFF;
+            color: #fff;
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -278,16 +318,43 @@
     <!-- ===== MAIN ABOUT CONTENT ===== -->
     <main class="py-12 pb-20 max-w-7xl mx-auto px-4">
 
-        <!-- 1. ABOUT ME -->
-        <div class="text-center max-w-4xl mx-auto mb-16" data-aos="fade-up">
+        <!-- ✅ 1. ABOUT ME (UPDATED - New Professional Section) -->
+        <div class="max-w-4xl mx-auto mb-16" data-aos="fade-up">
             <div class="divider-gradient mx-auto mb-4"></div>
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Building the Future, One Innovation at a Time</h2>
-            <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                I'm <strong class="text-primary">Bibek Patra</strong> — a <strong>founder, developer, author, and creative technologist</strong> from Mayurbhanj, Odisha. I build digital products that merge <strong>design, intelligence, and purpose</strong>. From AI assistants to social platforms, publishing tools to 3D visualization — my work is driven by a simple belief: <strong class="text-primary">technology should empower people</strong>.
-            </p>
-            <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mt-4">
-                I don't just write code. I write <strong>books</strong>. I build <strong>websites</strong>. I create <strong>content</strong> that educates and inspires. I architect <strong>experiences</strong>. And I'm constantly pushing the boundaries of what's possible — blending <strong>art, engineering, and entrepreneurship</strong> into everything I create.
-            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">About Me</h2>
+
+            <!-- Intro -->
+            <div class="text-center max-w-3xl mx-auto mb-8">
+                <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                    Hi, I'm <strong class="text-primary">Bibek Patra</strong> — a passionate <strong>Website &amp; Application Developer</strong> and <strong>Author</strong>. I create modern digital experiences through professional websites and applications while writing books that educate, inspire, and share meaningful ideas. I'm driven by creativity, continuous learning, and a commitment to delivering work that creates lasting value.
+                </p>
+            </div>
+
+            <!-- Website & App Development -->
+            <div class="about-card flex items-start gap-5 mb-5">
+                <div class="icon-wrap mt-1">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-primary">🌐 Website &amp; Application Development</h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mt-1 text-base">
+                        I design and develop modern, responsive, and high-performance websites and applications for businesses, startups, and individuals. Every project is built with a focus on clean design, seamless functionality, security, and user experience. My goal is to deliver reliable digital solutions that help clients strengthen their online presence and achieve long-term success.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Book Writing -->
+            <div class="about-card flex items-start gap-5">
+                <div class="icon-wrap mt-1">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-primary">📚 Book Writing</h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mt-1 text-base">
+                        Writing is my way of sharing knowledge and inspiring others. I create books that explore technology, personal growth, and practical ideas in a clear, engaging, and accessible style. Every book is written with the purpose of educating readers, encouraging curiosity, and creating a meaningful, lasting impact.
+                    </p>
+                </div>
+            </div>
         </div>
 
         <!-- 2. MY VENTURES (Smaller, Professional Cards) -->
@@ -300,7 +367,7 @@
 
             <div class="grid sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
 
-                <!-- AUTHOR / BOOKS CARD (Small) -->
+                <!-- AUTHOR / BOOKS CARD -->
                 <a href="/about-book" class="mini-card flex items-center gap-4 no-underline text-gray-800 dark:text-gray-200 group">
                     <div class="icon-sm">
                         <i class="fas fa-pen-fancy"></i>
@@ -312,7 +379,7 @@
                     <span class="arrow-link text-sm group-hover:translate-x-1 transition">→</span>
                 </a>
 
-                <!-- WEBDEV CARD (Small) -->
+                <!-- WEBDEV CARD -->
                 <a href="/webdev" class="mini-card flex items-center gap-4 no-underline text-gray-800 dark:text-gray-200 group">
                     <div class="icon-sm">
                         <i class="fas fa-code"></i>
@@ -324,7 +391,7 @@
                     <span class="arrow-link text-sm group-hover:translate-x-1 transition">→</span>
                 </a>
 
-                <!-- CONTENT CARD (Small) -->
+                <!-- CONTENT CARD -->
                 <a href="/content" class="mini-card flex items-center gap-4 no-underline text-gray-800 dark:text-gray-200 group">
                     <div class="icon-sm">
                         <i class="fas fa-video"></i>
@@ -339,7 +406,7 @@
             </div>
         </div>
 
-        <!-- 3. WORK EXPERIENCE SECTION (New) -->
+        <!-- 3. WORK EXPERIENCE SECTION -->
         <div class="mb-16" data-aos="fade-up">
             <div class="text-center mb-10">
                 <div class="divider-gradient mx-auto mb-4"></div>
@@ -355,15 +422,16 @@
                         </div>
                         <div>
                             <h4 class="text-base font-bold">View Full Work History</h4>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">5+ years · 5 organizations</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">5+ years · 6 organizations</p>
                         </div>
                     </div>
                     <span class="text-primary font-medium text-sm group-hover:translate-x-1 transition flex items-center gap-1">
                         View Details <i class="fas fa-arrow-right text-xs"></i>
                     </span>
                 </a>
+            </div>
+        </div>
 
-               
         <!-- 4. SKILLS + LANGUAGES -->
         <div class="mb-16" data-aos="fade-up">
             <div class="text-center mb-10">
