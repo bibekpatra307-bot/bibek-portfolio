@@ -100,13 +100,8 @@
             transform: scale(1.08);
         }
         @keyframes bounce {
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-8px);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
         }
 
         .hero-rectangle {
@@ -372,6 +367,29 @@
             color: #888;
         }
 
+        /* ===== TESTIMONIALS TOGGLE ===== */
+        .hidden-review {
+            display: none;
+        }
+        .testimonials-wrapper.show-all .hidden-review {
+            display: block;
+        }
+        #viewMoreBtn {
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        #viewMoreBtn i {
+            transition: transform 0.3s ease;
+        }
+        #viewMoreBtn .rotated {
+            transform: rotate(180deg);
+        }
+
         /* ===== CTA SECTION ===== */
         .cta-section {
             border-radius: 24px;
@@ -482,7 +500,7 @@
     <!-- ===== NAVBAR ===== -->
     <div id="navbar-placeholder"></div>
 
-    <!-- ===== HERO SECTION (✅ Background restored) ===== -->
+    <!-- ===== HERO SECTION ===== -->
     <section class="min-h-screen flex items-center justify-center pt-20 pb-10 bg-gradient-to-br from-primary/10 to-accent/10">
         <div class="max-w-4xl mx-auto px-4 text-center" data-aos="fade-up">
             <!-- Rectangle Image -->
@@ -526,31 +544,31 @@
         </div>
     </section>
 
-            <!-- ===== WHAT I DO (WEBSITE + BOOKS) ===== -->
-        <div class="max-w-4xl mx-auto mb-16" data-aos="fade-up">
-            <div class="divider-gradient mx-auto mb-4"></div>
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">What I Do</h2>
+    <!-- ===== WHAT I DO ===== -->
+    <div class="max-w-4xl mx-auto mb-16 px-4" data-aos="fade-up">
+        <div class="divider-gradient mx-auto mb-4"></div>
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">What I Do</h2>
 
-            <!-- Website & App Development -->
-            <div class="glass p-6 rounded-2xl mb-5">
-                <h3 class="text-xl font-bold text-primary flex items-center gap-3">
-                    <i class="fas fa-globe"></i> Website &amp; App Development
-                </h3>
-                <p class="text-gray-700 dark:text-gray-300 leading-relaxed mt-2 text-base">
-                    I build modern, responsive, and high-performance websites and web applications tailored for businesses, startups, and individuals. My focus is on delivering clean design, fast performance, and seamless user experiences — transforming ideas into reliable, scalable digital solutions that drive real-world results.
-                </p>
-            </div>
-
-            <!-- Book Writing -->
-            <div class="glass p-6 rounded-2xl">
-                <h3 class="text-xl font-bold text-primary flex items-center gap-3">
-                    <i class="fas fa-book-open"></i> Book Writing
-                </h3>
-                <p class="text-gray-700 dark:text-gray-300 leading-relaxed mt-2 text-base">
-                    I write books that inspire curiosity, encourage personal growth, and make knowledge accessible. From technology and science to self-improvement and practical life concepts, I present complex topics in a clear, engaging, and thought-provoking way — creating lasting value for readers around the world.
-                </p>
-            </div>
+        <!-- Website & App Development -->
+        <div class="glass p-6 rounded-2xl mb-5">
+            <h3 class="text-xl font-bold text-primary flex items-center gap-3">
+                <i class="fas fa-globe"></i> Website &amp; App Development
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed mt-2 text-base">
+                I build modern, responsive, and high-performance websites and web applications tailored for businesses, startups, and individuals. My focus is on delivering clean design, fast performance, and seamless user experiences — transforming ideas into reliable, scalable digital solutions that drive real-world results.
+            </p>
         </div>
+
+        <!-- Book Writing -->
+        <div class="glass p-6 rounded-2xl">
+            <h3 class="text-xl font-bold text-primary flex items-center gap-3">
+                <i class="fas fa-book-open"></i> Book Writing
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed mt-2 text-base">
+                I write books that inspire curiosity, encourage personal growth, and make knowledge accessible. From technology and science to self-improvement and practical life concepts, I present complex topics in a clear, engaging, and thought-provoking way — creating lasting value for readers around the world.
+            </p>
+        </div>
+    </div>
 
     <!-- ===== PRODUCTS CAROUSEL ===== -->
     <section class="py-12 max-w-7xl mx-auto px-4">
@@ -566,104 +584,129 @@
         <div class="carousel-indicators" id="productsIndicators"></div>
     </section>
 
-    <!-- ===== CLIENT TESTIMONIALS (15 reviews) ===== -->
+    <!-- ===== CLIENT TESTIMONIALS (15 reviews with View More) ===== -->
     <section class="py-14 bg-gray-50/60 dark:bg-gray-800/30">
         <div class="max-w-7xl mx-auto px-4">
             <div class="divider-gradient"></div>
             <h2 class="section-title">What Clients Say</h2>
             <p class="section-sub">Feedback from people I've worked with</p>
 
-            <div class="testimonial-grid" data-aos="fade-up">
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="quote">"Bibek delivered a stunning website and increased our online sales by 200%."</p>
-                    <p class="author">Rajesh Kumar</p>
-                    <p class="role">Business Owner, Delhi</p>
+            <div class="testimonials-wrapper" id="testimonialsWrapper">
+                <div class="testimonial-grid" id="testimonialGrid">
+                    <!-- Review 1 -->
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"Bibek delivered a stunning website and increased our online sales by 200%."</p>
+                        <p class="author">Rajesh Kumar</p>
+                        <p class="role">Business Owner, Delhi</p>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"His AI chatbot saved our support team hours every day. Highly recommended!"</p>
+                        <p class="author">Priya Sharma</p>
+                        <p class="role">Operations Manager, Mumbai</p>
+                    </div>
+                    <!-- Review 3 -->
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"Professional, fast, and highly skilled. Bibek brought our vision to life."</p>
+                        <p class="author">Amit Patel</p>
+                        <p class="role">Startup Founder, Bangalore</p>
+                    </div>
+                    <!-- Review 4 -->
+                    <div class="testimonial-card hidden-review">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"The best developer I've ever worked with. Attention to detail is unmatched."</p>
+                        <p class="author">Sneha Reddy</p>
+                        <p class="role">Product Manager, Hyderabad</p>
+                    </div>
+                    <!-- Review 5 -->
+                    <div class="testimonial-card hidden-review">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"Bibek's expertise in AI and web development is truly exceptional."</p>
+                        <p class="author">Vikram Singh</p>
+                        <p class="role">CTO, Pune</p>
+                    </div>
+                    <!-- Review 6 -->
+                    <div class="testimonial-card hidden-review">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"He built our e-commerce platform from scratch and it's been flawless."</p>
+                        <p class="author">Ananya Das</p>
+                        <p class="role">E-Commerce Director, Kolkata</p>
+                    </div>
+                    <!-- Review 7 -->
+                    <div class="testimonial-card hidden-review">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"Bibek is a true professional — delivered ahead of schedule and under budget."</p>
+                        <p class="author">Manoj Gupta</p>
+                        <p class="role">Project Lead, Chennai</p>
+                    </div>
+                    <!-- Review 8 -->
+                    <div class="testimonial-card hidden-review">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"The SEO strategy he implemented doubled our organic traffic in 3 months."</p>
+                        <p class="author">Neha Jain</p>
+                        <p class="role">Marketing Head, Jaipur</p>
+                    </div>
+                    <!-- Review 9 -->
+                    <div class="testimonial-card hidden-review">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"He's not just a developer — he's a problem solver. Highly recommend."</p>
+                        <p class="author">Arjun Nair</p>
+                        <p class="role">Business Owner, Kochi</p>
+                    </div>
+                    <!-- Review 10 -->
+                    <div class="testimonial-card hidden-review">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"Bibek's work on our mobile app was outstanding. Users love the experience."</p>
+                        <p class="author">Kavya Menon</p>
+                        <p class="role">Product Designer, Trivandrum</p>
+                    </div>
+                    <!-- Review 11 -->
+                    <div class="testimonial-card hidden-review">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"The publishing platform he built for us is intuitive and powerful."</p>
+                        <p class="author">Dr. Sanjay Verma</p>
+                        <p class="role">Publisher, Lucknow</p>
+                    </div>
+                    <!-- Review 12 -->
+                    <div class="testimonial-card hidden-review">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"Excellent communication and technical skills. A pleasure to work with."</p>
+                        <p class="author">Ritu Agarwal</p>
+                        <p class="role">Founder, Gurgaon</p>
+                    </div>
+                    <!-- Review 13 -->
+                    <div class="testimonial-card hidden-review">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"Bibek's 3D design work for our product visualization was breathtaking."</p>
+                        <p class="author">David D'Souza</p>
+                        <p class="role">Creative Director, Goa</p>
+                    </div>
+                    <!-- Review 14 -->
+                    <div class="testimonial-card hidden-review">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"He helped us launch our book on BibekBook — a game-changer for authors."</p>
+                        <p class="author">Shreya Pandey</p>
+                        <p class="role">Author, Bhopal</p>
+                    </div>
+                    <!-- Review 15 -->
+                    <div class="testimonial-card hidden-review">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"Reliable, creative, and always delivers high-quality work."</p>
+                        <p class="author">Gaurav Malhotra</p>
+                        <p class="role">Agency Partner, Chandigarh</p>
+                    </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="quote">"His AI chatbot saved our support team hours every day. Highly recommended!"</p>
-                    <p class="author">Priya Sharma</p>
-                    <p class="role">Operations Manager, Mumbai</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="quote">"Professional, fast, and highly skilled. Bibek brought our vision to life."</p>
-                    <p class="author">Amit Patel</p>
-                    <p class="role">Startup Founder, Bangalore</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="quote">"The best developer I've ever worked with. Attention to detail is unmatched."</p>
-                    <p class="author">Sneha Reddy</p>
-                    <p class="role">Product Manager, Hyderabad</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="quote">"Bibek's expertise in AI and web development is truly exceptional."</p>
-                    <p class="author">Vikram Singh</p>
-                    <p class="role">CTO, Pune</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="quote">"He built our e-commerce platform from scratch and it's been flawless."</p>
-                    <p class="author">Ananya Das</p>
-                    <p class="role">E-Commerce Director, Kolkata</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="quote">"Bibek is a true professional — delivered ahead of schedule and under budget."</p>
-                    <p class="author">Manoj Gupta</p>
-                    <p class="role">Project Lead, Chennai</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="quote">"The SEO strategy he implemented doubled our organic traffic in 3 months."</p>
-                    <p class="author">Neha Jain</p>
-                    <p class="role">Marketing Head, Jaipur</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="quote">"He's not just a developer — he's a problem solver. Highly recommend."</p>
-                    <p class="author">Arjun Nair</p>
-                    <p class="role">Business Owner, Kochi</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="quote">"Bibek's work on our mobile app was outstanding. Users love the experience."</p>
-                    <p class="author">Kavya Menon</p>
-                    <p class="role">Product Designer, Trivandrum</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="quote">"The publishing platform he built for us is intuitive and powerful."</p>
-                    <p class="author">Dr. Sanjay Verma</p>
-                    <p class="role">Publisher, Lucknow</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="quote">"Excellent communication and technical skills. A pleasure to work with."</p>
-                    <p class="author">Ritu Agarwal</p>
-                    <p class="role">Founder, Gurgaon</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="quote">"Bibek's 3D design work for our product visualization was breathtaking."</p>
-                    <p class="author">David D'Souza</p>
-                    <p class="role">Creative Director, Goa</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="quote">"He helped us launch our book on BibekBook — a game-changer for authors."</p>
-                    <p class="author">Shreya Pandey</p>
-                    <p class="role">Author, Bhopal</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="quote">"Reliable, creative, and always delivers high-quality work."</p>
-                    <p class="author">Gaurav Malhotra</p>
-                    <p class="role">Agency Partner, Chandigarh</p>
-                </div>
+            </div>
+
+            <!-- View More Button -->
+            <div class="text-center mt-6">
+                <button id="viewMoreBtn" class="text-primary font-medium hover:text-purple-700 transition text-sm">
+                    <span id="viewMoreText">View More</span>
+                    <i class="fas fa-chevron-down" id="viewMoreIcon"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -682,7 +725,7 @@
         <div class="carousel-indicators" id="blogIndicators"></div>
     </section>
 
-    <!-- ===== NEWSLETTER CTA (✅ With Sheet.best integration) ===== -->
+    <!-- ===== NEWSLETTER CTA ===== -->
     <section class="py-12 px-4">
         <div class="max-w-3xl mx-auto cta-section text-center" data-aos="fade-up">
             <div class="text-3xl mb-2">📬</div>
@@ -1007,6 +1050,21 @@
                 gap: 16,
                 speed: 1.0
             });
+
+            // ===== TESTIMONIALS VIEW MORE =====
+            const viewMoreBtn = document.getElementById('viewMoreBtn');
+            const wrapper = document.getElementById('testimonialsWrapper');
+            const textSpan = document.getElementById('viewMoreText');
+            const icon = document.getElementById('viewMoreIcon');
+
+            if (viewMoreBtn && wrapper) {
+                viewMoreBtn.addEventListener('click', function() {
+                    wrapper.classList.toggle('show-all');
+                    const isExpanded = wrapper.classList.contains('show-all');
+                    textSpan.textContent = isExpanded ? 'View Less' : 'View More';
+                    icon.classList.toggle('rotated', isExpanded);
+                });
+            }
 
             // ===== NEWSLETTER WITH SHEET.BEST + EMAILJS =====
             const form = document.getElementById('newsletterForm');
