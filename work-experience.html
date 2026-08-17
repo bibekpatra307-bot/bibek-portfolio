@@ -8,7 +8,8 @@
     <link rel="canonical" href="https://bibekpatra.site/work-experience" />
     <link rel="icon" type="image/png" href="/favicon.png">
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -55,8 +56,13 @@
             animation: bounce 2s infinite;
         }
         @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
         .divider-gradient {
             height: 3px;
@@ -112,6 +118,16 @@
             background: rgba(108, 59, 255, 0.2);
             border-color: rgba(108, 59, 255, 0.15);
         }
+        .badge-current {
+            background: rgba(245, 158, 11, 0.15);
+            color: #B45309;
+            border-color: rgba(245, 158, 11, 0.2);
+        }
+        .dark .badge-current {
+            background: rgba(245, 158, 11, 0.2);
+            color: #FCD34D;
+            border-color: rgba(245, 158, 11, 0.15);
+        }
     </style>
 </head>
 
@@ -132,291 +148,356 @@
             </div>
             <div class="flex items-center gap-4">
                 <button onclick="document.documentElement.classList.toggle('dark')"
-                    class="p-2 rounded-full bg-white/90 dark:bg-gray-800/90 shadow-lg text-gray-700 dark:text-gray-200 hover:shadow-xl transition border border-gray-200/50 dark:border-gray-700/50">
-                    <i class="fas fa-moon dark:hidden"></i>
-                    <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
-                </button>
-                <button id="menu-btn" class="md:hidden text-2xl text-gray-700 dark:text-gray-200">☰</button>
-            </div>
+                class="p-2 rounded-full bg-white/90 dark:bg-gray-800/90 shadow-lg text-gray-700 dark:text-gray-200 hover:shadow-xl transition border border-gray-200/50 dark:border-gray-700/50">
+                <i class="fas fa-moon dark:hidden"></i>
+                <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+            </button>
+            <button id="menu-btn" class="md:hidden text-2xl text-gray-700 dark:text-gray-200">☰</button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-t">
-            <a href="/" class="block px-4 py-3 border-b dark:border-gray-700">Home</a>
-            <a href="/about" class="block px-4 py-3 border-b dark:border-gray-700">About</a>
-            <a href="/about-book" class="block px-4 py-3 border-b dark:border-gray-700">Books</a>
-            <a href="/webdev" class="block px-4 py-3 border-b dark:border-gray-700">WebDev</a>
-            <a href="/content" class="block px-4 py-3 border-b dark:border-gray-700">Content</a>
-            <a href="/work-experience" class="block px-4 py-3 border-b dark:border-gray-700 text-primary">Experience</a>
-            <a href="/contact" class="block px-4 py-3 border-b dark:border-gray-700">Contact</a>
-        </div>
-    </nav>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-t">
+        <a href="/" class="block px-4 py-3 border-b dark:border-gray-700">Home</a>
+        <a href="/about" class="block px-4 py-3 border-b dark:border-gray-700">About</a>
+        <a href="/about-book" class="block px-4 py-3 border-b dark:border-gray-700">Books</a>
+        <a href="/webdev" class="block px-4 py-3 border-b dark:border-gray-700">WebDev</a>
+        <a href="/content" class="block px-4 py-3 border-b dark:border-gray-700">Content</a>
+        <a href="/work-experience" class="block px-4 py-3 border-b dark:border-gray-700 text-primary">Experience</a>
+        <a href="/contact" class="block px-4 py-3 border-b dark:border-gray-700">Contact</a>
+    </div>
+</nav>
 
-    <!-- ===== HERO ===== -->
-    <section class="pt-28 pb-12 text-center bg-gradient-to-br from-primary/10 to-accent/10">
-        <div class="max-w-4xl mx-auto px-4" data-aos="fade-up">
-            <h1 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Work Experience</h1>
-            <p class="text-lg text-gray-600 dark:text-gray-400 mt-3 max-w-2xl mx-auto">
-                My professional journey — roles, achievements, and growth across industries.
-            </p>
-            <div class="divider-gradient mx-auto mt-4"></div>
-        </div>
-    </section>
+<!-- ===== HERO ===== -->
+<section class="pt-28 pb-12 text-center bg-gradient-to-br from-primary/10 to-accent/10">
+    <div class="max-w-4xl mx-auto px-4" data-aos="fade-up">
+        <h1 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Work Experience</h1>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mt-3 max-w-2xl mx-auto">
+            My professional journey — roles, achievements, and growth across industries.
+        </p>
+        <div class="divider-gradient mx-auto mt-4"></div>
+    </div>
+</section>
 
-    <!-- ===== EXPERIENCE TIMELINE ===== -->
-    <main class="py-12 pb-20 max-w-4xl mx-auto px-4">
+<!-- ===== EXPERIENCE TIMELINE ===== -->
+<main class="py-12 pb-20 max-w-4xl mx-auto px-4">
 
-        <!-- ✅ Experience 1: GroMo (Financial Service Associte) -->
-        <div class="exp-card mb-6" data-aos="fade-up">
-            <div class="flex items-start gap-4">
-                <div class="timeline-dot"></div>
-                <div class="flex-1">
-                    <div class="flex flex-wrap items-start justify-between gap-2">
-                        <div>
-                            <h3 class="text-xl font-bold">Financial Service Provider</h3>
-                            <p class="text-primary font-medium">GroMo (Vitrak Fintech Private Limited)</p>
-                            <span class="company-badge">Tech-Enabled Fintech</span>
-                        </div>
-                        <span class="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">2022 – 2025</span>
+    <!-- ✅ 1. BKP Developers – Founder (New) -->
+    <div class="exp-card mb-6" data-aos="fade-up">
+        <div class="flex items-start gap-4">
+            <div class="timeline-dot"></div>
+            <div class="flex-1">
+                <div class="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                        <h3 class="text-xl font-bold">Founder</h3>
+                        <p class="text-primary font-medium">BKP Developers</p>
+                        <span class="company-badge badge-current">Current</span>
                     </div>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Tech-enabled platform distributing insurance, savings, credit cards, demat accounts, and loans.</p>
-                    <ul class="mt-3 space-y-1.5 text-sm text-gray-700 dark:text-gray-300">
-                        <li class="flex items-start gap-2">
-                            <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
-                            <span>Assisted <strong>100+ clients</strong> with demat accounts, credit/debit cards, and loan approvals.</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
-                            <span>Increased customer product adoption by <strong>25%</strong> through personalized financial consultations.</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
-                            <span>Trained new agents on product knowledge and compliance requirements.</span>
-                        </li>
-                    </ul>
+                    <span class="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">Jan 2026 – Present</span>
                 </div>
-            </div>
-        </div>
-
-        <!-- ✅ Experience 2: SkillsBazzar (Affiliate Marketer) -->
-        <div class="exp-card mb-6" data-aos="fade-up" data-aos-delay="50">
-            <div class="flex items-start gap-4">
-                <div class="timeline-dot"></div>
-                <div class="flex-1">
-                    <div class="flex flex-wrap items-start justify-between gap-2">
-                        <div>
-                            <h3 class="text-xl font-bold">Affiliate Marketer</h3>
-                            <p class="text-primary font-medium">SkillsBazzar</p>
-                            <span class="company-badge">Edtech</span>
-                        </div>
-                        <span class="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">2022 – 2025</span>
-                    </div>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Edtech platform offering digital skill courses with mentor-led learning.</p>
-                    <ul class="mt-3 space-y-1.5 text-sm text-gray-700 dark:text-gray-300">
-                        <li class="flex items-start gap-2">
-                            <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
-                            <span>Generated <strong>20% growth</strong> in sales within 1 year through targeted campaigns.</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
-                            <span>Built a network of <strong>100+ learners</strong> and affiliates, ensuring consistent monthly commissions.</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
-                            <span>Boosted online course enrollments by <strong>40%</strong> through marketing campaigns.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- ✅ Experience 3: Interiorswala (3D Interior Designer) - NEW -->
-        <div class="exp-card mb-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="flex items-start gap-4">
-                <div class="timeline-dot"></div>
-                <div class="flex-1">
-                    <div class="flex flex-wrap items-start justify-between gap-2">
-                        <div>
-                            <h3 class="text-xl font-bold">3D Interior Designer</h3>
-                            <p class="text-primary font-medium">Interiorswala</p>
-                            <span class="company-badge">Interior Design</span>
-                        </div>
-                        <span class="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">2025 – 2026</span>
-                    </div>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Leading interior design firm specializing in residential and commercial spaces. Member of Government Interiors Designers Association of India.</p>
-                    <ul class="mt-3 space-y-1.5 text-sm text-gray-700 dark:text-gray-300">
-                        <li class="flex items-start gap-2">
-                            <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
-                            <span>Created <strong>3D visualizations</strong> and interior design concepts for residential and commercial projects.</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
-                            <span>Collaborated with architects and clients to deliver <strong>customized design solutions</strong>.</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
-                            <span>Used <strong>Blender &amp; 3D design tools</strong> to produce high-quality renders and walkthroughs.</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
-                            <span>Worked on projects in <strong>Jamshedpur</strong> and surrounding regions.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- ✅ Experience 4: Rising Sky Academy (Area Marketing Manager) -->
-        <div class="exp-card mb-6" data-aos="fade-up" data-aos-delay="150">
-            <div class="flex items-start gap-4">
-                <div class="timeline-dot"></div>
-                <div class="flex-1">
-                    <div class="flex flex-wrap items-start justify-between gap-2">
-                        <div>
-                            <h3 class="text-xl font-bold">Marketing Manager</h3>
-                            <p class="text-primary font-medium">Rising Sky Academy ltd.</p>
-                            <span class="company-badge">Education</span>
-                        </div>
-                        <span class="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">2024 (5 months)</span>
-                    </div>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Education and tutorial service provider in Mayurbhanj &amp; Keonjhar, Odisha.</p>
-                    <ul class="mt-3 space-y-1.5 text-sm text-gray-700 dark:text-gray-300">
-                        <li class="flex items-start gap-2">
-                            <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
-                            <span>Developed local marketing strategies, improving admissions by <strong>35%</strong>.</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
-                            <span>Built partnerships with schools and coaching centers to expand reach.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- ✅ Experience 5: Sree Metaliks Ltd. (Supervisor) -->
-        <div class="exp-card mb-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="flex items-start gap-4">
-                <div class="timeline-dot"></div>
-                <div class="flex-1">
-                    <div class="flex flex-wrap items-start justify-between gap-2">
-                        <div>
-                            <h3 class="text-xl font-bold">Supervisor (Mechanical Department)</h3>
-                            <p class="text-primary font-medium">Sree Metaliks Ltd., Barbil</p>
-                            <span class="company-badge">Manufacturing</span>
-                        </div>
-                        <span class="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">2024 (3 months)</span>
-                    </div>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Manufacturer of industrial metal parts including flanges, castings, and more.</p>
-                    <ul class="mt-3 space-y-1.5 text-sm text-gray-700 dark:text-gray-300">
-                        <li class="flex items-start gap-2">
-                            <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
-                            <span>Supervised a team of <strong>50+ workers</strong>, ensuring tasks were completed safely and on time.</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
-                            <span>Coordinated with engineers to improve workflow efficiency by <strong>15%</strong>.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- ✅ Experience 6: Teacher -->
-        <div class="exp-card" data-aos="fade-up" data-aos-delay="250">
-            <div class="flex items-start gap-4">
-                <div class="timeline-dot"></div>
-                <div class="flex-1">
-                    <div class="flex flex-wrap items-start justify-between gap-2">
-                        <div>
-                            <h3 class="text-xl font-bold">Teacher</h3>
-                            <p class="text-primary font-medium">Sri Aurobindo Integral Education Centre &amp; Shree Ganesh Sikhya Kendra</p>
-                            <span class="company-badge">Education</span>
-                        </div>
-                        <span class="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">Ongoing</span>
-                    </div>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Private school providing primary education across multiple subjects in Nuadihi.</p>
-                    <ul class="mt-3 space-y-1.5 text-sm text-gray-700 dark:text-gray-300">
-                        <li class="flex items-start gap-2">
-                            <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
-                            <span>Taught <strong>100+ students</strong> across Mathematics, Science, English, History, and GK.</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
-                            <span></strong>Successfully <strong>guided numerous students to secure admission into reputed <strong>government schools</strong>.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Download PDFs CTA -->
-        <div class="mt-10 text-center p-6 bg-primary/10 dark:bg-primary/5 rounded-2xl" data-aos="fade-up">
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Download my complete resume or CV for more details.</p>
-            <div class="flex flex-wrap justify-center gap-3">
-                <a href="/resume.pdf" download class="bg-accent text-black px-5 py-2.5 rounded-xl font-semibold text-sm shadow-lg shadow-accent/30 hover:shadow-accent/50 transition flex items-center gap-2">
-                    <i class="fas fa-file-pdf"></i> Resume
-                </a>
-                <a href="/cv.pdf" download class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-5 py-2.5 rounded-xl font-semibold text-sm shadow-lg shadow-black/10 border border-gray-200 dark:border-gray-700 transition flex items-center gap-2">
-                    <i class="fas fa-file-alt"></i> CV
-                </a>
-            </div>
-        </div>
-
-    </main>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="bg-gray-100 dark:bg-gray-900 py-8">
-        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-6 text-center md:text-left">
-            <div>
-                <h4 class="font-bold text-lg mb-2">Bibek Patra</h4>
-                <p class="text-sm">Founder · Developer · 3D Designer · Author</p>
-                <div class="flex justify-center md:justify-start gap-4 mt-3">
-                    <a href="https://www.instagram.com/itsbibekpatra" target="_blank"><i class="fab fa-instagram text-xl hover:text-primary transition"></i></a>
-                    <a href="https://youtube.com/@gtbcreates" target="_blank"><i class="fab fa-youtube text-xl hover:text-primary transition"></i></a>
-                    <a href="https://www.linkedin.com/in/bibek-patra-932213293" target="_blank"><i class="fab fa-linkedin text-xl hover:text-primary transition"></i></a>
-                </div>
-            </div>
-            <div>
-                <h4 class="font-semibold mb-2">Quick Links</h4>
-                <ul class="space-y-1 text-sm">
-                    <li><a href="/" class="hover:text-primary transition">Home</a></li>
-                    <li><a href="/about" class="hover:text-primary transition">About</a></li>
-                    <li><a href="/about-book" class="hover:text-primary transition">Books</a></li>
-                    <li><a href="/webdev" class="hover:text-primary transition">WebDev</a></li>
-                    <li><a href="/content" class="hover:text-primary transition">Content</a></li>
-                    <li><a href="/work-experience" class="hover:text-primary transition">Experience</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-semibold mb-2">Connect</h4>
-                <ul class="space-y-1 text-sm">
-                    <li><a href="https://wa.me/918280482686" target="_blank" class="hover:text-primary transition">WhatsApp</a></li>
-                    <li><a href="https://www.instagram.com/itsbibekpatra" target="_blank" class="hover:text-primary transition">Instagram</a></li>
-                    <li><a href="https://www.linkedin.com/in/bibek-patra-932213293" target="_blank" class="hover:text-primary transition">LinkedIn</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-semibold mb-2">Legal</h4>
-                <ul class="space-y-1 text-sm">
-                    <li><a href="/privacy" class="hover:text-primary transition">Privacy Policy</a></li>
-                    <li><a href="/terms" class="hover:text-primary transition">Terms</a></li>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Modern web development &amp; digital solutions agency.</p>
+                <ul class="mt-3 space-y-1.5 text-sm text-gray-700 dark:text-gray-300">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                        <span>Build modern websites, web applications, and digital solutions.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                        <span>Focus on responsive design, performance, UX, and scalable technology.</span>
+                    </li>
                 </ul>
             </div>
         </div>
-        <div class="text-center text-sm mt-8 border-t dark:border-gray-700 pt-4">
-            © 2026 Bibek Patra. All Rights Reserved.
+    </div>
+
+    <!-- ✅ 2. Bibek Books – Founder & Author (New) -->
+    <div class="exp-card mb-6" data-aos="fade-up" data-aos-delay="50">
+        <div class="flex items-start gap-4">
+            <div class="timeline-dot"></div>
+            <div class="flex-1">
+                <div class="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                        <h3 class="text-xl font-bold">Founder &amp; Author</h3>
+                        <p class="text-primary font-medium">Bibek Books</p>
+                        <span class="company-badge badge-current">Current</span>
+                    </div>
+                    <span class="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">Jan 2026 – Present</span>
+                </div>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Digital publishing house for science, technology, fiction, non-fiction, spirituality &amp; self-improvement.</p>
+                <ul class="mt-3 space-y-1.5 text-sm text-gray-700 dark:text-gray-300">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                        <span>Publish and curate digital books across diverse genres.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                        <span>Make knowledge accessible, engaging, and affordable for readers worldwide.</span>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </footer>
+    </div>
 
-    <a href="https://wa.me/918280482686" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- ✅ 3. Interiors Wala – 3D Interior Designer (Merged) -->
+    <div class="exp-card mb-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex items-start gap-4">
+            <div class="timeline-dot"></div>
+            <div class="flex-1">
+                <div class="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                        <h3 class="text-xl font-bold">3D Interior Designer</h3>
+                        <p class="text-primary font-medium">Interiors Wala</p>
+                        <span class="company-badge">Interior Design</span>
+                    </div>
+                    <span class="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">Nov 2025 – Aug 2026</span>
+                </div>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Leading interior design firm in Sakchi, Jamshedpur — residential &amp; commercial spaces.</p>
+                <ul class="mt-3 space-y-1.5 text-sm text-gray-700 dark:text-gray-300">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                        <span>Created realistic <strong>3D interior designs</strong> and visualizations for residential and commercial spaces.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                        <span>Converted concepts into detailed visuals for client presentations and project execution.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                        <span>Collaborated with architects and clients to deliver customized design solutions.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 800, once: true });
-        document.getElementById('menu-btn').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
-    </script>
+    <!-- ✅ 4. GroMo – Financial Services Associate (Merged) -->
+    <div class="exp-card mb-6" data-aos="fade-up" data-aos-delay="150">
+        <div class="flex items-start gap-4">
+            <div class="timeline-dot"></div>
+            <div class="flex-1">
+                <div class="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                        <h3 class="text-xl font-bold">Financial Services Associate</h3>
+                        <p class="text-primary font-medium">GroMo (Vitrak Fintech Private Limited)</p>
+                        <span class="company-badge">Tech-Enabled Fintech</span>
+                    </div>
+                    <span class="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">Jan 2024 – Dec 2025</span>
+                </div>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Tech-enabled platform distributing insurance, savings, credit cards, demat accounts, and loans.</p>
+                <ul class="mt-3 space-y-1.5 text-sm text-gray-700 dark:text-gray-300">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                        <span>Assisted <strong>100+ clients</strong> with demat accounts, credit/debit cards, and loan approvals.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                        <span>Increased customer product adoption by <strong>25%</strong> through personalized financial consultations.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                        <span>Developed strong skills in communication, sales support, relationship management, and problem-solving.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ 5. Skills Bazzar – Affiliate Marketer (Merged) -->
+    <div class="exp-card mb-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex items-start gap-4">
+            <div class="timeline-dot"></div>
+            <div class="flex-1">
+                <div class="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                        <h3 class="text-xl font-bold">Affiliate Marketer</h3>
+                        <p class="text-primary font-medium">Skills Bazzar</p>
+                        <span class="company-badge">Edtech</span>
+                    </div>
+                    <span class="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">Mar 2022 – Dec 2025</span>
+                </div>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Edtech platform offering digital skill courses with mentor-led learning.</p>
+                <ul class="mt-3 space-y-1.5 text-sm text-gray-700 dark:text-gray-300">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                        <span>Generated <strong>20% growth</strong> in sales within 1 year through targeted campaigns.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                        <span>Built a network of <strong>100+ learners</strong> and affiliates, ensuring consistent monthly commissions.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                        <span>Boosted online course enrollments by <strong>40%</strong> through marketing campaigns.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ 6. Rising Sky Academy – Area Sales & Marketing Manager (Merged) -->
+    <div class="exp-card mb-6" data-aos="fade-up" data-aos-delay="250">
+        <div class="flex items-start gap-4">
+            <div class="timeline-dot"></div>
+            <div class="flex-1">
+                <div class="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                        <h3 class="text-xl font-bold">Area Sales &amp; Marketing Manager</h3>
+                        <p class="text-primary font-medium">Rising Sky Academy Ltd.</p>
+                        <span class="company-badge">Education</span>
+                    </div>
+                    <span class="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">2024</span>
+                </div>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Education and tutorial service provider in Mayurbhanj &amp; Keonjhar, Odisha.</p>
+                <ul class="mt-3 space-y-1.5 text-sm text-gray-700 dark:text-gray-300">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                        <span>Developed local marketing strategies, improving admissions by <strong>35%</strong>.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                        <span>Contributed to lead generation, digital outreach, customer engagement, and business growth.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                        <span>Built partnerships with schools and coaching centers to expand reach.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ 7. Sree Metaliks Ltd. – Contractual Supervisor (Merged) -->
+    <div class="exp-card mb-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="flex items-start gap-4">
+            <div class="timeline-dot"></div>
+            <div class="flex-1">
+                <div class="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                        <h3 class="text-xl font-bold">Contractual Supervisor (Mechanical)</h3>
+                        <p class="text-primary font-medium">Sree Metaliks Ltd., Barbil</p>
+                        <span class="company-badge">Manufacturing</span>
+                    </div>
+                    <span class="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">Jan 2024 – May 2024</span>
+                </div>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Manufacturer of industrial metal parts including flanges, castings, and more.</p>
+                <ul class="mt-3 space-y-1.5 text-sm text-gray-700 dark:text-gray-300">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                        <span>Managed and coordinated <strong>25+ workers</strong>, overseeing DRI kiln maintenance and daily mechanical operations.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                        <span>Supported new fabrication projects, including crusher platforms and plant structures.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                        <span>Coordinated with engineers to improve workflow efficiency by <strong>15%</strong>.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ 8. Teacher – Sri Aurobindo & Shree Ganesh (Merged) -->
+    <div class="exp-card" data-aos="fade-up" data-aos-delay="350">
+        <div class="flex items-start gap-4">
+            <div class="timeline-dot"></div>
+            <div class="flex-1">
+                <div class="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                        <h3 class="text-xl font-bold">Teacher</h3>
+                        <p class="text-primary font-medium">Sri Aurobindo Integral Education Centre &amp; Shree Ganesh Sikhya Kendra</p>
+                        <span class="company-badge">Education</span>
+                    </div>
+                    <span class="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">Aug 2023 – Aug 2024</span>
+                </div>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Private schools providing primary education across multiple subjects in Nuadihi.</p>
+                <ul class="mt-3 space-y-1.5 text-sm text-gray-700 dark:text-gray-300">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                        <span>Taught <strong>100+ students</strong> across Mathematics, Science, English, History, and GK.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                        <span>Successfully guided numerous students to secure admission into reputed government schools.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-primary text-xs mt-1"></i>
+                        <span>Developed strong skills in communication, classroom management, and student mentoring.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Download PDFs CTA -->
+    <div class="mt-10 text-center p-6 bg-primary/10 dark:bg-primary/5 rounded-2xl" data-aos="fade-up">
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Download my complete resume or CV for more details.</p>
+        <div class="flex flex-wrap justify-center gap-3">
+            <a href="/resume.pdf" download class="bg-accent text-black px-5 py-2.5 rounded-xl font-semibold text-sm shadow-lg shadow-accent/30 hover:shadow-accent/50 transition flex items-center gap-2">
+                <i class="fas fa-file-pdf"></i> Resume
+            </a>
+            <a href="/cv.pdf" download class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-5 py-2.5 rounded-xl font-semibold text-sm shadow-lg shadow-black/10 border border-gray-200 dark:border-gray-700 transition flex items-center gap-2">
+                <i class="fas fa-file-alt"></i> CV
+            </a>
+        </div>
+    </div>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-gray-100 dark:bg-gray-900 py-8">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-6 text-center md:text-left">
+        <div>
+            <h4 class="font-bold text-lg mb-2">Bibek Patra</h4>
+            <p class="text-sm">Founder · Developer · 3D Designer · Author</p>
+            <div class="flex justify-center md:justify-start gap-4 mt-3">
+                <a href="https://www.instagram.com/itsbibekpatra" target="_blank"><i class="fab fa-instagram text-xl hover:text-primary transition"></i></a>
+                <a href="https://youtube.com/@gtbcreates" target="_blank"><i class="fab fa-youtube text-xl hover:text-primary transition"></i></a>
+                <a href="https://www.linkedin.com/in/bibek-patra-932213293" target="_blank"><i class="fab fa-linkedin text-xl hover:text-primary transition"></i></a>
+            </div>
+        </div>
+        <div>
+            <h4 class="font-semibold mb-2">Quick Links</h4>
+            <ul class="space-y-1 text-sm">
+                <li><a href="/" class="hover:text-primary transition">Home</a></li>
+                <li><a href="/about" class="hover:text-primary transition">About</a></li>
+                <li><a href="/about-book" class="hover:text-primary transition">Books</a></li>
+                <li><a href="/webdev" class="hover:text-primary transition">WebDev</a></li>
+                <li><a href="/content" class="hover:text-primary transition">Content</a></li>
+                <li><a href="/work-experience" class="hover:text-primary transition">Experience</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-semibold mb-2">Connect</h4>
+            <ul class="space-y-1 text-sm">
+                <li><a href="https://wa.me/918280482686" target="_blank" class="hover:text-primary transition">WhatsApp</a></li>
+                <li><a href="https://www.instagram.com/itsbibekpatra" target="_blank" class="hover:text-primary transition">Instagram</a></li>
+                <li><a href="https://www.linkedin.com/in/bibek-patra-932213293" target="_blank" class="hover:text-primary transition">LinkedIn</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-semibold mb-2">Legal</h4>
+            <ul class="space-y-1 text-sm">
+                <li><a href="/privacy" class="hover:text-primary transition">Privacy Policy</a></li>
+                <li><a href="/terms" class="hover:text-primary transition">Terms</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="text-center text-sm mt-8 border-t dark:border-gray-700 pt-4">
+        &copy; 2026 Bibek Patra. All Rights Reserved.
+    </div>
+</footer>
+
+<a href="https://wa.me/918280482686" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+</script>
+<script>
+    AOS.init({ duration: 800, once: true });
+    document.getElementById('menu-btn').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+</script>
 </body>
 </html>
